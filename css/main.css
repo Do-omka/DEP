@@ -46,7 +46,6 @@ table {
   display: flex;
   width: 100%;
   max-width: 1920px;
-  flex-wrap: wrap;
 }
 .header .container,
 .footer .container {
@@ -66,7 +65,8 @@ table {
   background: url(../imgs/bg-main.png) no-repeat 50% 0%;
 }
 .s1,
-.s3 {
+.s3,
+.header {
   color: white;
 }
 .last {
@@ -79,11 +79,11 @@ table {
   flex-wrap: wrap;
 }
 .logo p {
-  color: #fefefe;
   font-family: "Codec Cold Logo";
   font-size: 27px;
   font-style: italic;
   text-transform: uppercase;
+  margin: 0 12px 0;
 }
 .nav {
   display: flex;
@@ -136,11 +136,11 @@ h2 {
   font-weight: 700;
 }
 p {
-  font-family: Mont;
+  font-family: "Mont - Book";
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 26px;
-  padding-top: 23px;
+  margin-top: 23px;
 }
 .main {
   margin-top: 188px;
@@ -149,6 +149,10 @@ p {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  max-width: 100%;
+}
+.main .description div {
+  flex-shrink: 0;
 }
 .main .description .platform {
   max-width: 653px;
@@ -203,11 +207,10 @@ p {
   padding: 0 60px;
 }
 .main .description .buyform .amount p {
-  color: #fefefe;
   font-family: "IBM Plex Sans";
   font-size: 15px;
   font-weight: 400;
-  padding: 0;
+  margin: 0;
 }
 .main .description .buyform .amount .inc {
   width: 300px;
@@ -233,15 +236,27 @@ p {
   border-radius: 10px;
   background: url(../imgs/urpinus.png) no-repeat 50% 50%, linear-gradient(-225deg, #007aff 0%, #00c0ff 100%);
 }
-.main .description .buyform button {
+.main .description .buyform .buynow {
   width: 264px;
   height: 47px;
   border-radius: 23px;
   background-image: linear-gradient(11deg, #009cef 0%, #00d7ee 100%);
-  color: #fefefe;
   font-family: "Mont - Semi Bold";
   font-size: 23px;
   font-weight: 400;
+  margin: auto auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28px;
+  color: white;
+  cursor: pointer;
+}
+.main .description .buyform .buynow:hover {
+  box-shadow: 0 0 3px 1px #00d7ee;
+}
+.main .description .buyform .buynow:active {
+  box-shadow: inset 0 0 3px white;
 }
 .main .advantages {
   margin-top: 125px;
@@ -255,7 +270,6 @@ p {
 .main .advantages ul li {
   padding-top: 109px;
   width: 390px;
-  flex-shrink: 0;
   position: relative;
 }
 .main .advantages ul li h3 {
@@ -314,7 +328,6 @@ p {
   font-family: "Mont - Semi Bold";
   font-size: 26px;
   font-weight: 400;
-  line-height: 61.39px;
 }
 .s2 p {
   color: #000000;
@@ -374,7 +387,7 @@ p {
   box-sizing: content-box;
   cursor: pointer;
 }
-.s2 .gallery .slide-slides {
+.s2 .gallery .slide {
   height: 100%;
   transition: 0.5s;
 }
@@ -383,13 +396,13 @@ p {
 .s2 .gallery #btn-3:checked ~ .controls label[for="btn-3"] {
   z-index: -1;
 }
-.s2 .gallery #btn-1:checked ~ .slides .slide-slides {
+.s2 .gallery #btn-1:checked ~ .slides .slide {
   transform: translate(0, 0);
 }
-.s2 .gallery #btn-2:checked ~ .slides .slide-slides {
+.s2 .gallery #btn-2:checked ~ .slides .slide {
   transform: translate(0, -100%);
 }
-.s2 .gallery #btn-3:checked ~ .slides .slide-slides {
+.s2 .gallery #btn-3:checked ~ .slides .slide {
   transform: translate(0, -200%);
 }
 .s2 .phones {
@@ -420,6 +433,7 @@ p {
   padding: 30px 84px 155px;
 }
 .s2 .questions .pdfs .pdf {
+  display: block;
   width: 126px;
   height: 126px;
   background-color: #009cef;
@@ -450,12 +464,255 @@ p {
 }
 .s3 {
   padding-top: 87px;
-  height: 1011px;
-  background: url(../imgs/bg-s3.png) no-repeat 50% -502px;
+  background: url(../imgs/bg-s3.png) no-repeat 50% 0;
 }
 .s3 .fastesy {
   color: #48b2e3;
   font-family: "Mont - Semi Bold";
   font-size: 24px;
   font-weight: 400;
+  text-align: center;
+}
+.s3 .fastesy + h2 {
+  text-align: center;
+  margin-bottom: 116px;
+}
+.s3 .gallery2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 36px;
+}
+.s3 .gallery2 .schedules {
+  height: 228px;
+  width: 1140px;
+  overflow: hidden;
+}
+.s3 .gallery2 .schedules .schedule {
+  transition: 1s ease;
+  display: flex;
+}
+.s3 .gallery2 .schedules .schedule.current2 {
+  transform: translate(-100%);
+}
+.s3 .gallery2 .schedules .schedule.current3 {
+  transform: translate(-200%);
+}
+.s3 .gallery2 .controls {
+  margin-right: 65px;
+  margin-top: 53px;
+  display: flex;
+}
+.s3 .gallery2 .controls div {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #5ec4fe;
+  border-radius: 50%;
+  margin-left: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.s3 .gallery2 .controls div::before {
+  border: 15px solid #5ec4fe;
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-left: none;
+  transform: translate(-2px);
+}
+.s3 .gallery2 .controls div:hover {
+  box-shadow: 0 0 6px 1px #009cef;
+}
+.s3 .gallery2 .controls div:active {
+  box-shadow: 0 0 6px 1px #009cef, inset 0 0 2px 0px white;
+}
+.s3 .gallery2 .controls div:nth-child(2)::before {
+  transform: rotate(180deg) translate(-2px);
+}
+.s3 h3 {
+  font-family: "Mont - Semi Bold";
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: 37px;
+  padding-bottom: 9px;
+  border-bottom: 4px solid #009cef;
+  align-self: center;
+  margin-bottom: 38px;
+}
+.s3 .buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 51px;
+}
+.s3 .buttons button {
+  width: 291px;
+  height: 77px;
+  background-color: rgba(22, 10, 87, 0.5);
+  color: #ffffff;
+  font-family: "Mont - Semi Bold";
+  font-size: 30px;
+  font-weight: 400;
+}
+.s4 {
+  padding-bottom: 50px;
+}
+.s4 .container {
+  align-items: center;
+}
+.s4 table {
+  margin-top: 42px;
+  margin-bottom: 60px;
+  width: 941px;
+  height: 82px;
+}
+.s4 table th {
+  text-align: left;
+  padding-left: 64px;
+  padding-right: 64px;
+  font-family: "Mont - Semi Bold";
+  font-size: 24px;
+  font-weight: 400;
+}
+.s4 table tbody tr {
+  box-shadow: 0 5px 13px rgba(40, 126, 255, 0.08);
+  height: 82px;
+}
+.s4 table tbody tr td {
+  padding-left: 64px;
+  width: 33%;
+  font-family: Mont;
+  font-size: 24px;
+  font-weight: 300;
+}
+.s4 table tbody tr:first-of-type {
+  border-radius: 0 75px 0 0;
+}
+.s4 table tbody tr:last-of-type {
+  border-radius: 0 0 0 75px;
+}
+.s4 .tokens {
+  margin-top: 35px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.s4 .tokens .token {
+  display: flex;
+}
+.s4 .tokens .token ul {
+  padding-top: 70px;
+}
+.s4 .tokens .token ul li {
+  font-family: Mont;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0 0 28px 23px;
+}
+.s4 .tokens .token ul li:last-child {
+  font-family: "Mont - Semi Bold";
+  font-size: 24px;
+  font-weight: 400;
+  color: #48b2e3;
+  text-transform: uppercase;
+}
+.s4 .deps {
+  display: flex;
+  flex-direction: column;
+}
+.s4 .deps .deps1 {
+  display: flex;
+  color: #d8e9ff;
+  font-family: "Mont - Heavy";
+  font-size: 117px;
+  font-weight: 400;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.s4 .deps .deps1 .dep {
+  position: relative;
+}
+.s4 .deps .deps1 .dep .dep2 {
+  position: absolute;
+  top: 45px;
+  left: 75px;
+  color: #000000;
+  font-family: "Mont - Heavy";
+  font-size: 51px;
+  font-weight: 400;
+  display: flex;
+  align-items: flex-end;
+}
+.s4 .deps .deps1 .dep1 {
+  font-size: 102px;
+}
+.last {
+  justify-content: center;
+}
+.last .back {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 913px;
+  height: 182px;
+  box-shadow: 0 5px 13px rgba(40, 126, 255, 0.46);
+  border-radius: 20px;
+  background: white;
+  display: flex;
+  position: relative;
+}
+.last .buy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 860px;
+  height: 240px;
+  padding: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 5px 13px rgba(40, 126, 255, 0.46);
+  border-radius: 20px;
+  background: url(../imgs/form.png) no-repeat 50% 50%;
+}
+.last .buy p {
+  margin-top: 9px;
+}
+.last .buy form {
+  margin-top: 30px;
+  display: flex;
+}
+.last .buy form [type="email"] {
+  width: 350px;
+  height: 47px;
+  border-radius: 23px 0 0 23px;
+  border: 1px solid #e8e8e8;
+  padding-left: 30px;
+  color: #a2a2a2;
+}
+.last .buy form [type="button"] {
+  width: 264px;
+  height: 47px;
+  border-radius: 0 23px 23px 0;
+  background-image: linear-gradient(11deg, #009cef 0%, #00d7ee 100%);
+  font-family: "Mont - Semi Bold";
+  font-size: 23px;
+  font-weight: 400;
+  color: white;
+  cursor: pointer;
+}
+.last .buy form [type="button"]:hover {
+  box-shadow: 0 0 3px 1px #00d7ee;
+}
+.last .buy form [type="button"]:active {
+  box-shadow: inset 0 0 3px 1px white;
+}
+.last .popup {
+  position: fixed !important;
+  z-index: 10;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: none;
 }

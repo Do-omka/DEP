@@ -51,8 +51,6 @@ table {
 		display: flex;
 		width: 100%;
 		max-width: 1920px;
-		flex-wrap: wrap;
-		//width: 1920px;
 			.container {
 				flex-direction: row;
 				justify-content: space-between;
@@ -76,7 +74,8 @@ table {
 
 
 .s1,
-.s3 {
+.s3,
+.header {
 	color: white;
 }
 
@@ -89,11 +88,11 @@ table {
 	align-items: center;
 	flex-wrap: wrap;
 	p {
-		color: #fefefe;
 		font-family: "Codec Cold Logo";
 		font-size: 27px;
 		font-style: italic;
 		text-transform: uppercase;
+		margin: 0 12px 0;
 	}
 }
 
@@ -150,11 +149,11 @@ h2 {
 	font-weight: 700;
 }
 p {
-	font-family: Mont;
+	font-family: "Mont - Book";
 	font-size: 24px;
-	font-weight: 300;
+	font-weight: 400;
 	line-height: 26px;
-	padding-top: 23px;
+	margin-top: 23px;
 }
 
 .main {
@@ -164,7 +163,10 @@ p {
 		//width: 100%;
 		justify-content: space-between;
 		flex-wrap: wrap;
-
+		max-width: 100%;
+		div {
+			flex-shrink: 0;
+		}
 		.platform {
 			max-width: 653px;
 			//min-width: 330px;
@@ -218,11 +220,11 @@ p {
 				text-align: left;
 				padding: 0 60px;
 				p {
-					color: #fefefe;
+					//color: #fefefe;
 					font-family: "IBM Plex Sans";
 					font-size: 15px;
 					font-weight: 400;
-					padding: 0;
+					margin: 0;
 				}
 				.inc {
 					width: 300px;
@@ -251,16 +253,27 @@ p {
 				   linear-gradient(-225deg, #007aff 0%, #00c0ff 100%);
 			   }
 			}
-			button {
+			.buynow {
 				width: 264px;
 				height: 47px;
 				border-radius: 23px;
 				background-image: linear-gradient(11deg, #009cef 0%, #00d7ee 100%);
-				color: #fefefe;
 				font-family: "Mont - Semi Bold";
 				font-size: 23px;
 				font-weight: 400;
-
+				margin: auto auto;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-top: 28px;
+				color: white;
+				cursor: pointer;
+			}
+			.buynow:hover {
+				box-shadow: 0 0 3px 1px #00d7ee;
+			}
+			.buynow:active {
+				box-shadow: inset 0 0 3px white;
 			}
 		}
 	}
@@ -274,7 +287,6 @@ p {
 			li {
 				padding-top: 109px;
 				width: 390px;
-				flex-shrink: 0;
 				position: relative;
 
 				h3 {
@@ -337,7 +349,6 @@ p {
 		font-family: "Mont - Semi Bold";
 		font-size: 26px;
 		font-weight: 400;
-		line-height: 61.39px;
 	}
 	p {
 		color: #000000;
@@ -357,8 +368,6 @@ p {
 		.slides {
 			height: 709px;
 			overflow: hidden;
-			// display: flex;
-			// align-items: center;
 		}
 		input {
 			display: none;
@@ -400,7 +409,7 @@ p {
 				cursor: pointer;
 			}
 		}
-		.slide-slides {
+		.slide {
 			height: 100%;
 			transition: 0.5s;
 		}
@@ -409,15 +418,15 @@ p {
 		#btn-3:checked ~ .controls label[for="btn-3"] {
 		    z-index: -1;
 		}
-		#btn-1:checked ~.slides .slide-slides{
+		#btn-1:checked ~.slides .slide{
 		    transform: translate(0, 0);
 		}
 
-		#btn-2:checked ~.slides .slide-slides {
+		#btn-2:checked ~.slides .slide {
 		    transform: translate(0, -100%);
 		}
 
-		#btn-3:checked ~.slides .slide-slides {
+		#btn-3:checked ~.slides .slide {
 		    transform: translate(0, -200%);
 		}
 	}
@@ -449,6 +458,7 @@ p {
 			padding: 30px 84px 155px;
 
 			.pdf {
+				display: block;
 				width: 126px;
 				height: 126px;
 				background-color: #009cef;
@@ -484,13 +494,264 @@ p {
 
 .s3 {
 	padding-top: 87px;
-	height: 1011px;
-	background: url(../imgs/bg-s3.png) no-repeat 50% -502px;
+	//height: 1011px;
+	background: url(../imgs/bg-s3.png) no-repeat 50% 0;
 	.fastesy {
 		color: #48b2e3;
 		font-family: "Mont - Semi Bold";
 		font-size: 24px;
 		font-weight: 400;
+		text-align: center;
+		+ h2 {
+			text-align: center;
+			margin-bottom: 116px;
+		}
+	}
+	.gallery2 {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		margin-bottom: 36px;
+		.schedules {
+			height: 228px;
+			width: 1140px;
+			overflow: hidden;
+			.schedule {
+				transition: 1s ease;
+				display: flex;
+			}
+			.schedule.current2{
+				transform: translate(-100%);
+			}
+			.schedule.current3{
+				transform: translate(-200%);
+			}
+		}
+		.controls {
+			margin-right: 65px;
+			margin-top: 53px;
+			display: flex;
+			div {
+				width: 50px;
+				height: 50px;
+				border: 1px solid #5ec4fe;
+				border-radius: 50%;
+				margin-left: 25px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+			}
+			div::before {
+				border: 15px solid #5ec4fe;
+				border-bottom: 8px solid transparent;
+				border-top: 8px solid transparent;
+				border-left: none;
+				transform: translate(-2px);
+			}
+			div:hover {
+				box-shadow: 0 0 6px 1px #009cef;
+			}
+			div:active {
+				box-shadow: 0 0 6px 1px #009cef, inset 0 0 2px 0px white;
+			}
+			div:nth-child(2)::before {
+				transform: rotate(180deg) translate(-2px);
+			}
+		}
+	}
+	h3 {
+		font-family: "Mont - Semi Bold";
+		font-size: 30px;
+		font-weight: 400;
+		//text-align: center;
+		margin-top: 37px;
+		padding-bottom: 9px;
+		border-bottom: 4px solid #009cef;
+		align-self: center;
+		margin-bottom: 38px;
+	}
+	.buttons {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 51px;
+		button {
+			width: 291px;
+			height: 77px;
+			background-color: rgba(22, 10, 87, 0.5);
+			color: #ffffff;
+			font-family: "Mont - Semi Bold";
+			font-size: 30px;
+			font-weight: 400;
+		}
+	}
+}
+
+.s4 {
+	.container {
+		align-items: center;
+	}
+	padding-bottom: 50px;
+	table {
+		margin-top: 42px;
+		margin-bottom: 60px;
+		width: 941px;
+		height: 82px;
+		th {
+			text-align: left;
+			padding-left: 64px;
+			padding-right: 64px;
+			font-family: "Mont - Semi Bold";
+			font-size: 24px;
+			font-weight: 400;
+		}
+
+		tbody {
+			tr {
+				box-shadow: 0 5px 13px rgba(40, 126, 255, 0.08);
+				height: 82px;
+				td {
+					padding-left: 64px;
+					width: 33%;
+					font-family: Mont;
+					font-size: 24px;
+					font-weight: 300;
+				}
+			}
+			tr:first-of-type {
+				border-radius: 0 75px 0 0;
+			}
+			tr:last-of-type {
+				border-radius: 0 0 0 75px;
+			}
+		}
+	}
+
+	.tokens {
+		margin-top: 35px;
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: flex-end;
+		.token {
+			display: flex;
+			ul {
+				padding-top: 70px;
+				li {
+					font-family: Mont;
+					font-size: 20px;
+					font-weight: 400;
+					padding: 0 0 28px 23px;
+				}
+				li:last-child {
+					font-family: "Mont - Semi Bold";
+					font-size: 24px;
+					font-weight: 400;
+					color: #48b2e3;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+	.deps {
+		display: flex;
+		flex-direction: column;
+		.deps1 {
+			display: flex;
+			color: #d8e9ff;
+			font-family: "Mont - Heavy";
+			font-size: 117px;
+			font-weight: 400;
+			justify-content: space-around;
+			width: 100%;
+			flex-wrap: wrap;
+			.dep {
+				position: relative;
+				.dep2 {
+					position: absolute;
+					top: 45px;
+					left: 75px;
+					color: #000000;
+					font-family: "Mont - Heavy";
+					font-size: 51px;
+					font-weight: 400;
+					display: flex;
+					align-items: flex-end;
+				}
+			}
+			.dep1 {
+				font-size: 102px;
+			}
+		}
+	}
+}
+
+.last {
+	justify-content: center;
+	.back {
+		margin-top: auto;
+		margin-bottom: auto;
+		width: 913px;
+		height: 182px;
+		box-shadow: 0 5px 13px rgba(40, 126, 255, 0.46);
+		border-radius: 20px;
+		background: white;
+		display: flex;
+		position: relative;
+	}
+	.buy {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 860px;
+		height: 240px;
+		padding: 55px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		box-shadow: 0 5px 13px rgba(40, 126, 255, 0.46);
+		border-radius: 20px;
+		background: url(../imgs/form.png) no-repeat 50% 50%;
+		p {
+			margin-top: 9px;
+		}
+		form {
+			margin-top: 30px;
+			display: flex;
+			[type="email"] {
+				width: 350px;
+				height: 47px;
+				border-radius: 23px 0 0 23px;
+				border: 1px solid #e8e8e8;
+				padding-left: 30px;
+				color: #a2a2a2;
+			}
+			[type="button"] {
+				width: 264px;
+				height: 47px;
+				border-radius: 0 23px 23px 0;
+				background-image: linear-gradient(11deg, #009cef 0%, #00d7ee 100%);
+				font-family: "Mont - Semi Bold";
+				font-size: 23px;
+				font-weight: 400;
+				color: white;
+				cursor: pointer;
+			}
+			[type="button"]:hover {
+				box-shadow: 0 0 3px 1px #00d7ee;
+			}
+			[type="button"]:active {
+				box-shadow: inset 0 0 3px 1px white;
+			}
+		}
+	}
+	.popup {
+		position: fixed !important;
+		z-index: 10;
+		top: 50%;
+		transform: translate(0, -50%);
+		display: none;
 	}
 
 }

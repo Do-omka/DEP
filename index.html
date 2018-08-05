@@ -57,7 +57,7 @@
 						</div>
 						<p>1 DEP = 0.000005 ETH</p>
 					</div>
-					<button type="button" name="button">Buy now</button>
+					<button class="buynow">Buy now</nutton>
 				</div>
 			</div>
 			<div class="advantages">
@@ -140,7 +140,7 @@
                     <label for="btn-3"></label>
                 </aside>
 				<div class="slides">
-					<div class="slide-slides">
+					<div class="slide">
 						<img src="imgs/screen1.png" alt="screen1" width="927" height="709">
 						<img src="imgs/screen2.png" alt="screen2" width="927" height="709">
 						<img src="imgs/screen3.png" alt="screen3" width="927" height="709">
@@ -156,12 +156,12 @@
 				<h2>Have questions?</h2>
 				<p>Just check our documentation (PDF)</p>
 				<div class="pdfs">
-					<div class="pdf">
+					<a href="#" class="pdf">
 						<p>Whitepaper</p>
-					</div>
-					<div class="pdf">
+					</a>
+					<a href="#" class="pdf">
 						<p>One page</p>
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -176,17 +176,15 @@
 			</h2>
 			<div class="gallery2">
 				<div class="schedules">
-					<img src="imgs/schedule1.png" alt="schedule1" width="1140" height="228">
-					<img src="imgs/schedule2.png" alt="schedule2" width="1140" height="228">
-					<img src="imgs/schedule3.png" alt="schedule3" width="1140" height="228">
+					<div class="schedule current1">
+						<img src="imgs/schedule1.png" alt="schedule1" width="1140" height="228">
+						<img src="imgs/schedule2.png" alt="schedule2" width="1140" height="228">
+						<img src="imgs/schedule3.png" alt="schedule3" width="1140" height="228">
+					</div>
 				</div>
 				<div class="controls">
-					<div class="prev">
-
-					</div>
-					<div class="next">
-
-					</div>
+					<div class="prev"></div>
+					<div class="next"></div>
 				</div>
 			</div>
 			<h2>
@@ -245,17 +243,17 @@
 			</table>
 			<h2>Distribution of tokens</h2>
 			<div class="tokens">
-				<div class="token1">
+				<div class="token">
 					<img src="imgs/funds-dis.png" alt="Distribution of raised funds" width="230" height="301">
 					<ul>
 						<li>60% - product development</li>
 						<li>25% - marketing</li>
 						<li>10% - legal support</li>
 						<li>5% - reserve funds</li>
+						<li>Distribution of raised funds</li>
 					</ul>
-					<div class="name"></div>
 				</div>
-				<div class="token2">
+				<div class="token">
 					<img src="imgs/bounty.png" alt="bounty" width="230" height="347">
 					<ul>
 						<li>40% - blogs/media</li>
@@ -263,52 +261,62 @@
 						<li>12% - campaign in Facebook</li>
 						<li>11% - campaign in Twitter</li>
 						<li>2% - campaign in Telegram</li>
+						<li>Bounty</li>
 					</ul>
-					<div class="name"></div>
 				</div>
 			</div>
 			<div class="deps">
-				<div class="dep1">
-					<div class="dep2">
-
+				<div class="deps1">
+					<div class="dep">
+						ICO
+						<div class="dep2">
+							<div class="dep1">75</div> MLN DEP
+						</div>
 					</div>
-				</div>
-				<div class="dep1">
-					<div class="dep2">
-
+					<div class="dep">
+						TEAM
+						<div class="dep2">
+							<div class="dep1">10</div> MLN DEP
+						</div>
 					</div>
-				</div>
-				<div class="dep1">
-					<div class="dep2">
-
+					<div class="deps1">
+					<div class="dep">
+						NETWORK
+						<div class="dep2">
+							<div class="dep1">10</div> MLN DEP
+						</div>
 					</div>
-				</div>
-				<div class="dep1">
-					<div class="dep2">
-
+					<div class="dep">
+						BOUNTY
+						<div class="dep2">
+							<div class="dep1">5</div> MLN DEP
+						</div>
+					</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<section class="s s5 last">
-		<div class="buynow">
-			<div class="back"></div>
-			<h2>Buy the first</h2>
-			<p>Buy tokens right now. Get it in the first group!</p>
-			<form action="" method="">
-				<input type="email" name="" value="E-mail">
-				<input type="button" name="" value="Buy now">
-			</form>
+		<div class="back">
+			<div class="buy">
+				<h2>Buy the first</h2>
+				<p>Buy tokens right now. Get it in the first group!</p>
+				<form action="" method="">
+					<input type="email" name="" placeholder="E-mail">
+					<input type="button" name="" value="Buy now">
+				</form>
+			</div>
 		</div>
-		<div class="buynow popup">
-			<div class="back"></div>
-			<h2>Buy the first</h2>
-			<p>Buy tokens right now. Get it in the first group!</p>
-			<form action="" method="">
-				<input type="email" name="" value="E-mail">
-				<input type="button" name="" value="Buy now">
-			</form>
+		<div class="back popup">
+			<div class="buy">
+				<h2>Buy the first</h2>
+				<p>Buy tokens right now. Get it in the first group!</p>
+				<form action="" method="">
+					<input type="email" name="" value="E-mail">
+					<input type="button" name="" value="Buy now">
+				</form>
+			</div>
 		</div>
 	</section>
 	<footer class='footer'>
@@ -328,5 +336,6 @@
 			</nav>
 		</div>
 	</footer>
+	<script src="js/main.js"></script>
 </body>
 </html>
