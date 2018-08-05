@@ -6,7 +6,6 @@
 	font-size: 100%;
 	font: inherit;
 	box-sizing: border-box;
-	word-break: break-all;
 }
 body {
 	line-height: 1;
@@ -75,10 +74,6 @@ table {
   background: url(../imgs/bg-main.png) no-repeat 50% 0%;
 }
 
-.s3 {
-	height: 1011px;
-	background: url(../imgs/bg-s3.png) no-repeat 50% 0%;
-}
 
 .s1,
 .s3 {
@@ -117,7 +112,6 @@ table {
 				font-size: 20px;
 				font-weight: 300;
 			}
-
 		}
 		a:hover {
 			border-bottom: 4px solid #00d7ee;
@@ -140,16 +134,8 @@ table {
 			border-bottom: 4px solid #00d7ee;
 			align-self: flex-end;
 		}
-		// a:last-child::before {
-		// 	right: 0%;
-		// 	width: 195px;
-		// 	height: 47px;
-		// 	border-radius: 24px;
-		// 	border: 3px solid #00d7ee;
-		// }
 		a:last-child li {
 			right: 0%;
-			//width: 195px;
 			border-radius: 24px;
 			border: 3px solid #00d7ee;
 			padding: 13px 36px;
@@ -163,20 +149,17 @@ h2 {
 	font-size: 45px;
 	font-weight: 700;
 }
+p {
+	font-family: Mont;
+	font-size: 24px;
+	font-weight: 300;
+	line-height: 26px;
+	padding-top: 23px;
+}
 
 .main {
-	padding-top: 27px;
-	p {
-		color: #fefefe;
-		font-family: Mont;
-		font-size: 24px;
-		font-weight: 300;
-		line-height: 26px;
-		padding-top: 23px;
-	}
 	margin-top: 188px;
 	.description {
-		padding-top: 27px;
 		display: flex;
 		//width: 100%;
 		justify-content: space-between;
@@ -191,10 +174,9 @@ h2 {
 			//margin-left: auto;
 			width: 420px;
 			height: 329px;
-
+			padding-top: 27px;
 			text-align: center;
 			h2 {
-				color: #fefefe;
 				font-family: "Mont - Semi Bold";
 				font-size: 27px;
 				font-weight: 400;
@@ -290,9 +272,10 @@ h2 {
 			min-width: 390px;
 			flex-wrap: wrap;
 			li {
-				padding-top: 127px;
+				padding-top: 109px;
 				width: 390px;
 				flex-shrink: 0;
+				position: relative;
 
 				h3 {
 					font-family: "Mont - Semi Bold";
@@ -310,6 +293,23 @@ h2 {
 			li:nth-child(odd) {
 				margin-right: 68px;
 			}
+			li::before {
+				width: 100px;
+				height: 57px;
+				background-image: url(../imgs/adv-icons.png);
+				top: 32px;
+			}
+			li:nth-child(2)::before {
+				background-position: top right;
+				width: 57px;
+			}
+			li:nth-child(3)::before {
+				background-position: bottom left;
+			}
+			li:nth-child(4)::before {
+				background-position: bottom right;
+				width: 57px;
+			}
 		}
 	}
 	.justlook {
@@ -322,7 +322,7 @@ h2 {
 			font-family: "IBM Plex Sans - Medium Italic";
 			font-size: 30px;
 			font-weight: 400;
-			line-height: 32px;
+			margin-bottom: 210px;
 		}
 	}
 	.youcantsee {
@@ -427,10 +427,12 @@ h2 {
 		justify-content: space-between;
 		width: 100%;
 		flex-wrap: wrap;
-		margin-bottom: 207px;
+		margin-bottom: 104px;
 	}
 	.questions {
+		padding-top: 103px;
 		width: 490px;
+		position: relative;
 		h2 {
 			font-family: Mont;
 			font-size: 50px;
@@ -444,12 +446,12 @@ h2 {
 		.pdfs {
 			display: flex;
 			justify-content: space-between;
-			padding: 30px 84px 110px;
+			padding: 30px 84px 155px;
 
 			.pdf {
 				width: 126px;
 				height: 126px;
-				background-image: linear-gradient(to top, #009cef 0%, #00d7ee 100%);
+				background-color: #009cef;
 				border-radius: 50%;
 				p {
 					font-family: Mont;
@@ -461,16 +463,34 @@ h2 {
 					text-align: center;
 				}
 			}
+			.pdf:nth-child(1) {
+				background: url(../imgs/pdf1.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
+			}
+			.pdf:nth-child(2) {
+				background: url(../imgs/pdf2.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
+			}
 		}
 	}
+	.questions::before {
+		width: 757px;
+		height: 721px;
+		right: -20px;
+		top: 0;
+		transform: translate(100%);
+		background: url(../imgs/hmm.png) no-repeat;
+	}
+
 }
 
 .s3 {
 	padding-top: 87px;
+	height: 1011px;
+	background: url(../imgs/bg-s3.png) no-repeat 50% -502px;
 	.fastesy {
 		color: #48b2e3;
 		font-family: "Mont - Semi Bold";
 		font-size: 24px;
 		font-weight: 400;
 	}
+
 }
