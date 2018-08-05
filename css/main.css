@@ -435,10 +435,10 @@ p {
   text-align: center;
 }
 .s2 .questions .pdfs .pdf:nth-child(1) {
-  background: url(../imgs/pdf-icons.png) no-repeat 27px center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
+  background: url(../imgs/pdf1.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
 }
 .s2 .questions .pdfs .pdf:nth-child(2) {
-  background: url(../imgs/pdf-icons.png) no-repeat right center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
+  background: url(../imgs/pdf2.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
 }
 .s2 .questions::before {
   width: 757px;
