@@ -8,6 +8,9 @@
 }
 body {
   line-height: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 ol,
 ul {
@@ -35,11 +38,11 @@ table {
   align-items: center;
 }
 .container {
-  width: 1140px;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  width: 100%;
+  max-width: 1920px;
+  padding: 0px 390px;
 }
 .header,
 .footer {
@@ -58,6 +61,7 @@ table {
 }
 .footer {
   min-height: 72px;
+  margin: 0 auto;
 }
 .s1 {
   min-height: 2919px;
@@ -98,7 +102,7 @@ table {
   align-items: center;
 }
 .nav ul a li {
-  padding: 0px 23px;
+  margin: 0px 23px;
   font-family: Mont;
   font-size: 20px;
   font-weight: 300;
@@ -143,7 +147,7 @@ p {
   margin-top: 23px;
 }
 .main {
-  margin-top: 188px;
+  padding-top: 188px;
 }
 .main .description {
   display: flex;
@@ -156,7 +160,27 @@ p {
 }
 .main .description .platform {
   max-width: 653px;
-  flex-shrink: 1;
+}
+.main .description .platform .socials {
+  margin-top: 36px;
+  display: flex;
+}
+.main .description .platform .socials a li {
+  margin-right: 20px;
+  width: 38px;
+  height: 38px;
+  font-size: 0;
+  background-image: url("../imgs/soc.png");
+  background-repeat: no-repeat;
+}
+.main .description .platform .socials a .telegram {
+  background-position: -58px center;
+}
+.main .description .platform .socials a .facebook {
+  background-position: -116px center;
+}
+.main .description .platform .socials a .bitcointalk {
+  background-position: -174px;
 }
 .main .description .buyform {
   width: 420px;
@@ -328,6 +352,7 @@ p {
   font-family: "Mont - Semi Bold";
   font-size: 26px;
   font-weight: 400;
+  margin-top: 34px;
 }
 .s2 p {
   color: #000000;
@@ -466,16 +491,27 @@ p {
   padding-top: 87px;
   background: url(../imgs/bg-s3.png) no-repeat 50% 0;
 }
-.s3 .fastesy {
+.s3 .container {
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.s3 .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.s3 .wrapper .fastesy {
   color: #48b2e3;
   font-family: "Mont - Semi Bold";
   font-size: 24px;
   font-weight: 400;
-  text-align: center;
 }
-.s3 .fastesy + h2 {
-  text-align: center;
+.s3 .wrapper .fastesy + h2 {
   margin-bottom: 116px;
+  text-align: center;
 }
 .s3 .gallery2 {
   display: flex;
@@ -530,22 +566,31 @@ p {
 .s3 .gallery2 .controls div:nth-child(2)::before {
   transform: rotate(180deg) translate(-2px);
 }
-.s3 h3 {
+.s3 .service {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1920px;
+}
+.s3 .service h3 {
   font-family: "Mont - Semi Bold";
   font-size: 30px;
   font-weight: 400;
   margin-top: 37px;
   padding-bottom: 9px;
   border-bottom: 4px solid #009cef;
-  align-self: center;
-  margin-bottom: 38px;
 }
-.s3 .buttons {
+.s3 .service .buttons {
   display: flex;
   justify-content: space-around;
   margin-bottom: 51px;
+  flex-wrap: wrap;
+  width: 100%;
 }
-.s3 .buttons button {
+.s3 .service .buttons button {
   width: 291px;
   height: 77px;
   background-color: rgba(22, 10, 87, 0.5);
@@ -556,9 +601,10 @@ p {
 }
 .s4 {
   padding-bottom: 50px;
+  padding-top: 50px;
 }
 .s4 .container {
-  align-items: center;
+  justify-content: center;
 }
 .s4 table {
   margin-top: 42px;
@@ -593,13 +639,17 @@ p {
 }
 .s4 .tokens {
   margin-top: 35px;
+  margin-bottom: 14px;
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 .s4 .tokens .token {
   display: flex;
+  align-items: flex-end;
+  flex-grow: 0;
 }
 .s4 .tokens .token ul {
   padding-top: 70px;
@@ -619,34 +669,41 @@ p {
 }
 .s4 .deps {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .s4 .deps .deps1 {
+  flex-direction: column;
+  align-items: flex-start;
   display: flex;
-  color: #d8e9ff;
-  font-family: "Mont - Heavy";
-  font-size: 117px;
-  font-weight: 400;
-  justify-content: space-around;
-  width: 100%;
-  flex-wrap: wrap;
 }
 .s4 .deps .deps1 .dep {
   position: relative;
-}
-.s4 .deps .deps1 .dep .dep2 {
-  position: absolute;
-  top: 45px;
-  left: 75px;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 80px;
+  margin-top: 106px;
   color: #000000;
   font-family: "Mont - Heavy";
   font-size: 51px;
   font-weight: 400;
-  display: flex;
-  align-items: flex-end;
 }
-.s4 .deps .deps1 .dep1 {
-  font-size: 102px;
+.s4 .deps .deps1 .dep .dep1 {
+  font-size: 100px;
+}
+.s4 .deps .deps1 .dep .dep2 {
+  color: #d8e9ff;
+  font-family: "Mont - Heavy";
+  font-size: 110px;
+  font-weight: 400;
+  position: absolute;
+  z-index: -1;
+  top: -45px;
+  left: -75px;
+}
+.s4 .deps .deps1:nth-child(even) {
+  margin-right: 40px;
 }
 .last {
   justify-content: center;
@@ -710,7 +767,7 @@ p {
   box-shadow: inset 0 0 3px 1px white;
 }
 .last .popup {
-  position: fixed !important;
+  position: fixed;
   z-index: 10;
   top: 50%;
   transform: translate(0, -50%);

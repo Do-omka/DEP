@@ -9,6 +9,9 @@
 }
 body {
 	line-height: 1;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 ol, ul {
 	list-style: none;
@@ -36,14 +39,15 @@ table {
 	align-items: center;
 }
 .container {
-	width: 1140px;
-	//width: 1920px;
-	margin: 0 auto;
 	display: flex;
 	flex-wrap: wrap;
-	//padding: 0px 390px;
-	//margin: 0px 390px;
-	flex-direction: column;
+	//flex-direction: column;
+	width: 100%;
+	max-width: 1920px;
+	//width: 1140px;
+	//width: 1920px;
+	//padding: 0 20%;
+	padding: 0px 390px;
 }
 
 .header,
@@ -64,6 +68,7 @@ table {
 
 .footer {
 	min-height: 72px;
+	margin: 0 auto;
 }
 
 .s1 {
@@ -106,7 +111,7 @@ table {
 			display: flex;
 			align-items: center;
 			li {
-				padding: 0px 23px;
+				margin: 0px 23px;
 				font-family: Mont;
 				font-size: 20px;
 				font-weight: 300;
@@ -157,10 +162,9 @@ p {
 }
 
 .main {
-	margin-top: 188px;
+	padding-top: 188px;
 	.description {
 		display: flex;
-		//width: 100%;
 		justify-content: space-between;
 		flex-wrap: wrap;
 		max-width: 100%;
@@ -169,11 +173,33 @@ p {
 		}
 		.platform {
 			max-width: 653px;
-			//min-width: 330px;
-			flex-shrink: 1;
+			//min-width: 100px;
+			.socials {
+				margin-top: 36px;
+				display: flex;
+				a {
+					li {
+						margin-right: 20px;
+						width: 38px;
+						height: 38px;
+						font-size: 0;
+						background-image: url("../imgs/soc.png");
+	    				background-repeat: no-repeat;
+					}
+					.telegram {
+						background-position: -58px center;
+					}
+					.facebook {
+						background-position: -116px center;
+					}
+					.bitcointalk {
+						background-position: -174px;
+					}
+				}
+
+			}
 		}
 		.buyform {
-			//margin-left: auto;
 			width: 420px;
 			height: 329px;
 			padding-top: 27px;
@@ -349,6 +375,7 @@ p {
 		font-family: "Mont - Semi Bold";
 		font-size: 26px;
 		font-weight: 400;
+		margin-top: 34px
 	}
 	p {
 		color: #000000;
@@ -494,17 +521,30 @@ p {
 
 .s3 {
 	padding-top: 87px;
-	//height: 1011px;
 	background: url(../imgs/bg-s3.png) no-repeat 50% 0;
-	.fastesy {
-		color: #48b2e3;
-		font-family: "Mont - Semi Bold";
-		font-size: 24px;
-		font-weight: 400;
-		text-align: center;
-		+ h2 {
-			text-align: center;
-			margin-bottom: 116px;
+	.container {
+		flex-direction: column;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		width: 100%;
+		flex-direction: column;
+
+		.fastesy {
+
+			color: #48b2e3;
+			font-family: "Mont - Semi Bold";
+			font-size: 24px;
+			font-weight: 400;
+
+			+ h2 {
+				margin-bottom: 116px;
+				text-align: center;
+			}
 		}
 	}
 	.gallery2 {
@@ -560,38 +600,47 @@ p {
 			}
 		}
 	}
-	h3 {
-		font-family: "Mont - Semi Bold";
-		font-size: 30px;
-		font-weight: 400;
-		//text-align: center;
-		margin-top: 37px;
-		padding-bottom: 9px;
-		border-bottom: 4px solid #009cef;
-		align-self: center;
-		margin-bottom: 38px;
-	}
-	.buttons {
+	.service {
 		display: flex;
-		justify-content: space-around;
-		margin-bottom: 51px;
-		button {
-			width: 291px;
-			height: 77px;
-			background-color: rgba(22, 10, 87, 0.5);
-			color: #ffffff;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+		max-width: 1920px;
+		h3 {
 			font-family: "Mont - Semi Bold";
 			font-size: 30px;
 			font-weight: 400;
+			margin-top: 37px;
+			padding-bottom: 9px;
+			border-bottom: 4px solid #009cef;
+		}
+		.buttons {
+			display: flex;
+			justify-content: space-around;
+			margin-bottom: 51px;
+			flex-wrap: wrap;
+			width: 100%;
+			button {
+				width: 291px;
+				height: 77px;
+				background-color: rgba(22, 10, 87, 0.5);
+				color: #ffffff;
+				font-family: "Mont - Semi Bold";
+				font-size: 30px;
+				font-weight: 400;
+			}
 		}
 	}
 }
 
 .s4 {
 	.container {
-		align-items: center;
+		justify-content: center;
 	}
 	padding-bottom: 50px;
+	padding-top: 50px;
 	table {
 		margin-top: 42px;
 		margin-bottom: 60px;
@@ -629,13 +678,17 @@ p {
 
 	.tokens {
 		margin-top: 35px;
+		margin-bottom: 14px;
 		display: flex;
 		width: 100%;
 		justify-content: space-between;
 		align-items: flex-end;
+		flex-wrap: wrap;
 		.token {
 			display: flex;
-			ul {
+			align-items: flex-end;
+			flex-grow: 0;
+				ul {
 				padding-top: 70px;
 				li {
 					font-family: Mont;
@@ -655,33 +708,43 @@ p {
 	}
 	.deps {
 		display: flex;
-		flex-direction: column;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		width: 100%;
 		.deps1 {
+			flex-direction: column;
+			align-items: flex-start;
 			display: flex;
-			color: #d8e9ff;
-			font-family: "Mont - Heavy";
-			font-size: 117px;
-			font-weight: 400;
-			justify-content: space-around;
-			width: 100%;
-			flex-wrap: wrap;
+
 			.dep {
 				position: relative;
+				display: flex;
+				align-items: flex-end;
+				margin-left: 80px;
+				margin-top: 106px;
+				color: #000000;
+				font-family: "Mont - Heavy";
+				font-size: 51px;
+				font-weight: 400;
+				.dep1 {
+					font-size: 100px;
+				}
 				.dep2 {
-					position: absolute;
-					top: 45px;
-					left: 75px;
-					color: #000000;
+					color: #d8e9ff;
 					font-family: "Mont - Heavy";
-					font-size: 51px;
+					font-size: 110px;
 					font-weight: 400;
-					display: flex;
-					align-items: flex-end;
+					position: absolute;
+					z-index: -1;
+					top: -45px;
+					left: -75px;
+
 				}
 			}
-			.dep1 {
-				font-size: 102px;
-			}
+
+		}
+		.deps1:nth-child(even) {
+			margin-right: 40px;
 		}
 	}
 }
@@ -747,7 +810,7 @@ p {
 		}
 	}
 	.popup {
-		position: fixed !important;
+		position: fixed;
 		z-index: 10;
 		top: 50%;
 		transform: translate(0, -50%);
