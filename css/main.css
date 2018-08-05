@@ -5,6 +5,7 @@
   font-size: 100%;
   font: inherit;
   box-sizing: border-box;
+  word-break: break-all;
 }
 body {
   line-height: 1;
@@ -32,28 +33,33 @@ table {
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .container {
-  max-width: 1920px;
+  width: 1140px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  padding: 0px 390px;
+  flex-direction: column;
 }
-.header {
-  display: flex;
-  min-height: 92px;
-  width: 100%;
-  margin: 0 auto;
-  border-bottom: 2px solid #232070;
-  flex-wrap: wrap;
-  max-width: 1920px;
-}
+.header,
 .footer {
   display: flex;
-  min-height: 72px;
   width: 100%;
+  max-width: 1920px;
   flex-wrap: wrap;
+}
+.header .container,
+.footer .container {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header {
+  min-height: 92px;
+  border-bottom: 2px solid #232070;
+}
+.footer {
+  min-height: 72px;
 }
 .s1 {
   min-height: 2919px;
@@ -74,7 +80,6 @@ table {
 }
 .logo {
   display: flex;
-  margin: auto 0;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -86,7 +91,6 @@ table {
   text-transform: uppercase;
 }
 .nav {
-  margin-left: auto;
   display: flex;
 }
 .nav ul {
@@ -114,6 +118,7 @@ table {
   width: 195px;
   position: relative;
   justify-content: center;
+  align-items: center;
 }
 .nav ul a:last-child:hover {
   border: none;
@@ -124,23 +129,20 @@ table {
   border-bottom: 4px solid #00d7ee;
   align-self: flex-end;
 }
-.nav ul a:last-child::before {
+.nav ul a:last-child li {
   right: 0%;
-  width: 195px;
-  height: 47px;
   border-radius: 24px;
   border: 3px solid #00d7ee;
+  padding: 13px 36px;
 }
-.main {
-  margin-top: 188px;
-}
-.main h2 {
-  color: #fefefe;
+h2 {
   font-family: Mont;
   font-size: 45px;
   font-weight: 700;
-  line-height: 55px;
+}
+.main {
   padding-top: 27px;
+  margin-top: 188px;
 }
 .main p {
   color: #fefefe;
@@ -153,16 +155,14 @@ table {
 .main .description {
   padding-top: 27px;
   display: flex;
-  width: 100%;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .main .description .platform {
   max-width: 653px;
-  min-width: 330px;
   flex-shrink: 1;
 }
 .main .description .buyform {
-  margin-left: auto;
   width: 420px;
   height: 329px;
   text-align: center;
@@ -296,4 +296,138 @@ table {
 .main .youcantsee {
   width: 420px;
   margin-top: 210px;
+}
+.s2 {
+  padding-top: 55px;
+}
+.s2 h3 {
+  font-family: "Mont - Semi Bold";
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 61.39px;
+}
+.s2 p {
+  color: #000000;
+  font-family: "Mont - Book";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+}
+.s2 .gallery {
+  width: 927px;
+  height: 709px;
+  margin: 28px auto 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.s2 .gallery .slides {
+  height: 709px;
+  overflow: hidden;
+}
+.s2 .gallery input {
+  display: none;
+}
+.s2 .gallery .controls {
+  position: absolute;
+  transform: translate(-100%, -50%);
+  left: -9px;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.s2 .gallery .controls label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+  box-sizing: border-box;
+  margin: 20px 9px;
+  cursor: pointer;
+}
+.s2 .gallery .controls label::before {
+  display: block;
+  border-radius: 50%;
+  background-color: #00d7ee;
+  background-image: linear-gradient(to top, #009cef 0%, #00d7ee 100%);
+  padding: 3px;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+.s2 .gallery .slide-slides {
+  height: 100%;
+  transition: 0.5s;
+}
+.s2 .gallery #btn-1:checked ~ .controls label[for="btn-1"],
+.s2 .gallery #btn-2:checked ~ .controls label[for="btn-2"],
+.s2 .gallery #btn-3:checked ~ .controls label[for="btn-3"] {
+  z-index: -1;
+}
+.s2 .gallery #btn-1:checked ~ .slides .slide-slides {
+  transform: translate(0, 0);
+}
+.s2 .gallery #btn-2:checked ~ .slides .slide-slides {
+  transform: translate(0, -100%);
+}
+.s2 .gallery #btn-3:checked ~ .slides .slide-slides {
+  transform: translate(0, -200%);
+}
+.s2 .phones {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 207px;
+}
+.s2 .questions {
+  width: 490px;
+}
+.s2 .questions h2 {
+  font-family: Mont;
+  font-size: 50px;
+  font-weight: 700;
+}
+.s2 .questions p {
+  font-family: "Mont - Book";
+  font-size: 27px;
+  font-weight: 400;
+}
+.s2 .questions .pdfs {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 84px 110px;
+}
+.s2 .questions .pdfs .pdf {
+  width: 126px;
+  height: 126px;
+  background-image: linear-gradient(to top, #009cef 0%, #00d7ee 100%);
+  border-radius: 50%;
+}
+.s2 .questions .pdfs .pdf p {
+  font-family: Mont;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  margin-top: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+.s3 {
+  padding-top: 87px;
+}
+.s3 .fastesy {
+  color: #48b2e3;
+  font-family: "Mont - Semi Bold";
+  font-size: 24px;
+  font-weight: 400;
 }
