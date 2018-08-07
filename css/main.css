@@ -153,13 +153,13 @@ p {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 100%;
-}
-.main .description div {
-  flex-shrink: 0;
+  width: 100%;
+  align-items: flex-end;
 }
 .main .description .platform {
   max-width: 653px;
+  flex-basis: 100px;
+  flex-grow: 1;
 }
 .main .description .platform .socials {
   margin-top: 36px;
@@ -180,7 +180,7 @@ p {
   background-position: -116px center;
 }
 .main .description .platform .socials a .bitcointalk {
-  background-position: -174px;
+  background-position: -173px center;
 }
 .main .description .buyform {
   width: 420px;
@@ -362,16 +362,16 @@ p {
   line-height: 32px;
 }
 .s2 .gallery {
-  width: 927px;
-  height: 709px;
   margin: 28px auto 120px;
   position: relative;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 .s2 .gallery .slides {
   height: 709px;
   overflow: hidden;
+  width: 927px;
 }
 .s2 .gallery input {
   display: none;
@@ -385,6 +385,7 @@ p {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  align-self: flex-end;
 }
 .s2 .gallery .controls label {
   display: block;
@@ -496,28 +497,23 @@ p {
   width: 100%;
   flex-wrap: wrap;
 }
-.s3 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-}
-.s3 .wrapper .fastesy {
+.s3 .fastesy {
+  text-align: center;
   color: #48b2e3;
   font-family: "Mont - Semi Bold";
   font-size: 24px;
   font-weight: 400;
 }
-.s3 .wrapper .fastesy + h2 {
+.s3 .fastesy + h2 {
   margin-bottom: 116px;
   text-align: center;
 }
 .s3 .gallery2 {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 36px;
+  width: 100%;
 }
 .s3 .gallery2 .schedules {
   height: 228px;
@@ -535,6 +531,7 @@ p {
   transform: translate(-200%);
 }
 .s3 .gallery2 .controls {
+  align-self: flex-end;
   margin-right: 65px;
   margin-top: 53px;
   display: flex;
@@ -569,11 +566,12 @@ p {
 .s3 .service {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
   width: 100%;
-  max-width: 1920px;
+  flex-direction: column;
+}
+.s3 .service h2 {
+  align-self: flex-start;
 }
 .s3 .service h3 {
   font-family: "Mont - Semi Bold";
@@ -586,6 +584,7 @@ p {
 .s3 .service .buttons {
   display: flex;
   justify-content: space-around;
+  margin-top: 25px;
   margin-bottom: 51px;
   flex-wrap: wrap;
   width: 100%;
@@ -649,7 +648,7 @@ p {
 .s4 .tokens .token {
   display: flex;
   align-items: flex-end;
-  flex-grow: 0;
+  max-width: 550px;
 }
 .s4 .tokens .token ul {
   padding-top: 70px;
@@ -704,6 +703,7 @@ p {
 }
 .s4 .deps .deps1:nth-child(even) {
   margin-right: 40px;
+  margin-left: auto;
 }
 .last {
   justify-content: center;
@@ -772,4 +772,11 @@ p {
   top: 50%;
   transform: translate(0, -50%);
   display: none;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
 }
