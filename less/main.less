@@ -1,4 +1,94 @@
 // out: ../css/main.css, compress: false
+
+
+@font-face {
+	font-family: Mont;
+	src: url('../fonts/Mont-Regular.ttf') format("truetype");
+	src: url('../fonts/Mont-Regular.woff') format("woff");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Codec Cold Logo';
+	src: url('../fonts/CodecColdLogo-Italic.ttf') format("truetype");
+	src: url('../fonts/CodecColdLogo-Italic.woff') format("woff");
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Mont-Book";
+	src: url('../fonts/"Mont-Book".ttf') format("truetype");
+	src: url('../fonts/Mont-Book.woff') format("woff");
+}
+
+@font-face {
+	font-family: Mont;
+	src: url('../fonts/Mont-Light.ttf') format("truetype");
+	src: url('../fonts/Mont-Light.woff') format("woff");
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: "Mont-Semi Bold";
+	font-weight: 400;
+	src: url('../fonts/Mont-SemiBold.ttf') format("truetype");
+	src: url('../fonts/Mont-SemiBold.woff') format("woff");
+}
+
+@font-face {
+	font-family: "Mont-Bold";
+	font-weight: 700;
+	src: url('../fonts/Mont-Bold.ttf') format("truetype");
+	src: url('../fonts/Mont-Bold.woff') format("woff");
+}
+
+@font-face {
+	font-family: "Mont";
+	font-weight: 700;
+	src: url('../fonts/Mont-Bold.ttf') format("truetype");
+	src: url('../fonts/Mont-Bold.woff') format("woff");
+}
+
+@font-face {
+	font-family: "Mont-Book";
+	src: url('../fonts/Mont-Book.ttf') format("truetype");
+	src: url('../fonts/Mont-Book.woff') format("woff");
+}
+
+@font-face {
+	font-family: "IBM Plex Mono";
+	font-weight: 300;
+	src: url('../fonts/IBMPlexMono-Light.ttf') format("truetype");
+	src: url('../fonts/IBMPlexMono-Light.woff') format("woff");
+}
+
+@font-face {
+	font-family: "IBM Plex Sans";
+	font-weight: 300;
+	src: url('../fonts/IBMPlexSans-Light.ttf') format("truetype");
+	src: url('../fonts/IBMPlexSans-Light.woff') format("woff");
+}
+
+@font-face {
+	font-family: "IBM Plex Sans";
+	font-weight: 400;
+	src: url('../fonts/IBMPlexSans-Medium.ttf') format("truetype");
+	src: url('../fonts/IBMPlexSans-Medium.woff') format("woff");
+}
+
+@font-face {
+	font-family: "IBM Plex Sans - Medium Italic";
+	src: url('../fonts/IBMPlexSans-MediumItalic.ttf') format("truetype");
+	src: url('../fonts/IBMPlexSans-MediumItalic.woff') format("woff");
+}
+
+@font-face {
+	font-family: "Mont - Heavy";
+	src: url('../fonts/Mont-Heavy.ttf') format("truetype");
+	src: url('../fonts/Mont-Heavy.woff') format("woff");
+	font-weight: 400;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -80,9 +170,11 @@ table {
 }
 
 .s1 {
-  min-height: 2919px;
-  background-color: #160a57;
-  background: url(../imgs/bg-main.png) no-repeat 50% 0%;
+	min-height: 2919px;
+	background-color: #160a57;
+	background-image: url(../imgs/bg-main.png);
+	background-repeat: no-repeat;
+	background-position: 50% 0%;
 }
 
 
@@ -94,14 +186,17 @@ table {
 
 .last {
 	height: 539px;
-	background: url(../imgs/bg-last.png) no-repeat 50% 0%;
+	background-color: #160a57;
+	background: url(../imgs/bg-last.png);
+	background-repeat: no-repeat;
+	background-position: 50% 0%;
 }
 .logo {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
 	p {
-		font-family: "Codec Cold Logo";
+		font-family: 'Codec Cold Logo';
 		font-size: 27px;
 		font-style: italic;
 		text-transform: uppercase;
@@ -129,7 +224,7 @@ table {
 			border-bottom: 4px solid #00d7ee;
 		}
 		a:last-child {
-			font-family: "Mont - Semi Bold";
+			font-family: "Mont-Semi Bold";
 			font-size: 20px;
 			font-weight: 400;
 			width: 195px;
@@ -162,7 +257,7 @@ h2 {
 	font-weight: 700;
 }
 p {
-	font-family: "Mont - Book";
+	font-family: "Mont-Book";
 	font-size: 24px;
 	font-weight: 400;
 	line-height: 26px;
@@ -170,8 +265,8 @@ p {
 }
 
 .main {
-	padding-top: 188px;
 	.description {
+		padding-top: 188px;
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
@@ -180,6 +275,7 @@ p {
 			max-width: 653px;
 			flex-basis: 100px;
 			flex-grow: 1;
+			margin-right: 20px;
 			.socials {
 				margin-top: 36px;
 				display: flex;
@@ -213,7 +309,7 @@ p {
 			text-align: center;
 			//margin-left: auto;
 			h2 {
-				font-family: "Mont - Semi Bold";
+				font-family: "Mont-Semi Bold";
 				font-size: 27px;
 				font-weight: 400;
 			}
@@ -292,7 +388,7 @@ p {
 				height: 47px;
 				border-radius: 23px;
 				background-image: linear-gradient(11deg, #009cef 0%, #00d7ee 100%);
-				font-family: "Mont - Semi Bold";
+				font-family: "Mont-Semi Bold";
 				font-size: 23px;
 				font-weight: 400;
 				margin: auto auto;
@@ -324,7 +420,7 @@ p {
 				position: relative;
 
 				h3 {
-					font-family: "Mont - Semi Bold";
+					font-family: "Mont-Semi Bold";
 					font-size: 19px;
 					font-weight: 400;
 					margin-bottom: 10px;
@@ -381,17 +477,18 @@ p {
 .s2 {
 	padding-top: 55px;
 	h3 {
-		font-family: "Mont - Semi Bold";
+		font-family: "Mont-Semi Bold";
 		font-size: 26px;
 		font-weight: 400;
 		margin-top: 34px
 	}
 	p {
 		color: #000000;
-		font-family: "Mont - Book";
+		font-family: "Mont-Book";
 		font-size: 24px;
 		font-weight: 400;
 		line-height: 32px;
+		margin-top: 15px;
 	}
 	.gallery {
 		margin: 28px auto 120px;
@@ -494,7 +591,7 @@ p {
 			font-weight: 700;
 		}
 		p {
-			font-family: "Mont - Book";
+			font-family: "Mont-Book";
 			font-size: 27px;
 			font-weight: 400;
 		}
@@ -549,7 +646,7 @@ p {
 	.fastesy {
 		text-align: center;
 		color: #48b2e3;
-		font-family: "Mont - Semi Bold";
+		font-family: "Mont-Semi Bold";
 		font-size: 24px;
 		font-weight: 400;
 
@@ -571,6 +668,7 @@ p {
 			.schedule {
 				transition: 1s ease;
 				display: flex;
+
 			}
 			.schedule.current1 {
 				transform: translate(0);
@@ -622,7 +720,7 @@ p {
 			align-self: flex-start;
 		}
 		h3 {
-			font-family: "Mont - Semi Bold";
+			font-family: "Mont-Semi Bold";
 			font-size: 30px;
 			font-weight: 400;
 			margin-top: 37px;
@@ -641,7 +739,7 @@ p {
 				height: 77px;
 				background-color: rgba(22, 10, 87, 0.5);
 				color: #ffffff;
-				font-family: "Mont - Semi Bold";
+				font-family: "Mont-Semi Bold";
 				font-size: 30px;
 				font-weight: 400;
 			}
@@ -664,7 +762,7 @@ p {
 			text-align: left;
 			padding-left: 64px;
 			padding-right: 64px;
-			font-family: "Mont - Semi Bold";
+			font-family: "Mont-Semi Bold";
 			font-size: 24px;
 			font-weight: 400;
 		}
@@ -701,8 +799,9 @@ p {
 		.token {
 			display: flex;
 			align-items: flex-end;
+			flex-basis: 450px;
 			max-width: 550px;
-
+			flex-grow: 1;
 				ul {
 				padding-top: 70px;
 				li {
@@ -712,7 +811,7 @@ p {
 					padding: 0 0 28px 23px;
 				}
 				li:last-child {
-					font-family: "Mont - Semi Bold";
+					font-family: "Mont-Semi Bold";
 					font-size: 24px;
 					font-weight: 400;
 					color: #48b2e3;
@@ -738,7 +837,7 @@ p {
 				margin-left: 80px;
 				margin-top: 106px;
 				color: #000000;
-				font-family: "Mont - Heavy";
+				font-family: "Mont-Heavy";
 				font-size: 51px;
 				font-weight: 400;
 				.dep1 {
@@ -746,7 +845,7 @@ p {
 				}
 				.dep2 {
 					color: #d8e9ff;
-					font-family: "Mont - Heavy";
+					font-family: "Mont-Heavy";
 					font-size: 110px;
 					font-weight: 400;
 					position: absolute;
@@ -811,7 +910,7 @@ p {
 				height: 47px;
 				border-radius: 0 23px 23px 0;
 				background-image: linear-gradient(11deg, #009cef 0%, #00d7ee 100%);
-				font-family: "Mont - Semi Bold";
+				font-family: "Mont-Semi Bold";
 				font-size: 23px;
 				font-weight: 400;
 				color: white;
