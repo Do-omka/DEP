@@ -138,9 +138,10 @@ table {
 	//width: 1920px;
 	//padding: 0 20%;
 	padding: 0 390px;
+	transition: 0.3s;
 }
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1660px) {
     body {
 		.container {
 	        padding: 0 150px;
@@ -153,9 +154,17 @@ table {
 		.container {
 	        padding: 0 50px;
 		}
+		.s4 {
+			.commission-level {
+				tbody tr td,
+				thead tr th{
+					padding-left: 16px;
+					padding-right: 16px;
+				}
+			}
+		}
     }
 }
-
 
 .header,
 .footer {
@@ -165,6 +174,7 @@ table {
 			.container {
 				flex-direction: row;
 				justify-content: space-between;
+				flex-wrap: nowrap;
 	}
 }
 .header {
@@ -179,11 +189,11 @@ table {
 }
 
 .s1 {
-	min-height: 2919px;
-	background-color: #160a57;
+	min-height: 2918px;
 	background-image: url(../imgs/bg-main.png);
 	background-repeat: no-repeat;
 	background-position: 50% 0%;
+	background-size: auto 100%;
 }
 
 
@@ -193,17 +203,10 @@ table {
 	color: white;
 }
 
-.last {
-	height: 539px;
-	background-color: #160a57;
-	background: url(../imgs/bg-last.png);
-	background-repeat: no-repeat;
-	background-position: 50% 0%;
-}
 .logo {
 	display: flex;
 	align-items: center;
-	flex-wrap: wrap;
+	//flex-wrap: wrap;
 	p {
 		font-family: 'Codec Cold Logo';
 		font-size: 27px;
@@ -275,17 +278,15 @@ p {
 
 .main {
 	.description {
-		padding-top: 188px;
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		flex-wrap: wrap;
 		width: 100%;
 		.platform {
 			margin-top: 188px;
-			max-width: 653px;
-			flex-basis: 100px;
+			flex-basis: 10px;
 			flex-grow: 1;
-			margin-right: 20px;
+			margin-right: 70px;
 			.socials {
 				margin-top: 36px;
 				display: flex;
@@ -423,13 +424,12 @@ p {
 		ul {
 			display: flex;
 			max-width: 850px;
-			min-width: 390px;
+			//min-width: 390px;
 			flex-wrap: wrap;
 			li {
 				padding-top: 109px;
-				width: 390px;
+				max-width: 390px;
 				position: relative;
-
 				h3 {
 					font-family: "Mont-Semi Bold";
 					font-size: 19px;
@@ -469,7 +469,7 @@ p {
 		margin-top: 413px;
 		width: 555px;
 		.three-random-words {
-			background-image: linear-gradient(-225deg, #00d7ee 0%, #009cef 100%);
+			background-image: linear-gradient(-225deg, #00d7ee 0%, #009cef 100%), -webkit-linear-gradient(-225deg, #00d7ee 0%, #009cef 100%);
 			background-clip: text;
 			-webkit-background-clip: text;
 			color: transparent;
@@ -609,9 +609,11 @@ p {
 		.pdfs {
 			display: flex;
 			justify-content: space-between;
-			padding: 30px 84px 155px;
-
+			padding: 0px 84px 110px;
+			flex-wrap: wrap;
 			.pdf {
+				margin-top: 30px;
+				margin-bottom: 45px;
 				display: block;
 				width: 126px;
 				height: 126px;
@@ -647,14 +649,18 @@ p {
 }
 
 .s3 {
-	padding-top: 87px;
-	background: url(../imgs/bg-s3.png) no-repeat 50% 0;
+	background-image: url(../imgs/bg-s3.png);
+	background-repeat: no-repeat;
+	background-position: 50% 0%;
+	min-height: 1010px;
+	background-size: auto 100%;
 	.container {
 		flex-direction: column;
 		width: 100%;
 		flex-wrap: wrap;
 	}
 	.fastesy {
+		margin-top: 87px;
 		text-align: center;
 		color: #48b2e3;
 		font-family: "Mont-Semi Bold";
@@ -742,7 +748,6 @@ p {
 			display: flex;
 			justify-content: space-around;
 			margin-top: 25px;
-			margin-bottom: 51px;
 			flex-wrap: wrap;
 			width: 100%;
 			button {
@@ -753,21 +758,28 @@ p {
 				font-family: "Mont-Semi Bold";
 				font-size: 30px;
 				font-weight: 400;
+				margin-bottom: 50px;
 			}
 		}
 	}
 }
 
 .s4 {
+	h2 {
+		text-align: center;
+		+ p {
+			text-align: center;
+		}
+	}
 	.container {
 		justify-content: center;
 	}
 	padding-bottom: 50px;
 	padding-top: 50px;
-	table {
+	.commission-level {
 		margin-top: 42px;
 		margin-bottom: 60px;
-		width: 941px;
+		max-width: 941px;
 		height: 82px;
 		th {
 			text-align: left;
@@ -777,7 +789,6 @@ p {
 			font-size: 24px;
 			font-weight: 400;
 		}
-
 		tbody {
 			tr {
 				box-shadow: 0 5px 13px rgba(40, 126, 255, 0.08);
@@ -840,7 +851,7 @@ p {
 			flex-direction: column;
 			align-items: flex-start;
 			display: flex;
-
+			width: 550px;
 			.dep {
 				position: relative;
 				display: flex;
@@ -856,9 +867,7 @@ p {
 				}
 				.dep2 {
 					color: #d8e9ff;
-					font-family: "Mont-Heavy";
 					font-size: 110px;
-					font-weight: 400;
 					position: absolute;
 					z-index: -1;
 					top: -45px;
@@ -871,12 +880,17 @@ p {
 		.deps1:nth-child(even) {
 			margin-right: 40px;
 			margin-left: auto;
+			width: 500px;
 		}
 	}
 }
 
 .last {
 	justify-content: center;
+	height: 539px;
+	background-image: url(../imgs/bg-last.png);
+	background-repeat: no-repeat;
+	background-position: 50% 0%;
 	.back {
 		margin-top: auto;
 		margin-bottom: auto;

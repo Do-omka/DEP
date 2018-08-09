@@ -118,8 +118,9 @@ table {
   width: 100%;
   max-width: 1920px;
   padding: 0 390px;
+  transition: 0.3s;
 }
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1660px) {
   body .container {
     padding: 0 150px;
   }
@@ -127,6 +128,11 @@ table {
 @media only screen and (max-width: 1200px) {
   body .container {
     padding: 0 50px;
+  }
+  body .s4 .commission-level tbody tr td,
+  body .s4 .commission-level thead tr th {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 .header,
@@ -139,6 +145,7 @@ table {
 .footer .container {
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 .header {
   min-height: 92px;
@@ -149,28 +156,20 @@ table {
   margin: 0 auto;
 }
 .s1 {
-  min-height: 2919px;
-  background-color: #160a57;
+  min-height: 2918px;
   background-image: url(../imgs/bg-main.png);
   background-repeat: no-repeat;
   background-position: 50% 0%;
+  background-size: auto 100%;
 }
 .s1,
 .s3,
 .header {
   color: white;
 }
-.last {
-  height: 539px;
-  background-color: #160a57;
-  background: url(../imgs/bg-last.png);
-  background-repeat: no-repeat;
-  background-position: 50% 0%;
-}
 .logo {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 }
 .logo p {
   font-family: 'Codec Cold Logo';
@@ -237,18 +236,16 @@ p {
   margin-top: 23px;
 }
 .main .description {
-  padding-top: 188px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
 }
 .main .description .platform {
   margin-top: 188px;
-  max-width: 653px;
-  flex-basis: 100px;
+  flex-basis: 10px;
   flex-grow: 1;
-  margin-right: 20px;
+  margin-right: 70px;
 }
 .main .description .platform .socials {
   margin-top: 36px;
@@ -379,12 +376,11 @@ p {
 .main .advantages ul {
   display: flex;
   max-width: 850px;
-  min-width: 390px;
   flex-wrap: wrap;
 }
 .main .advantages ul li {
   padding-top: 109px;
-  width: 390px;
+  max-width: 390px;
   position: relative;
 }
 .main .advantages ul li h3 {
@@ -424,7 +420,7 @@ p {
   width: 555px;
 }
 .main .justlook .three-random-words {
-  background-image: linear-gradient(-225deg, #00d7ee 0%, #009cef 100%);
+  background-image: linear-gradient(-225deg, #00d7ee 0%, #009cef 100%), -webkit-linear-gradient(-225deg, #00d7ee 0%, #009cef 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -549,9 +545,12 @@ p {
 .s2 .questions .pdfs {
   display: flex;
   justify-content: space-between;
-  padding: 30px 84px 155px;
+  padding: 0px 84px 110px;
+  flex-wrap: wrap;
 }
 .s2 .questions .pdfs .pdf {
+  margin-top: 30px;
+  margin-bottom: 45px;
   display: block;
   width: 126px;
   height: 126px;
@@ -582,8 +581,11 @@ p {
   background: url(../imgs/hmm.png) no-repeat;
 }
 .s3 {
-  padding-top: 87px;
-  background: url(../imgs/bg-s3.png) no-repeat 50% 0;
+  background-image: url(../imgs/bg-s3.png);
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  min-height: 1010px;
+  background-size: auto 100%;
 }
 .s3 .container {
   flex-direction: column;
@@ -591,6 +593,7 @@ p {
   flex-wrap: wrap;
 }
 .s3 .fastesy {
+  margin-top: 87px;
   text-align: center;
   color: #48b2e3;
   font-family: "Mont-Semi Bold";
@@ -681,7 +684,6 @@ p {
   display: flex;
   justify-content: space-around;
   margin-top: 25px;
-  margin-bottom: 51px;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -693,21 +695,28 @@ p {
   font-family: "Mont-Semi Bold";
   font-size: 30px;
   font-weight: 400;
+  margin-bottom: 50px;
 }
 .s4 {
   padding-bottom: 50px;
   padding-top: 50px;
 }
+.s4 h2 {
+  text-align: center;
+}
+.s4 h2 + p {
+  text-align: center;
+}
 .s4 .container {
   justify-content: center;
 }
-.s4 table {
+.s4 .commission-level {
   margin-top: 42px;
   margin-bottom: 60px;
-  width: 941px;
+  max-width: 941px;
   height: 82px;
 }
-.s4 table th {
+.s4 .commission-level th {
   text-align: left;
   padding-left: 64px;
   padding-right: 64px;
@@ -715,21 +724,21 @@ p {
   font-size: 24px;
   font-weight: 400;
 }
-.s4 table tbody tr {
+.s4 .commission-level tbody tr {
   box-shadow: 0 5px 13px rgba(40, 126, 255, 0.08);
   height: 82px;
 }
-.s4 table tbody tr td {
+.s4 .commission-level tbody tr td {
   padding-left: 64px;
   width: 33%;
   font-family: Mont;
   font-size: 24px;
   font-weight: 300;
 }
-.s4 table tbody tr:first-of-type {
+.s4 .commission-level tbody tr:first-of-type {
   border-radius: 0 75px 0 0;
 }
-.s4 table tbody tr:last-of-type {
+.s4 .commission-level tbody tr:last-of-type {
   border-radius: 0 0 0 75px;
 }
 .s4 .tokens {
@@ -774,6 +783,7 @@ p {
   flex-direction: column;
   align-items: flex-start;
   display: flex;
+  width: 550px;
 }
 .s4 .deps .deps1 .dep {
   position: relative;
@@ -791,9 +801,7 @@ p {
 }
 .s4 .deps .deps1 .dep .dep2 {
   color: #d8e9ff;
-  font-family: "Mont-Heavy";
   font-size: 110px;
-  font-weight: 400;
   position: absolute;
   z-index: -1;
   top: -45px;
@@ -802,9 +810,14 @@ p {
 .s4 .deps .deps1:nth-child(even) {
   margin-right: 40px;
   margin-left: auto;
+  width: 500px;
 }
 .last {
   justify-content: center;
+  height: 539px;
+  background-image: url(../imgs/bg-last.png);
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
 }
 .last .back {
   margin-top: auto;
