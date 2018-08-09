@@ -130,13 +130,10 @@ table {
 }
 .container {
 	display: flex;
-	flex-wrap: wrap;
-	//flex-direction: column;
+	//flex-wrap: wrap;
+	flex-direction: column;
 	width: 100%;
 	max-width: 1920px;
-	//width: 1140px;
-	//width: 1920px;
-	//padding: 0 20%;
 	padding: 0 390px;
 	transition: 0.3s;
 }
@@ -206,7 +203,6 @@ table {
 .logo {
 	display: flex;
 	align-items: center;
-	//flex-wrap: wrap;
 	p {
 		font-family: 'Codec Cold Logo';
 		font-size: 27px;
@@ -218,10 +214,11 @@ table {
 
 .nav {
 	display: flex;
+
 	ul {
 		display: flex;
-		margin-left: auto;
 		flex-wrap: wrap;
+		justify-content: flex-end;
 		a {
 			display: flex;
 			align-items: center;
@@ -286,7 +283,7 @@ p {
 			margin-top: 188px;
 			flex-basis: 10px;
 			flex-grow: 1;
-			margin-right: 70px;
+
 			.socials {
 				margin-top: 36px;
 				display: flex;
@@ -313,6 +310,7 @@ p {
 			}
 		}
 		.buyform {
+			margin-left: 70px;
 			margin-top: 188px;
 			background-color: rgba(14, 0, 79, 0.5);
 			width: 420px;
@@ -424,11 +422,12 @@ p {
 		ul {
 			display: flex;
 			max-width: 850px;
-			//min-width: 390px;
 			flex-wrap: wrap;
 			li {
 				padding-top: 109px;
-				max-width: 390px;
+				flex-basis: 390px;
+				// flex-basis: 100px;
+				// flex-shrink: 0;
 				position: relative;
 				h3 {
 					font-family: "Mont-Semi Bold";
@@ -469,6 +468,8 @@ p {
 		margin-top: 413px;
 		width: 555px;
 		.three-random-words {
+			height: 30px;
+			color: #00d7ee;
 			background-image: linear-gradient(-225deg, #00d7ee 0%, #009cef 100%), -webkit-linear-gradient(-225deg, #00d7ee 0%, #009cef 100%);
 			background-clip: text;
 			-webkit-background-clip: text;
@@ -587,10 +588,15 @@ p {
 
 	.phones {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		width: 100%;
 		flex-wrap: wrap;
-		margin-bottom: 104px;
+		padding-bottom: 104px;
+		.phone {
+			margin-bottom: 50px;
+			margin-right: 25px;
+			margin-left: 25px;
+		}
 	}
 	.questions {
 		padding-top: 103px;
@@ -964,4 +970,9 @@ p {
 	align-items: center;
 	width: 100%;
 	flex-direction: column;
+}
+
+
+img {
+	display: block;
 }
