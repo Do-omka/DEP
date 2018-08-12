@@ -187,9 +187,11 @@ table {
 
 .s1 {
 	min-height: 2918px;
-	background-image: url(../imgs/bg-main.png);
+	//background-image: url(../imgs/bg-main.png);
+	background-image: url(../imgs/scheme.png),
+	url(../imgs/bg-main.jpg);
 	background-repeat: no-repeat;
-	background-position: 50% 0%;
+	background-position: 50% 100%;
 	background-size: contain 100%;
 }
 
@@ -281,8 +283,15 @@ p {
 		width: 100%;
 		.platform {
 			margin-top: 188px;
+			margin-right: 70px;
 			flex-basis: 10px;
 			flex-grow: 1;
+			p {
+				font-family: Mont;
+				font-size: 20px;
+				font-weight: 300;
+				line-height: 26px;
+			}
 			.socials {
 				margin-top: 36px;
 				display: flex;
@@ -315,7 +324,6 @@ p {
 			height: 329px;
 			padding-top: 27px;
 			text-align: center;
-			//margin-left: auto;
 			h2 {
 				font-family: "Mont-Semi Bold";
 				font-size: 27px;
@@ -416,7 +424,9 @@ p {
 		}
 	}
 	.advantages {
-		margin-top: 125px;
+		margin-top: 133px;
+		position: relative;
+		margin-bottom: 105px;
 		ul {
 			display: flex;
 			max-width: 850px;
@@ -462,24 +472,44 @@ p {
 			}
 		}
 	}
-	.justlook {
-		margin-top: 220px;
-		width: 555px;
-		.three-random-words {
-			height: 30px;
-			color: #00d7ee;
-			background-image: linear-gradient(-225deg, #00d7ee 0%, #009cef 100%), -webkit-linear-gradient(-225deg, #00d7ee 0%, #009cef 100%);
-			background-clip: text;
-			-webkit-background-clip: text;
-			color: transparent;
-			font-family: "IBM Plex Sans - Medium Italic";
-			font-size: 30px;
-			font-weight: 400;
-			margin-bottom: 210px;
-		}
+	.advantages::after{
+		background: url(../imgs/advantages.png) no-repeat;
+		width: 671px;
+		height: 624px;
+		left: 650px;
+		top: 0;
 	}
+	.justlook {
+		display: flex;
+		flex-wrap: wrap;
+		.left {
+			background: url(../imgs/justlook.png) no-repeat;
+			width: 602px;
+			height: 609px;
+			margin-bottom: 50px;
+			margin-right: 55px;
+		}
+		.right {
+			margin-top: 115px;
+			flex-basis: 200px;
+			flex-grow: 1;
+			margin-bottom: 100px;
+			.three-random-words {
+				height: 30px;
+				color: #00d7ee;
+				background-image: linear-gradient(-225deg, #00d7ee 0%, #009cef 100%), -webkit-linear-gradient(-225deg, #00d7ee 0%, #009cef 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
+				font-family: "IBM Plex Sans - Medium Italic";
+				font-size: 30px;
+				font-weight: 400;
+			}
+		}
+
+	}
+
 	.cantsee {
-		margin-top: 230px;
 		.h2 {
 			line-height: 60px;
 		}
@@ -900,10 +930,14 @@ p {
 
 .last {
 	justify-content: center;
-	height: 539px;
-	background-image: url(../imgs/bg-last.png);
+	height: 421px;
+	background-image: url(../imgs/last-pattern.png),
+	linear-gradient(20deg, #0b1362 0%, #2433b8 100%);
 	background-repeat: no-repeat;
 	background-position: 50% 0%;
+	background-size: cover;
+	align-self: center;
+	max-width: 1920px;
 	.back {
 		margin-top: auto;
 		margin-bottom: auto;

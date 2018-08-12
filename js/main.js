@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			nextSlide = setTimeout(function() {
 				btn2.checked = true;
 				btn2.dispatchEvent(new Event('change'));
-			}, 2000);
+			}, 5000);
 		}
 	});
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			nextSlide = setTimeout(function() {
 				btn3.checked = true;
 				btn3.dispatchEvent(new Event('change'));
-			}, 2000);
+			}, 5000);
 		}
 	});
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			nextSlide = setTimeout(function() {
 				btn1.checked = true;
 				btn1.dispatchEvent(new Event('change'));
-			}, 2000);
+			}, 5000);
 		}
 	});
 	btn1.dispatchEvent(new Event('change'));
