@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function(){
 	btn3 = document.getElementById("btn-3");
 	var nextSlide;
 
-
 	btn1.addEventListener('change', function() {
 		if (btn1.checked === true) {
 			clearTimeout(nextSlide);
@@ -38,60 +37,52 @@ document.addEventListener('DOMContentLoaded', function(){
 	btn1.dispatchEvent(new Event('change'));
 	btn2.dispatchEvent(new Event('change'));
 	btn3.dispatchEvent(new Event('change'));
-});
 
-var gallery1 = 1;
-document.querySelector('.gallery1 .controls .prev').addEventListener('click', function() {
-	if (gallery1 == 2) {
-		document.querySelector('.gallery1 .schedule').classList.add('current1');
-		document.querySelector('.gallery1 .schedule').classList.remove('current2');
-		gallery1--;
-	} else if (gallery1 == 3) {
-			document.querySelector('.gallery1 .schedule').classList.add('current2');
-			document.querySelector('.gallery1 .schedule').classList.remove('current3');
-			gallery1--;
+
+	document.querySelector('.gallery1 .controls .prev').addEventListener('click', function() {
+		if (btn2.checked === true) {
+			btn1.checked = true;
+		} else if (btn3.checked === true) {
+				btn2.checked = true;
+			}
+	});
+
+	document.querySelector('.gallery1 .controls .next').addEventListener('click', function() {
+		if (btn1.checked === true) {
+			btn2.checked = true;
+		} else if (btn2.checked === true) {
+				btn3.checked = true;
+			}
+	});
+
+	var gallery2 = 1;
+	document.querySelector('.gallery2 .controls .prev').addEventListener('click', function() {
+		if (gallery2 == 2) {
+			document.querySelector('.gallery2 .schedule').classList.add('current1');
+			document.querySelector('.gallery2 .schedule').classList.remove('current2');
+			gallery2--;
 		}
-});
+	});
 
-document.querySelector('.gallery1 .controls .next').addEventListener('click', function() {
-	if (gallery1 == 1) {
-		document.querySelector('.gallery1 .schedule').classList.add('current2');
-		document.querySelector('.gallery1 .schedule').classList.remove('current1');
-		gallery1++;
-	} else if (gallery1 == 2) {
-			document.querySelector('.gallery1 .schedule').classList.add('current3');
-			document.querySelector('.gallery1 .schedule').classList.remove('current2');
-			gallery1++;
+	document.querySelector('.gallery2 .controls .next').addEventListener('click', function() {
+		if (gallery2 == 1) {
+			document.querySelector('.gallery2 .schedule').classList.add('current2');
+			document.querySelector('.gallery2 .schedule').classList.remove('current1');
+			gallery2++;
 		}
-});
+	});
 
-var gallery2 = 1;
-document.querySelector('.gallery2 .controls .prev').addEventListener('click', function() {
-	if (gallery2 == 2) {
-		document.querySelector('.gallery2 .schedule').classList.add('current1');
-		document.querySelector('.gallery2 .schedule').classList.remove('current2');
-		gallery2--;
-	}
-});
+	document.querySelector('.buynow').addEventListener('click', function(event) {
+		console.log(document.querySelector('.last .back.popup').style.display = 'block');
+		event.stopPropagation();
+	});
 
-document.querySelector('.gallery2 .controls .next').addEventListener('click', function() {
-	if (gallery2 == 1) {
-		document.querySelector('.gallery2 .schedule').classList.add('current2');
-		document.querySelector('.gallery2 .schedule').classList.remove('current1');
-		gallery2++;
-	}
-});
+	document.addEventListener('click', function() {
+	    document.querySelector('.popup').style.display = "none";
+	});
 
-document.querySelector('.buynow').addEventListener('click', function(event) {
-	console.log(document.querySelector('.last .back.popup').style.display = 'block');
-	event.stopPropagation();
-});
+	document.querySelector(".popup").addEventListener('click', function(event) {
+	    event.stopPropagation();
+	});
 
-document.addEventListener('click', function() {
-    document.querySelector('.popup').style.display = "none";
 });
-
-document.querySelector(".popup").addEventListener('click', function(event) {
-    event.stopPropagation();
-});
-document.querySelector('.popup').hide;

@@ -109,6 +109,7 @@ table {
 }
 .s {
   width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,9 +118,9 @@ table {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1920px;
-  padding: 0 390px;
   transition: 0.3s;
+  width: 1140px;
+  margin: auto;
 }
 @media only screen and (max-width: 1660px) {
   body .container {
@@ -503,33 +504,75 @@ p {
   margin-top: 15px;
 }
 .s2 .gallery1 {
-  margin: 28px auto 120px;
+  margin: 28px auto 45px;
   position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  align-items: stretch;
 }
 .s2 .gallery1 .slides {
-  height: 709px;
-  width: 927px;
+  margin: auto;
+  width: 1920px;
+  overflow: hidden;
 }
 .s2 .gallery1 input {
   display: none;
+}
+.s2 .gallery1 .controls {
+  align-self: flex-end;
+  margin-right: 65px;
+  margin-top: 53px;
+  display: flex;
+}
+.s2 .gallery1 .controls div {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #5ec4fe;
+  border-radius: 50%;
+  margin-left: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.s2 .gallery1 .controls div::before {
+  border: 15px solid #5ec4fe;
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-left: none;
+  transform: translate(-2px);
+}
+.s2 .gallery1 .controls div:hover {
+  box-shadow: 0 0 6px 1px #009cef;
+}
+.s2 .gallery1 .controls div:active {
+  box-shadow: 0 0 6px 1px #009cef, inset 0 0 2px 0px white;
+}
+.s2 .gallery1 .controls div:nth-child(2)::before {
+  transform: rotate(180deg) translate(-2px);
 }
 .s2 .gallery1 .slide {
   height: 100%;
   transition: 0.5s;
   display: flex;
+  width: 952px;
+  margin: auto;
+}
+.s2 .gallery1 .slide img {
+  box-sizing: content-box;
+  padding: 0 70px;
 }
 .s2 .gallery1 #btn-1:checked ~ .controls label[for="btn-1"],
 .s2 .gallery1 #btn-2:checked ~ .controls label[for="btn-2"],
 .s2 .gallery1 #btn-3:checked ~ .controls label[for="btn-3"] {
   z-index: -1;
 }
-.s2 .gallery1 #btn-2:checked ~ .slides .slide {
+.s2 .gallery1 #btn-1:checked ~ .slides .slide {
   transform: translate(0, 0);
 }
-.s2 .gallery1 #btn-1:checked ~ .slides .slide {
+.s2 .gallery1 #btn-2:checked ~ .slides .slide {
   transform: translate(-100%, 0);
 }
 .s2 .gallery1 #btn-3:checked ~ .slides .slide {
@@ -609,7 +652,6 @@ p {
 }
 .s3 .container {
   flex-direction: column;
-  width: 100%;
   flex-wrap: wrap;
 }
 .s3 .fastesy {
@@ -868,7 +910,6 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 5px 13px rgba(40, 126, 255, 0.46);
   border-radius: 20px;
   background: url(../imgs/form.png) no-repeat 50% 50%;
 }
@@ -904,12 +945,66 @@ p {
 .last .buy form [type="button"]:active {
   box-shadow: inset 0 0 3px 1px white;
 }
+.last .back.popup {
+  width: 913px;
+  height: 226px;
+}
 .last .popup {
   position: fixed;
   z-index: 10;
   top: 50%;
   transform: translate(0, -50%);
   display: none;
+}
+.last .popup .buy {
+  background: url(../imgs/form2.png) no-repeat 50% 50%;
+  width: 878px;
+  height: 326px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 40px 100px;
+}
+.last .popup .buy h2 {
+  font-family: Mont;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 35px;
+  margin-bottom: 15px;
+}
+.last .popup .buy .key {
+  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.08);
+  background-color: rgba(13, 98, 224, 0.03);
+  font-family: "Myriad Pro";
+  font-size: 26px;
+  font-weight: 400;
+  width: 854px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.last .popup .buy .exchange {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.last .popup .buy .exchange .rate {
+  font-family: "Myriad Pro";
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.last .popup .buy .exchange .min {
+  color: #7d7d7d;
+  font-family: "Myriad Pro";
+  font-size: 20px;
+  font-weight: 400;
+}
+.last .popup .buy form [type="button"] {
+  width: 264px;
+  height: 47px;
+  border-radius: 0 10px 10px 0;
+}
+.last .popup .buy form [type="email"] {
+  border-radius: 10px 0 0 10px;
 }
 .wrapper {
   display: flex;

@@ -125,6 +125,8 @@ table {
 
 .s {
 	width: 100%;
+	//min-width: 1920px;
+	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -133,9 +135,11 @@ table {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	max-width: 1920px;
-	padding: 0 390px;
+	// max-width: 1920px;
+	// padding: 0 390px;
 	transition: 0.3s;
+	width: 1140px;
+	margin: auto;
 }
 
 @media only screen and (max-width: 1660px) {
@@ -557,16 +561,17 @@ p {
 		margin-top: 15px;
 	}
 	.gallery1 {
-		margin: 28px auto 120px;
+		margin: 28px auto 45px;
 		position: relative;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		//width: 100%;
+		width: 100%;
+		align-items: stretch;
 		.slides {
-			height: 709px;
-			//overflow: hidden;
-			width: 927px;
+			margin: auto;
+			width: 1920px;
+			overflow: hidden;
 		}
 		input {
 			display: none;
@@ -618,21 +623,62 @@ p {
 		// 		cursor: pointer;
 		// 	}
 		// }
+		.controls {
+			align-self: flex-end;
+			margin-right: 65px;
+			margin-top: 53px;
+			display: flex;
+			div {
+				width: 50px;
+				height: 50px;
+				border: 1px solid #5ec4fe;
+				border-radius: 50%;
+				margin-left: 25px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+			}
+			div::before {
+				border: 15px solid #5ec4fe;
+				border-bottom: 8px solid transparent;
+				border-top: 8px solid transparent;
+				border-left: none;
+				transform: translate(-2px);
+			}
+			div:hover {
+				box-shadow: 0 0 6px 1px #009cef;
+			}
+			div:active {
+				box-shadow: 0 0 6px 1px #009cef, inset 0 0 2px 0px white;
+			}
+			div:nth-child(2)::before {
+				transform: rotate(180deg) translate(-2px);
+			}
+		}
 		.slide {
 			height: 100%;
 			transition: 0.5s;
 			display: flex;
+			width: 952px;
+			margin: auto;
+
+			img {
+				box-sizing: content-box;
+				padding: 0 70px;
+			}
 		}
 		#btn-1:checked ~ .controls label[for="btn-1"],
 		#btn-2:checked ~ .controls label[for="btn-2"],
 		#btn-3:checked ~ .controls label[for="btn-3"] {
 		    z-index: -1;
 		}
-		#btn-2:checked ~.slides .slide{
+
+		#btn-1:checked ~.slides .slide{
 		    transform: translate(0, 0);
 		}
 
-		#btn-1:checked ~.slides .slide {
+		#btn-2:checked ~.slides .slide {
 		    transform: translate(-100%, 0);
 		}
 
@@ -717,7 +763,6 @@ p {
 	background-size: auto 100%;
 	.container {
 		flex-direction: column;
-		width: 100%;
 		flex-wrap: wrap;
 	}
 	.fastesy {
@@ -982,7 +1027,7 @@ p {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		box-shadow: 0 5px 13px rgba(40, 126, 255, 0.46);
+		//box-shadow: 0 5px 13px rgba(40, 126, 255, 0.46);
 		border-radius: 20px;
 		background: url(../imgs/form.png) no-repeat 50% 50%;
 		p {
@@ -1018,12 +1063,69 @@ p {
 			}
 		}
 	}
+	.back.popup {
+		width: 913px;
+		height: 226px;
+	}
 	.popup {
 		position: fixed;
 		z-index: 10;
 		top: 50%;
 		transform: translate(0, -50%);
 		display: none;
+		.buy {
+			background: url(../imgs/form2.png) no-repeat 50% 50%;
+			width: 878px;
+			height: 326px;
+			text-align: center;
+			vertical-align: middle;
+			padding: 40px 100px;
+			h2 {
+			font-family: Mont;
+			font-size: 30px;
+			font-weight: 700;
+			line-height: 35px;
+			margin-bottom: 15px;
+			}
+
+			.key {
+				box-shadow: 0 1px 9px rgba(0, 0, 0, 0.08);
+				background-color: rgba(13, 98, 224, 0.03);
+				font-family: "Myriad Pro";
+				font-size: 26px;
+				font-weight: 400;
+				width: 854px;
+				line-height: 1.5;
+				margin-bottom: 20px;
+			}
+			.exchange {
+				display: flex;
+				justify-content: space-evenly;
+				width: 100%;
+				.rate {
+					font-family: "Myriad Pro";
+					font-size: 20px;
+					font-weight: 400;
+					text-transform: uppercase;
+				}
+				.min {
+					color: rgb(125, 125, 125);
+					font-family: "Myriad Pro";
+					font-size: 20px;
+					font-weight: 400;
+				}
+			}
+			form {
+				[type="button"] {
+					width: 264px;
+					height: 47px;
+					border-radius: 0 10px 10px 0;
+				}
+				[type="email"] {
+					border-radius: 10px 0 0 10px;
+				}
+			}
+		}
 	}
 
 }
