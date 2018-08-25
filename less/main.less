@@ -102,6 +102,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
+	align-items: center;
 }
 ol, ul {
 	list-style: none;
@@ -130,7 +131,6 @@ table {
 }
 .container {
 	display: flex;
-	//flex-wrap: wrap;
 	flex-direction: column;
 	width: 100%;
 	max-width: 1920px;
@@ -186,13 +186,13 @@ table {
 }
 
 .s1 {
-	min-height: 2918px;
-	//background-image: url(../imgs/bg-main.png);
-	background-image: url(../imgs/scheme.png),
+	min-height: 2680px;
+	background-image: url(../imgs/spot.png),
 	url(../imgs/bg-main.jpg);
-	background-repeat: no-repeat;
-	background-position: 50% 100%;
-	background-size: contain 100%;
+	background-repeat: no-repeat, no-repeat;
+	background-position: 0 100%, center;
+	background-size: auto, cover;
+	max-width: 1920px;
 }
 
 
@@ -276,6 +276,7 @@ p {
 }
 
 .main {
+
 	.description {
 		display: flex;
 		justify-content: space-around;
@@ -510,9 +511,29 @@ p {
 	}
 
 	.cantsee {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
 		.h2 {
 			line-height: 60px;
 		}
+		.youcantsee {
+			margin-right: -80px;
+			width: 450px;
+			flex-shrink: 0;
+		}
+	}
+
+	.scheme {
+		position: relative;
+		//align-self: flex-end;
+		background-image: url(../imgs/scheme.png);
+		background-repeat: no-repeat;
+		width: 787px;
+		height: 789px;
+		top: -90px;
+		flex-shrink: 0;
+
 	}
 }
 
@@ -535,7 +556,7 @@ p {
 		line-height: 32px;
 		margin-top: 15px;
 	}
-	.gallery {
+	.gallery1 {
 		margin: 28px auto 120px;
 		position: relative;
 		display: flex;
@@ -544,78 +565,79 @@ p {
 		//width: 100%;
 		.slides {
 			height: 709px;
-			overflow: hidden;
+			//overflow: hidden;
 			width: 927px;
 		}
 		input {
 			display: none;
 		}
-		.controls {
-			// position: absolute;
-			// transform: translate(-100%, -50%);
-			// left: -9px;
-			// top: 50%;
-			// display: flex;
-			// justify-content: center;
-			// flex-direction: column;
-			// align-items: center;
-			// align-self: flex-end;
-			position: absolute;
-			transform: translate(-100%, -50%);
-			left: -9px;
-			top: 50%;
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			align-items: center;
-			align-self: flex-end;
-
-			label {
-				display: block;
-				width: 16px;
-				height: 16px;
-				background: white;
-				border-radius: 50%;
-				position: relative;
-				box-sizing: border-box;
-				margin: 20px 9px;
-				cursor: pointer;
-			}
-			label::before {
-				display: block;
-				border-radius: 50%;
-				background-color: #00d7ee;
-				background-image: linear-gradient(to top, #009cef 0%, #00d7ee 100%);
-				padding: 3px;
-				width: 100%;
-				height:100%;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				z-index: -1;
-				box-sizing: content-box;
-				cursor: pointer;
-			}
-		}
+		// .controls {
+		// 	// position: absolute;
+		// 	// transform: translate(-100%, -50%);
+		// 	// left: -9px;
+		// 	// top: 50%;
+		// 	// display: flex;
+		// 	// justify-content: center;
+		// 	// flex-direction: column;
+		// 	// align-items: center;
+		// 	// align-self: flex-end;
+		// 	position: absolute;
+		// 	transform: translate(-100%, -50%);
+		// 	left: -9px;
+		// 	top: 50%;
+		// 	display: flex;
+		// 	justify-content: center;
+		// 	flex-direction: column;
+		// 	align-items: center;
+		// 	align-self: flex-end;
+		//
+		// 	label {
+		// 		display: block;
+		// 		width: 16px;
+		// 		height: 16px;
+		// 		background: white;
+		// 		border-radius: 50%;
+		// 		position: relative;
+		// 		box-sizing: border-box;
+		// 		margin: 20px 9px;
+		// 		cursor: pointer;
+		// 	}
+		// 	label::before {
+		// 		display: block;
+		// 		border-radius: 50%;
+		// 		background-color: #00d7ee;
+		// 		background-image: linear-gradient(to top, #009cef 0%, #00d7ee 100%);
+		// 		padding: 3px;
+		// 		width: 100%;
+		// 		height:100%;
+		// 		top: 50%;
+		// 		left: 50%;
+		// 		transform: translate(-50%, -50%);
+		// 		z-index: -1;
+		// 		box-sizing: content-box;
+		// 		cursor: pointer;
+		// 	}
+		// }
 		.slide {
 			height: 100%;
 			transition: 0.5s;
+			display: flex;
 		}
 		#btn-1:checked ~ .controls label[for="btn-1"],
 		#btn-2:checked ~ .controls label[for="btn-2"],
 		#btn-3:checked ~ .controls label[for="btn-3"] {
 		    z-index: -1;
 		}
-		#btn-1:checked ~.slides .slide{
+		#btn-2:checked ~.slides .slide{
 		    transform: translate(0, 0);
 		}
 
-		#btn-2:checked ~.slides .slide {
-		    transform: translate(0, -100%);
+		#btn-1:checked ~.slides .slide {
+		    transform: translate(-100%, 0);
 		}
 
 		#btn-3:checked ~.slides .slide {
-		    transform: translate(0, -200%);
+		    transform: translate(-200%, 0);
 		}
 	}
 

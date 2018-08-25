@@ -40,34 +40,51 @@ document.addEventListener('DOMContentLoaded', function(){
 	btn3.dispatchEvent(new Event('change'));
 });
 
-var current = 1;
-document.querySelector('.gallery2 .controls .prev').addEventListener('click', function() {
-	if (current == 2) {
-		document.querySelector('.gallery2 .schedule').classList.add('current1');
-		document.querySelector('.gallery2 .schedule').classList.remove('current2');
-		current--;
-	} else if (current == 3) {
-			document.querySelector('.gallery2 .schedule').classList.add('current2');
-			document.querySelector('.gallery2 .schedule').classList.remove('current3');
-			current--;
+var gallery1 = 1;
+document.querySelector('.gallery1 .controls .prev').addEventListener('click', function() {
+	if (gallery1 == 2) {
+		document.querySelector('.gallery1 .schedule').classList.add('current1');
+		document.querySelector('.gallery1 .schedule').classList.remove('current2');
+		gallery1--;
+	} else if (gallery1 == 3) {
+			document.querySelector('.gallery1 .schedule').classList.add('current2');
+			document.querySelector('.gallery1 .schedule').classList.remove('current3');
+			gallery1--;
 		}
 });
 
+document.querySelector('.gallery1 .controls .next').addEventListener('click', function() {
+	if (gallery1 == 1) {
+		document.querySelector('.gallery1 .schedule').classList.add('current2');
+		document.querySelector('.gallery1 .schedule').classList.remove('current1');
+		gallery1++;
+	} else if (gallery1 == 2) {
+			document.querySelector('.gallery1 .schedule').classList.add('current3');
+			document.querySelector('.gallery1 .schedule').classList.remove('current2');
+			gallery1++;
+		}
+});
+
+var gallery2 = 1;
+document.querySelector('.gallery2 .controls .prev').addEventListener('click', function() {
+	if (gallery2 == 2) {
+		document.querySelector('.gallery2 .schedule').classList.add('current1');
+		document.querySelector('.gallery2 .schedule').classList.remove('current2');
+		gallery2--;
+	}
+});
+
 document.querySelector('.gallery2 .controls .next').addEventListener('click', function() {
-	if (current == 1) {
+	if (gallery2 == 1) {
 		document.querySelector('.gallery2 .schedule').classList.add('current2');
 		document.querySelector('.gallery2 .schedule').classList.remove('current1');
-		current++;
-	} else if (current == 2) {
-			document.querySelector('.gallery2 .schedule').classList.add('current3');
-			document.querySelector('.gallery2 .schedule').classList.remove('current2');
-			current++;
-		}
-	});
+		gallery2++;
+	}
+});
+
 document.querySelector('.buynow').addEventListener('click', function(event) {
 	console.log(document.querySelector('.last .back.popup').style.display = 'block');
-event.stopPropagation();
-	//console.log(document.querySelector('.popup').style.display);
+	event.stopPropagation();
 });
 
 document.addEventListener('click', function() {
