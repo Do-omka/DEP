@@ -233,7 +233,7 @@ p {
 	display: none;
 }
 .header {
-	.nav ul a {display: none;}
+
 	@media only screen and (max-width: 450px) {
 		padding-top: 35px;
 		min-height: auto;
@@ -254,7 +254,12 @@ p {
 				width: 100%;
 				a {
 					float: left;
+					display: none;
+					background: #190157;
 					//display: block;
+					li {
+						margin: 0;
+					}
 				}
 			}
 		}
@@ -390,7 +395,7 @@ p {
 		a:hover {
 			border-bottom: 4px solid #00d7ee;
 		}
-		a:last-child {
+		a:last-of-type {
 			font-family: "Mont-Semi Bold";
 			font-size: 20px;
 			font-weight: 400;
@@ -399,16 +404,16 @@ p {
 			justify-content: center;
 			align-items: center;
 		}
-		a:last-child:hover {
+		a:last-of-type:hover {
 			border:none;
 		}
-		a:last-child:hover::after {
+		a:last-of-type:hover::after {
 			width: 195px;
 			height: 47px;
 			border-bottom: 4px solid #00d7ee;
 			align-self: flex-end;
 		}
-		a:last-child li {
+		a:last-of-type li {
 			right: 0%;
 			border-radius: 24px;
 			border: 3px solid #00d7ee;

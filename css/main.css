@@ -194,9 +194,6 @@ p {
   min-height: 92px;
   border-bottom: 2px solid #232070;
 }
-.header .nav ul a {
-  display: none;
-}
 @media only screen and (max-width: 450px) {
   .header {
     padding-top: 35px;
@@ -219,6 +216,11 @@ p {
   }
   .header .nav ul a {
     float: left;
+    display: none;
+    background: #190157;
+  }
+  .header .nav ul a li {
+    margin: 0;
   }
   .header nav:hover {
     position: relative;
@@ -334,7 +336,7 @@ p {
 .nav ul a:hover {
   border-bottom: 4px solid #00d7ee;
 }
-.nav ul a:last-child {
+.nav ul a:last-of-type {
   font-family: "Mont-Semi Bold";
   font-size: 20px;
   font-weight: 400;
@@ -343,16 +345,16 @@ p {
   justify-content: center;
   align-items: center;
 }
-.nav ul a:last-child:hover {
+.nav ul a:last-of-type:hover {
   border: none;
 }
-.nav ul a:last-child:hover::after {
+.nav ul a:last-of-type:hover::after {
   width: 195px;
   height: 47px;
   border-bottom: 4px solid #00d7ee;
   align-self: flex-end;
 }
-.nav ul a:last-child li {
+.nav ul a:last-of-type li {
   right: 0%;
   border-radius: 24px;
   border: 3px solid #00d7ee;
