@@ -157,7 +157,7 @@ p {
     padding: 0 150px;
   }
 }
-@media only screen and (max-width: 1310px) and (min-width: 450px) {
+@media only screen and (max-width: 1400px) and (min-width: 450px) {
   .container {
     padding: 0 50px;
   }
@@ -249,7 +249,7 @@ p {
   background-size: auto, cover;
   max-width: 1920px;
 }
-@media only screen and (max-width: 1310px) {
+@media only screen and (max-width: 1400px) {
   .s1 {
     min-height: auto;
     padding-bottom: 20px;
@@ -617,7 +617,7 @@ p {
   margin-bottom: 50px;
   margin-right: 55px;
 }
-@media only screen and (max-width: 1310px) {
+@media only screen and (max-width: 1400px) {
   .main .justlook .left {
     width: 256px;
     height: 258px;
@@ -664,7 +664,7 @@ p {
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (max-width: 1310px) {
+@media only screen and (max-width: 1400px) {
   .main .cantsee {
     justify-content: center;
     flex-wrap: wrap;
@@ -678,7 +678,7 @@ p {
   width: 450px;
   flex-shrink: 0;
 }
-@media only screen and (max-width: 1310px) {
+@media only screen and (max-width: 1400px) {
   .main .cantsee .youcantsee {
     margin: 0 auto;
     width: auto;
@@ -694,7 +694,7 @@ p {
   top: -90px;
   flex-shrink: 0;
 }
-@media only screen and (max-width: 1310px) {
+@media only screen and (max-width: 1400px) {
   .main .cantsee .scheme {
     top: 0;
     background: url(../imgs/scheme-m.png) no-repeat;
@@ -776,14 +776,8 @@ p {
 }
 .s2 .gallery .controls {
   align-self: flex-end;
-  margin-right: 65px;
   margin-top: 53px;
   display: flex;
-}
-@media only screen and (max-width: 450px) {
-  .s2 .gallery .controls {
-    margin-right: 0;
-  }
 }
 .s2 .gallery .controls div {
   width: 50px;
@@ -860,7 +854,7 @@ p {
     transform-origin: bottom;
   }
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1200px) {
   .s2 .gallery-m {
     margin: 28px auto 45px;
     position: relative;
@@ -883,7 +877,6 @@ p {
   }
   .s2 .gallery-m .controls {
     align-self: flex-end;
-    margin-right: 65px;
     margin-top: 53px;
     display: flex;
   }
@@ -942,9 +935,6 @@ p {
   .s2 .gallery-m .slide img {
     padding: 0 8px;
   }
-  .s2 .gallery-m .controls {
-    margin-right: 0;
-  }
   .s2 .gallery-m #btn-11:checked ~ .slides .slide {
     transform: translate(0, 0);
   }
@@ -967,36 +957,31 @@ p {
     transform-origin: bottom;
   }
 }
-@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
+@media only screen and (max-width: 1200px) and only screen and (max-width: 450px) {
   .s2 .gallery-m {
     margin: 0;
     margin-bottom: 20px;
     background-color: #f6f5ff;
   }
 }
-@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
+@media only screen and (max-width: 1200px) and only screen and (max-width: 450px) {
   .s2 .gallery-m .slides {
     width: 320px;
   }
 }
-@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
-  .s2 .gallery-m .controls {
-    margin-right: 0;
-  }
-}
-@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
+@media only screen and (max-width: 1200px) and only screen and (max-width: 450px) {
   .s2 .gallery-m .slide {
     width: 219px;
   }
 }
-@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
+@media only screen and (max-width: 1200px) and only screen and (max-width: 450px) {
   .s2 .gallery-m .slide img {
     width: 193px;
     height: 160px;
     padding: 0 13px;
   }
 }
-@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
+@media only screen and (max-width: 1200px) and only screen and (max-width: 450px) {
   .s2 .gallery-m #btn-1:checked ~ .slides .slide img:not(:nth-child(1)) {
     transform: scale(0.85);
     transform-origin: bottom;
@@ -1017,7 +1002,7 @@ p {
   flex-wrap: wrap;
   padding-bottom: 104px;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1200px) {
   .s2 .phones {
     margin: 0;
     margin-bottom: 15px;
@@ -1034,7 +1019,7 @@ p {
   width: 490px;
   position: relative;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   .s2 .questions {
     background-color: white;
     box-sizing: content-box;
@@ -1050,7 +1035,7 @@ p {
   font-size: 50px;
   font-weight: 700;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   .s2 .questions h2 {
     font-size: 20px;
   }
@@ -1060,7 +1045,7 @@ p {
   font-size: 27px;
   font-weight: 400;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   .s2 .questions p {
     font-size: 13px;
   }
@@ -1071,7 +1056,7 @@ p {
   padding: 0px 84px 110px;
   flex-wrap: wrap;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   .s2 .questions .pdfs {
     padding: 0;
     justify-content: center;
@@ -1087,7 +1072,7 @@ p {
   border-radius: 50%;
   justify-content: center;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   .s2 .questions .pdfs .pdf {
     width: 69px;
     height: 69px;
@@ -1103,7 +1088,7 @@ p {
   margin-top: 100%;
   padding-top: 20px;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   .s2 .questions .pdfs .pdf p {
     font-size: 15px;
   }
@@ -1111,7 +1096,7 @@ p {
 .s2 .questions .pdfs .pdf:nth-child(1) {
   background: url(../imgs/pdf1.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   .s2 .questions .pdfs .pdf:nth-child(1) {
     background-size: 30px 39px, cover;
     margin-right: 30px;
@@ -1120,7 +1105,7 @@ p {
 .s2 .questions .pdfs .pdf:nth-child(2) {
   background: url(../imgs/pdf2.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   .s2 .questions .pdfs .pdf:nth-child(2) {
     background-size: 22px 31px, cover;
     margin-left: 30px;
