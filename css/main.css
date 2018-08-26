@@ -112,7 +112,7 @@ h2 {
   font-size: 45px;
   font-weight: 700;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   h2 {
     font-size: 20px;
   }
@@ -124,7 +124,7 @@ p {
   line-height: 26px;
   margin-top: 23px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   p {
     font-size: 13px;
     font-weight: 300;
@@ -167,7 +167,7 @@ p {
     padding-right: 16px;
   }
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .container {
     padding: 0 15px;
   }
@@ -191,7 +191,7 @@ p {
   min-height: 92px;
   border-bottom: 2px solid #232070;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .header {
     min-height: 55px;
     align-items: flex-end;
@@ -208,7 +208,7 @@ p {
   margin: 0 auto;
   background-color: #fbfbff;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .footer .container {
     flex-direction: column;
     padding-top: 20px;
@@ -249,7 +249,7 @@ p {
   background-size: auto, cover;
   max-width: 1920px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s1 {
     min-height: auto;
     padding-bottom: 20px;
@@ -264,7 +264,7 @@ p {
   display: flex;
   align-items: center;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .logo img {
     width: 20px;
     height: 20px;
@@ -277,7 +277,7 @@ p {
   text-transform: uppercase;
   margin: 0 12px 0;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .logo p {
     font-size: 17px;
   }
@@ -290,7 +290,7 @@ p {
   flex-wrap: wrap;
   justify-content: flex-end;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .nav ul {
     display: none;
   }
@@ -338,7 +338,7 @@ p {
   flex-wrap: wrap;
   width: 100%;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .description {
     margin-top: 40px;
   }
@@ -349,7 +349,7 @@ p {
   flex-basis: 10px;
   flex-grow: 1;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .description .platform {
     margin-top: 0px;
     margin-right: 0;
@@ -361,7 +361,7 @@ p {
   font-weight: 300;
   line-height: 26px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .description .platform p {
     font-size: 13px;
     font-weight: 300;
@@ -372,7 +372,7 @@ p {
   margin-top: 36px;
   display: flex;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .description .platform .socials {
     display: none;
   }
@@ -402,7 +402,7 @@ p {
   padding-top: 27px;
   text-align: center;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .description .buyform {
     margin-top: 5px;
     font-size: 10px;
@@ -416,7 +416,7 @@ p {
   font-size: 27px;
   font-weight: 400;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .description .buyform h2 {
     display: none;
   }
@@ -426,7 +426,7 @@ p {
   justify-content: space-between;
   padding: 22px 78px 49px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .description .buyform .endtime {
     display: none;
   }
@@ -463,7 +463,7 @@ p {
   text-align: left;
   padding: 0 60px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
 }
 .main .description .buyform .amount p {
   font-family: "IBM Plex Sans";
@@ -511,7 +511,7 @@ p {
   color: white;
   cursor: pointer;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .description .buyform .buynow {
     border-radius: 5px;
   }
@@ -527,7 +527,7 @@ p {
   position: relative;
   margin-bottom: 105px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .advantages {
     margin-top: 55px;
     margin-bottom: 60px;
@@ -549,7 +549,7 @@ p {
   font-weight: 400;
   margin-bottom: 10px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .advantages ul li h3 {
     font-size: 16px;
   }
@@ -560,7 +560,7 @@ p {
   font-weight: 300;
   line-height: 19px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .advantages ul li p {
     font-size: 13px;
   }
@@ -596,7 +596,7 @@ p {
   display: flex;
   flex-wrap: wrap;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .justlook {
     flex-direction: column;
   }
@@ -608,13 +608,14 @@ p {
   margin-bottom: 50px;
   margin-right: 55px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .justlook .left {
     width: 256px;
     height: 258px;
     background-size: contain;
     margin-right: 0;
     align-self: center;
+    margin-bottom: 15px;
   }
 }
 .main .justlook .right {
@@ -623,11 +624,12 @@ p {
   flex-grow: 1;
   margin-bottom: 100px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .justlook .right {
     margin-top: auto;
     order: -1;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    flex-basis: 0;
   }
 }
 .main .justlook .right .three-random-words {
@@ -647,7 +649,7 @@ p {
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .cantsee {
     justify-content: center;
     flex-wrap: wrap;
@@ -661,7 +663,7 @@ p {
   width: 450px;
   flex-shrink: 0;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .cantsee .youcantsee {
     margin: 0 auto;
     width: auto;
@@ -677,7 +679,7 @@ p {
   top: -90px;
   flex-shrink: 0;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .main .cantsee .scheme {
     top: 0;
     background: url(../imgs/scheme-m.png) no-repeat;
@@ -688,7 +690,7 @@ p {
 .s2 {
   padding-top: 55px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 {
     background-color: #f6f5ff;
   }
@@ -702,7 +704,7 @@ p {
   font-weight: 400;
   margin-top: 34px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 h3 {
     font-size: 13px;
     letter-spacing: 0.05px;
@@ -716,7 +718,7 @@ p {
   line-height: 32px;
   margin-top: 15px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 p {
     font-size: 13px;
     margin: 10px 0 5px;
@@ -732,7 +734,7 @@ p {
   width: 100%;
   align-items: stretch;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .gallery1 {
     margin: 0;
     margin-bottom: 20px;
@@ -744,7 +746,7 @@ p {
   width: 1920px;
   overflow: hidden;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .gallery1 .slides {
     width: 320px;
   }
@@ -792,16 +794,16 @@ p {
   width: 952px;
   margin: auto;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .gallery1 .slide {
-    width: 206px;
+    width: 219px;
   }
 }
 .s2 .gallery1 .slide img {
   box-sizing: content-box;
   padding: 0 70px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .gallery1 .slide img {
     width: 193px;
     height: 160px;
@@ -829,7 +831,7 @@ p {
   flex-wrap: wrap;
   padding-bottom: 104px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .phones {
     margin: 0;
     margin-bottom: 15px;
@@ -846,7 +848,7 @@ p {
   width: 490px;
   position: relative;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .questions {
     background-color: white;
     box-sizing: content-box;
@@ -862,7 +864,7 @@ p {
   font-size: 50px;
   font-weight: 700;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .questions h2 {
     font-size: 20px;
   }
@@ -872,7 +874,7 @@ p {
   font-size: 27px;
   font-weight: 400;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .questions p {
     font-size: 13px;
   }
@@ -883,7 +885,7 @@ p {
   padding: 0px 84px 110px;
   flex-wrap: wrap;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .questions .pdfs {
     padding: 0;
     justify-content: center;
@@ -899,7 +901,7 @@ p {
   border-radius: 50%;
   justify-content: center;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .questions .pdfs .pdf {
     width: 69px;
     height: 69px;
@@ -915,7 +917,7 @@ p {
   margin-top: 100%;
   padding-top: 20px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .questions .pdfs .pdf p {
     font-size: 15px;
   }
@@ -923,7 +925,7 @@ p {
 .s2 .questions .pdfs .pdf:nth-child(1) {
   background: url(../imgs/pdf1.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .questions .pdfs .pdf:nth-child(1) {
     background-size: 30px 39px, cover;
     margin-right: 30px;
@@ -932,7 +934,7 @@ p {
 .s2 .questions .pdfs .pdf:nth-child(2) {
   background: url(../imgs/pdf2.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s2 .questions .pdfs .pdf:nth-child(2) {
     background-size: 22px 31px, cover;
     margin-left: 30px;
@@ -953,7 +955,7 @@ p {
   min-height: 1010px;
   background-size: auto 100%;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s3 {
     background: white;
     color: black;
@@ -970,7 +972,7 @@ p {
   flex-direction: column;
   flex-wrap: wrap;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s3 .container {
     margin-top: 35px;
   }
@@ -994,7 +996,7 @@ p {
   margin-bottom: 36px;
   width: 100%;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s3 .gallery2 {
     display: none;
   }
@@ -1057,7 +1059,7 @@ p {
   width: 100%;
   flex-direction: column;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s3 .service {
     order: -1;
   }
@@ -1073,7 +1075,7 @@ p {
   padding-bottom: 9px;
   border-bottom: 4px solid #009cef;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s3 .service h3 {
     font-size: 14px;
     margin-top: 15px;
@@ -1100,7 +1102,7 @@ p {
   display: flex;
   border-radius: 15px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s3 .service .buttons div {
     font-size: 9px;
     width: 85px;
@@ -1117,7 +1119,7 @@ p {
 .s4 h2 {
   text-align: center;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 h2 {
     text-align: left;
   }
@@ -1125,7 +1127,7 @@ p {
 .s4 h2 + p {
   text-align: center;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 h2 + p {
     text-align: left;
     max-width: 200px;
@@ -1139,7 +1141,7 @@ p {
   margin-bottom: 60px;
   max-width: 941px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .commission-level {
     margin-bottom: 30px;
   }
@@ -1152,12 +1154,12 @@ p {
   font-size: 24px;
   font-weight: 400;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .commission-level th {
     font-size: 14px;
   }
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .commission-level tbody tr {
     font-size: 14px;
     box-shadow: none;
@@ -1171,7 +1173,7 @@ p {
   box-shadow: 0 5px 13px rgba(40, 126, 255, 0.08);
   height: 82px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .commission-level tbody tr {
     font-size: 14px;
     box-shadow: none;
@@ -1185,7 +1187,7 @@ p {
   font-size: 24px;
   font-weight: 300;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .commission-level tbody tr td {
     font-size: 14px;
   }
@@ -1205,7 +1207,7 @@ p {
   align-items: flex-end;
   flex-wrap: wrap;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .tokens {
     margin-top: 25px;
     align-content: flex-start;
@@ -1229,7 +1231,7 @@ p {
   max-width: 550px;
   flex-grow: 1;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .tokens .token {
     margin-bottom: 25px;
     align-items: flex-start;
@@ -1240,7 +1242,7 @@ p {
   display: flex;
   flex-direction: column;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .tokens .token ul {
     padding-top: 0px;
     margin-top: 0;
@@ -1252,7 +1254,7 @@ p {
   font-weight: 400;
   margin: 0 0 28px 23px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .tokens .token ul li {
     font-size: 11px;
     margin: 0 0 7px 10px;
@@ -1265,7 +1267,7 @@ p {
   color: #48b2e3;
   text-transform: uppercase;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .tokens .token ul li:last-child {
     font-size: 14px;
     order: -1;
@@ -1284,7 +1286,7 @@ p {
   display: flex;
   width: 600px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .deps .deps1 .dep:last-child {
     font-size: 21px;
     margin-left: 75px;
@@ -1305,7 +1307,7 @@ p {
   font-size: 64px;
   font-weight: 400;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .deps .deps1 .dep {
     font-size: 21px;
     margin-left: 30px;
@@ -1315,7 +1317,7 @@ p {
 .s4 .deps .deps1 .dep .dep1 {
   font-size: 102px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .deps .deps1 .dep .dep1 {
     font-size: 43px;
   }
@@ -1328,7 +1330,7 @@ p {
   top: -45px;
   left: -75px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .s4 .deps .deps1 .dep .dep2 {
     font-size: 49px;
     left: -30px;
@@ -1418,7 +1420,7 @@ p {
   transform: translate(0, -50%);
   display: none;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .last .popup.back {
     width: 290px;
     height: 267px;
@@ -1477,7 +1479,7 @@ p {
 .last .popup.back .buy form [type="email"] {
   border-radius: 10px 0 0 10px;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .last .popup.back .buy {
     width: 100%;
     height: 100%;
@@ -1528,7 +1530,7 @@ p {
     border: 1px solid #e8e8e8;
   }
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 450px) {
   .last {
     height: 195px;
     color: white;
