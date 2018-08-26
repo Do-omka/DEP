@@ -96,6 +96,7 @@
 	font-size: 100%;
 	font: inherit;
 	box-sizing: border-box;
+	//flex-wrap: nowrap!important;
 }
 
 body {
@@ -294,7 +295,7 @@ p {
 	background-position: 0 100%, center;
 	background-size: auto, cover;
 	max-width: 1920px;
-	@media only screen and (max-width: 450px) {
+	@media only screen and (max-width: 1310px) {
 		min-height: auto;
 		padding-bottom: 20px;
 	}
@@ -415,7 +416,8 @@ p {
 			}
 			.socials {
 				@media only screen and (max-width: 450px) {
-					display: none;
+					//display: none;
+					margin-top: 15px;
 				}
 
 				margin-top: 36px;
@@ -444,11 +446,13 @@ p {
 		}
 		.buyform {
 			@media only screen and (max-width: 450px) {
-				margin-top: 5px;
+				margin-top: 15px;
 				font-size: 10px;
 				height: auto;
 				padding-bottom: 15px;
 				padding-top: 15px;
+				// max-width: 420px;
+				// width: 100%;
 			}
 			margin-top: 188px;
 			background-color: rgba(14, 0, 79, 0.5);
@@ -504,7 +508,7 @@ p {
 			}
 			.amount {
 				@media only screen and (max-width: 450px) {
-					//width: 244px;
+					padding: 0 23px;
 				}
 
 				text-align: left;
@@ -517,7 +521,13 @@ p {
 					margin: 0;
 				}
 				.inc {
-					width: 300px;
+					@media only screen and (max-width: 450px) {
+						width: 244px;
+						width: 100%;
+					}
+
+					//width: 300px;
+					width: 100%;
 					height: 19px;
 					box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.1);
 					border-radius: 8px;
@@ -650,13 +660,17 @@ p {
 		display: flex;
 		flex-wrap: wrap;
 		.left {
-			@media only screen and (max-width: 450px) {
+			@media only screen and (max-width: 1310px) {
 				width: 256px;
 				height: 258px;
 				background-size: contain;
 				margin-right: 0;
 				align-self: center;
 				margin-bottom: 15px;
+				margin-right: 20px;
+			}
+			@media only screen and (max-width: 450px) {
+				margin-right: 0;
 			}
 
 			background: url(../imgs/justlook.png) no-repeat;
@@ -694,7 +708,7 @@ p {
 	}
 
 	.cantsee {
-		@media only screen and (max-width: 450px) {
+		@media only screen and (max-width: 1310px) {
 			justify-content: center;
 			flex-wrap: wrap;
 		}
@@ -706,7 +720,7 @@ p {
 			line-height: 60px;
 		}
 		.youcantsee {
-			@media only screen and (max-width: 450px) {
+			@media only screen and (max-width: 1310px) {
 				margin: 0 auto;
 				width: auto;
 				text-align: center;
@@ -716,10 +730,12 @@ p {
 			flex-shrink: 0;
 		}
 		.scheme {
-			@media only screen and (max-width: 450px) {
+			@media only screen and (max-width: 1310px) {
 				top: 0;
 				background: url(../imgs/scheme-m.png) no-repeat;
-				width: 291px;
+				background-size: 100%;
+				max-width: 291px;
+				width: 100%;
 				height: 368px;
 			}
 			position: relative;
@@ -768,7 +784,7 @@ p {
 		line-height: 32px;
 		margin-top: 15px;
 	}
-	.gallery1 {
+	.gallery {
 		@media only screen and (max-width: 450px) {
 			margin: 0;
 			margin-bottom: 20px;
@@ -786,7 +802,7 @@ p {
 			@media only screen and (max-width: 450px) {
 				width: 320px;
 			}
-			margin: auto;
+			margin: 0;
 			width: 1920px;
 			overflow: hidden;
 			position: relative;
@@ -844,6 +860,9 @@ p {
 		// 	}
 		// }
 		.controls {
+			@media only screen and (max-width: 450px) {
+				margin-right: 0;
+			}
 			align-self: flex-end;
 			margin-right: 65px;
 			margin-top: 53px;
@@ -885,10 +904,13 @@ p {
 			display: flex;
 			width: 952px;
 			margin: auto;
+			align-items: flex-end;
 
 			img {
 				box-sizing: content-box;
 				padding: 0 70px;
+				transition: 0.5s;
+				//flex-shrink: 0;
 
 				@media only screen and (max-width: 450px) {
 					width: 193px;
@@ -897,11 +919,11 @@ p {
 				}
 			}
 		}
-		#btn-1:checked ~ .controls label[for="btn-1"],
-		#btn-2:checked ~ .controls label[for="btn-2"],
-		#btn-3:checked ~ .controls label[for="btn-3"] {
-		    z-index: -1;
-		}
+		// #btn-1:checked ~ .controls label[for="btn-1"],
+		// #btn-2:checked ~ .controls label[for="btn-2"],
+		// #btn-3:checked ~ .controls label[for="btn-3"] {
+		//     z-index: -1;
+		// }
 
 		#btn-1:checked ~.slides .slide{
 		    transform: translate(0, 0);
@@ -914,8 +936,61 @@ p {
 		#btn-3:checked ~.slides .slide {
 		    transform: translate(-200%, 0);
 		}
+
+		@media only screen and (max-width: 450px) {
+			#btn-1:checked ~.slides .slide img:not(:nth-child(1)) {
+			    transform: scale(0.85);
+				transform-origin: bottom;
+			}
+			#btn-2:checked ~.slides .slide img:not(:nth-child(2)) {
+			    transform: scale(0.85);
+				transform-origin: bottom;
+			}
+			#btn-3:checked ~.slides .slide img:not(:nth-child(3)) {
+			    transform: scale(0.85);
+				transform-origin: bottom;
+			}
+		}
 	}
 
+	.gallery-m {
+		@media only screen and (max-width: 450px) {
+			.gallery;
+			.slide {
+				width: 190px;
+				img {
+					padding: 0 8px;
+				}
+			}
+			.controls {
+				margin-right: 0;
+			}
+			#btn-11:checked ~.slides .slide{
+			    transform: translate(0, 0);
+			}
+
+			#btn-22:checked ~.slides .slide {
+			    transform: translate(-100%, 0);
+			}
+
+			#btn-33:checked ~.slides .slide {
+			    transform: translate(-200%, 0);
+			}
+
+			#btn-11:checked ~.slides .slide img:not(:nth-child(1)) {
+			    transform: scale(0.85);
+				transform-origin: bottom;
+			}
+			#btn-22:checked ~.slides .slide img:not(:nth-child(2)) {
+			    transform: scale(0.85);
+				transform-origin: bottom;
+			}
+			#btn-33:checked ~.slides .slide img:not(:nth-child(3)) {
+			    transform: scale(0.85);
+				transform-origin: bottom;
+			}
+		}
+	}
 	.phones {
 		@media only screen and (max-width: 450px) {
 			margin: 0;
@@ -1043,10 +1118,9 @@ p {
 		}
 	}
 
-	.roadmap {
+	.roadmap-m {
 		margin-top: 50px;
 	}
-	//justify-content: flex-start;
 	background-image: url(../imgs/bg-s3.png);
 	background-repeat: no-repeat;
 	background-position: 50% 0%;
@@ -1073,7 +1147,7 @@ p {
 			text-align: center;
 		}
 	}
-	.gallery2 {
+	.roadmap {
 		@media only screen and (max-width: 450px) {
 			display: none;
 		}
@@ -1084,13 +1158,15 @@ p {
 		margin-bottom: 36px;
 		width: 100%;
 		.schedules {
-			height: 228px;
-			width: 1140px;
 			overflow: hidden;
 			.schedule {
+				min-height: 228px;
+				max-width: 1140px;
 				transition: 1s ease;
 				display: flex;
-
+				img {
+					width: 100%;
+				}
 			}
 			.schedule.current1 {
 				transform: translate(0);
@@ -1215,6 +1291,7 @@ p {
 	padding-bottom: 50px;
 	padding-top: 50px;
 	.commission-level {
+		//max-width: 100%;
 		@media only screen and (max-width: 450px) {
 			margin-bottom: 30px;
 		}
@@ -1223,6 +1300,10 @@ p {
 		margin-bottom: 60px;
 		max-width: 941px;
 		th {
+			@media only screen and (max-width: 660px) {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
 			@media only screen and (max-width: 450px) {
 				font-size: 14px;
 			}
@@ -1255,14 +1336,19 @@ p {
 				box-shadow: 0 5px 13px rgba(40, 126, 255, 0.08);
 				height: 82px;
 				td {
-					@media only screen and (max-width: 450px) {
-						font-size: 14px;
-					}
+
 					padding-left: 64px;
 					width: 33%;
 					font-family: Mont;
 					font-size: 24px;
 					font-weight: 300;
+					@media only screen and (max-width: 660px) {
+						padding-left: 15px;
+						padding-right: 15px;
+					}
+					@media only screen and (max-width: 450px) {
+						font-size: 14px;
+					}
 				}
 			}
 			tr:first-of-type {

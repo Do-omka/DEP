@@ -2,9 +2,14 @@
 document.addEventListener('DOMContentLoaded', function(){
 	var btn1 = document.getElementById("btn-1"),
 	btn2 = document.getElementById("btn-2"),
-	btn3 = document.getElementById("btn-3");
-	var nextSlide;
+	btn3 = document.getElementById("btn-3"),
+	btn11 = document.getElementById("btn-11"),
+	btn22 = document.getElementById("btn-22"),
+	btn33 = document.getElementById("btn-33"),
+	nextSlide,
+	nextPhone;
 
+// screen slider
 	btn1.addEventListener('change', function() {
 		if (btn1.checked === true) {
 			clearTimeout(nextSlide);
@@ -39,36 +44,41 @@ document.addEventListener('DOMContentLoaded', function(){
 	btn3.dispatchEvent(new Event('change'));
 
 
-	document.querySelector('.gallery1 .controls .prev').addEventListener('click', function() {
+	document.querySelector('.gallery .controls .prev').addEventListener('click', function() {
 		if (btn2.checked === true) {
 			btn1.checked = true;
+			btn1.dispatchEvent(new Event('change'));
 		} else if (btn3.checked === true) {
 				btn2.checked = true;
+				btn2.dispatchEvent(new Event('change'));
 			}
 	});
 
-	document.querySelector('.gallery1 .controls .next').addEventListener('click', function() {
+	document.querySelector('.gallery .controls .next').addEventListener('click', function() {
 		if (btn1.checked === true) {
 			btn2.checked = true;
+			btn2.dispatchEvent(new Event('change'));
 		} else if (btn2.checked === true) {
 				btn3.checked = true;
+				btn3.dispatchEvent(new Event('change'));
 			}
 	});
 
-	var gallery2 = 1;
-	document.querySelector('.gallery2 .controls .prev').addEventListener('click', function() {
-		if (gallery2 == 2) {
-			document.querySelector('.gallery2 .schedule').classList.add('current1');
-			document.querySelector('.gallery2 .schedule').classList.remove('current2');
-			gallery2--;
+//roadmap slider
+	var roadmap = 1;
+	document.querySelector('.roadmap .controls .prev').addEventListener('click', function() {
+		if (roadmap == 2) {
+			document.querySelector('.roadmap .schedule').classList.add('current1');
+			document.querySelector('.roadmap .schedule').classList.remove('current2');
+			roadmap--;
 		}
 	});
 
-	document.querySelector('.gallery2 .controls .next').addEventListener('click', function() {
-		if (gallery2 == 1) {
-			document.querySelector('.gallery2 .schedule').classList.add('current2');
-			document.querySelector('.gallery2 .schedule').classList.remove('current1');
-			gallery2++;
+	document.querySelector('.roadmap .controls .next').addEventListener('click', function() {
+		if (roadmap == 1) {
+			document.querySelector('.roadmap .schedule').classList.add('current2');
+			document.querySelector('.roadmap .schedule').classList.remove('current1');
+			roadmap++;
 		}
 	});
 
@@ -83,6 +93,61 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	document.querySelector(".popup").addEventListener('click', function(event) {
 	    event.stopPropagation();
+	});
+
+//mobile phones slider
+	btn11.addEventListener('change', function() {
+		if (btn11.checked === true) {
+			clearTimeout(nextPhone);
+			nextPhone = setTimeout(function() {
+				btn22.checked = true;
+				btn22.dispatchEvent(new Event('change'));
+			}, 5000);
+		}
+	});
+
+	btn22.addEventListener('change', function() {
+		if (btn22.checked === true) {
+			clearTimeout(nextPhone);
+			nextPhone = setTimeout(function() {
+				btn33.checked = true;
+				btn33.dispatchEvent(new Event('change'));
+			}, 5000);
+		}
+	});
+
+	btn33.addEventListener('change', function() {
+		if (btn33.checked === true) {
+			clearTimeout(nextPhone);
+			nextPhone = setTimeout(function() {
+				btn11.checked = true;
+				btn11.dispatchEvent(new Event('change'));
+			}, 5000);
+		}
+	});
+	btn11.dispatchEvent(new Event('change'));
+	btn22.dispatchEvent(new Event('change'));
+	btn33.dispatchEvent(new Event('change'));
+
+
+	document.querySelector('.gallery-m  .controls .prev').addEventListener('click', function() {
+		if (btn22.checked === true) {
+			btn11.checked = true;
+			btn11.dispatchEvent(new Event('change'));
+		} else if (btn33.checked === true) {
+				btn22.checked = true;
+				btn22.dispatchEvent(new Event('change'));
+			}
+	});
+
+	document.querySelector('.gallery-m .controls .next').addEventListener('click', function() {
+		if (btn11.checked === true) {
+			btn22.checked = true;
+			btn22.dispatchEvent(new Event('change'));
+		} else if (btn22.checked === true) {
+				btn33.checked = true;
+				btn33.dispatchEvent(new Event('change'));
+			}
 	});
 
 });

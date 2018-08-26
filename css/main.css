@@ -249,7 +249,7 @@ p {
   background-size: auto, cover;
   max-width: 1920px;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1310px) {
   .s1 {
     min-height: auto;
     padding-bottom: 20px;
@@ -374,7 +374,7 @@ p {
 }
 @media only screen and (max-width: 450px) {
   .main .description .platform .socials {
-    display: none;
+    margin-top: 15px;
   }
 }
 .main .description .platform .socials a li {
@@ -404,7 +404,7 @@ p {
 }
 @media only screen and (max-width: 450px) {
   .main .description .buyform {
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: 10px;
     height: auto;
     padding-bottom: 15px;
@@ -464,6 +464,9 @@ p {
   padding: 0 60px;
 }
 @media only screen and (max-width: 450px) {
+  .main .description .buyform .amount {
+    padding: 0 23px;
+  }
 }
 .main .description .buyform .amount p {
   font-family: "IBM Plex Sans";
@@ -472,13 +475,19 @@ p {
   margin: 0;
 }
 .main .description .buyform .amount .inc {
-  width: 300px;
+  width: 100%;
   height: 19px;
   box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   background-color: #222075;
   position: relative;
   margin: 0 auto;
+}
+@media only screen and (max-width: 450px) {
+  .main .description .buyform .amount .inc {
+    width: 244px;
+    width: 100%;
+  }
 }
 .main .description .buyform .amount .inc::before {
   height: 19px;
@@ -608,7 +617,7 @@ p {
   margin-bottom: 50px;
   margin-right: 55px;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1310px) {
   .main .justlook .left {
     width: 256px;
     height: 258px;
@@ -616,6 +625,12 @@ p {
     margin-right: 0;
     align-self: center;
     margin-bottom: 15px;
+    margin-right: 20px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .main .justlook .left {
+    margin-right: 0;
   }
 }
 .main .justlook .right {
@@ -649,7 +664,7 @@ p {
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1310px) {
   .main .cantsee {
     justify-content: center;
     flex-wrap: wrap;
@@ -663,7 +678,7 @@ p {
   width: 450px;
   flex-shrink: 0;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1310px) {
   .main .cantsee .youcantsee {
     margin: 0 auto;
     width: auto;
@@ -679,11 +694,13 @@ p {
   top: -90px;
   flex-shrink: 0;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1310px) {
   .main .cantsee .scheme {
     top: 0;
     background: url(../imgs/scheme-m.png) no-repeat;
-    width: 291px;
+    background-size: 100%;
+    max-width: 291px;
+    width: 100%;
     height: 368px;
   }
 }
@@ -725,7 +742,7 @@ p {
     line-height: 16px;
   }
 }
-.s2 .gallery1 {
+.s2 .gallery {
   margin: 28px auto 45px;
   position: relative;
   display: flex;
@@ -735,14 +752,14 @@ p {
   align-items: stretch;
 }
 @media only screen and (max-width: 450px) {
-  .s2 .gallery1 {
+  .s2 .gallery {
     margin: 0;
     margin-bottom: 20px;
     background-color: #f6f5ff;
   }
 }
-.s2 .gallery1 .slides {
-  margin: auto;
+.s2 .gallery .slides {
+  margin: 0;
   width: 1920px;
   overflow: hidden;
   position: relative;
@@ -750,20 +767,25 @@ p {
   transform: translate(-50%, 0);
 }
 @media only screen and (max-width: 450px) {
-  .s2 .gallery1 .slides {
+  .s2 .gallery .slides {
     width: 320px;
   }
 }
-.s2 .gallery1 input {
+.s2 .gallery input {
   display: none;
 }
-.s2 .gallery1 .controls {
+.s2 .gallery .controls {
   align-self: flex-end;
   margin-right: 65px;
   margin-top: 53px;
   display: flex;
 }
-.s2 .gallery1 .controls div {
+@media only screen and (max-width: 450px) {
+  .s2 .gallery .controls {
+    margin-right: 0;
+  }
+}
+.s2 .gallery .controls div {
   width: 50px;
   height: 50px;
   border: 1px solid #5ec4fe;
@@ -774,58 +796,219 @@ p {
   align-items: center;
   cursor: pointer;
 }
-.s2 .gallery1 .controls div::before {
+.s2 .gallery .controls div::before {
   border: 15px solid #5ec4fe;
   border-bottom: 8px solid transparent;
   border-top: 8px solid transparent;
   border-left: none;
   transform: translate(-2px);
 }
-.s2 .gallery1 .controls div:hover {
+.s2 .gallery .controls div:hover {
   box-shadow: 0 0 6px 1px #009cef;
 }
-.s2 .gallery1 .controls div:active {
+.s2 .gallery .controls div:active {
   box-shadow: 0 0 6px 1px #009cef, inset 0 0 2px 0px white;
 }
-.s2 .gallery1 .controls div:nth-child(2)::before {
+.s2 .gallery .controls div:nth-child(2)::before {
   transform: rotate(180deg) translate(-2px);
 }
-.s2 .gallery1 .slide {
+.s2 .gallery .slide {
   height: 100%;
   transition: 0.5s;
   display: flex;
   width: 952px;
   margin: auto;
+  align-items: flex-end;
 }
 @media only screen and (max-width: 450px) {
-  .s2 .gallery1 .slide {
+  .s2 .gallery .slide {
     width: 219px;
   }
 }
-.s2 .gallery1 .slide img {
+.s2 .gallery .slide img {
   box-sizing: content-box;
   padding: 0 70px;
+  transition: 0.5s;
 }
 @media only screen and (max-width: 450px) {
-  .s2 .gallery1 .slide img {
+  .s2 .gallery .slide img {
     width: 193px;
     height: 160px;
     padding: 0 13px;
   }
 }
-.s2 .gallery1 #btn-1:checked ~ .controls label[for="btn-1"],
-.s2 .gallery1 #btn-2:checked ~ .controls label[for="btn-2"],
-.s2 .gallery1 #btn-3:checked ~ .controls label[for="btn-3"] {
-  z-index: -1;
-}
-.s2 .gallery1 #btn-1:checked ~ .slides .slide {
+.s2 .gallery #btn-1:checked ~ .slides .slide {
   transform: translate(0, 0);
 }
-.s2 .gallery1 #btn-2:checked ~ .slides .slide {
+.s2 .gallery #btn-2:checked ~ .slides .slide {
   transform: translate(-100%, 0);
 }
-.s2 .gallery1 #btn-3:checked ~ .slides .slide {
+.s2 .gallery #btn-3:checked ~ .slides .slide {
   transform: translate(-200%, 0);
+}
+@media only screen and (max-width: 450px) {
+  .s2 .gallery #btn-1:checked ~ .slides .slide img:not(:nth-child(1)) {
+    transform: scale(0.85);
+    transform-origin: bottom;
+  }
+  .s2 .gallery #btn-2:checked ~ .slides .slide img:not(:nth-child(2)) {
+    transform: scale(0.85);
+    transform-origin: bottom;
+  }
+  .s2 .gallery #btn-3:checked ~ .slides .slide img:not(:nth-child(3)) {
+    transform: scale(0.85);
+    transform-origin: bottom;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .s2 .gallery-m {
+    margin: 28px auto 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+  .s2 .gallery-m .slides {
+    margin: 0;
+    width: 1920px;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .s2 .gallery-m input {
+    display: none;
+  }
+  .s2 .gallery-m .controls {
+    align-self: flex-end;
+    margin-right: 65px;
+    margin-top: 53px;
+    display: flex;
+  }
+  .s2 .gallery-m .controls div {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #5ec4fe;
+    border-radius: 50%;
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .s2 .gallery-m .controls div::before {
+    border: 15px solid #5ec4fe;
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    border-left: none;
+    transform: translate(-2px);
+  }
+  .s2 .gallery-m .controls div:hover {
+    box-shadow: 0 0 6px 1px #009cef;
+  }
+  .s2 .gallery-m .controls div:active {
+    box-shadow: 0 0 6px 1px #009cef, inset 0 0 2px 0px white;
+  }
+  .s2 .gallery-m .controls div:nth-child(2)::before {
+    transform: rotate(180deg) translate(-2px);
+  }
+  .s2 .gallery-m .slide {
+    height: 100%;
+    transition: 0.5s;
+    display: flex;
+    width: 952px;
+    margin: auto;
+    align-items: flex-end;
+  }
+  .s2 .gallery-m .slide img {
+    box-sizing: content-box;
+    padding: 0 70px;
+    transition: 0.5s;
+  }
+  .s2 .gallery-m #btn-1:checked ~ .slides .slide {
+    transform: translate(0, 0);
+  }
+  .s2 .gallery-m #btn-2:checked ~ .slides .slide {
+    transform: translate(-100%, 0);
+  }
+  .s2 .gallery-m #btn-3:checked ~ .slides .slide {
+    transform: translate(-200%, 0);
+  }
+  .s2 .gallery-m .slide {
+    width: 190px;
+  }
+  .s2 .gallery-m .slide img {
+    padding: 0 8px;
+  }
+  .s2 .gallery-m .controls {
+    margin-right: 0;
+  }
+  .s2 .gallery-m #btn-11:checked ~ .slides .slide {
+    transform: translate(0, 0);
+  }
+  .s2 .gallery-m #btn-22:checked ~ .slides .slide {
+    transform: translate(-100%, 0);
+  }
+  .s2 .gallery-m #btn-33:checked ~ .slides .slide {
+    transform: translate(-200%, 0);
+  }
+  .s2 .gallery-m #btn-11:checked ~ .slides .slide img:not(:nth-child(1)) {
+    transform: scale(0.85);
+    transform-origin: bottom;
+  }
+  .s2 .gallery-m #btn-22:checked ~ .slides .slide img:not(:nth-child(2)) {
+    transform: scale(0.85);
+    transform-origin: bottom;
+  }
+  .s2 .gallery-m #btn-33:checked ~ .slides .slide img:not(:nth-child(3)) {
+    transform: scale(0.85);
+    transform-origin: bottom;
+  }
+}
+@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
+  .s2 .gallery-m {
+    margin: 0;
+    margin-bottom: 20px;
+    background-color: #f6f5ff;
+  }
+}
+@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
+  .s2 .gallery-m .slides {
+    width: 320px;
+  }
+}
+@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
+  .s2 .gallery-m .controls {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
+  .s2 .gallery-m .slide {
+    width: 219px;
+  }
+}
+@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
+  .s2 .gallery-m .slide img {
+    width: 193px;
+    height: 160px;
+    padding: 0 13px;
+  }
+}
+@media only screen and (max-width: 450px) and only screen and (max-width: 450px) {
+  .s2 .gallery-m #btn-1:checked ~ .slides .slide img:not(:nth-child(1)) {
+    transform: scale(0.85);
+    transform-origin: bottom;
+  }
+  .s2 .gallery-m #btn-2:checked ~ .slides .slide img:not(:nth-child(2)) {
+    transform: scale(0.85);
+    transform-origin: bottom;
+  }
+  .s2 .gallery-m #btn-3:checked ~ .slides .slide img:not(:nth-child(3)) {
+    transform: scale(0.85);
+    transform-origin: bottom;
+  }
 }
 .s2 .phones {
   display: flex;
@@ -968,7 +1151,7 @@ p {
     display: none;
   }
 }
-.s3 .roadmap {
+.s3 .roadmap-m {
   margin-top: 50px;
 }
 .s3 .container {
@@ -992,7 +1175,7 @@ p {
   margin-bottom: 116px;
   text-align: center;
 }
-.s3 .gallery2 {
+.s3 .roadmap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1000,35 +1183,38 @@ p {
   width: 100%;
 }
 @media only screen and (max-width: 450px) {
-  .s3 .gallery2 {
+  .s3 .roadmap {
     display: none;
   }
 }
-.s3 .gallery2 .schedules {
-  height: 228px;
-  width: 1140px;
+.s3 .roadmap .schedules {
   overflow: hidden;
 }
-.s3 .gallery2 .schedules .schedule {
+.s3 .roadmap .schedules .schedule {
+  min-height: 228px;
+  max-width: 1140px;
   transition: 1s ease;
   display: flex;
 }
-.s3 .gallery2 .schedules .schedule.current1 {
+.s3 .roadmap .schedules .schedule img {
+  width: 100%;
+}
+.s3 .roadmap .schedules .schedule.current1 {
   transform: translate(0);
 }
-.s3 .gallery2 .schedules .schedule.current2 {
+.s3 .roadmap .schedules .schedule.current2 {
   transform: translate(-100%);
 }
-.s3 .gallery2 .schedules .schedule.current3 {
+.s3 .roadmap .schedules .schedule.current3 {
   transform: translate(-200%);
 }
-.s3 .gallery2 .controls {
+.s3 .roadmap .controls {
   align-self: flex-end;
   margin-right: 65px;
   margin-top: 53px;
   display: flex;
 }
-.s3 .gallery2 .controls div {
+.s3 .roadmap .controls div {
   width: 50px;
   height: 50px;
   border: 1px solid #5ec4fe;
@@ -1039,20 +1225,20 @@ p {
   align-items: center;
   cursor: pointer;
 }
-.s3 .gallery2 .controls div::before {
+.s3 .roadmap .controls div::before {
   border: 15px solid #5ec4fe;
   border-bottom: 8px solid transparent;
   border-top: 8px solid transparent;
   border-left: none;
   transform: translate(-2px);
 }
-.s3 .gallery2 .controls div:hover {
+.s3 .roadmap .controls div:hover {
   box-shadow: 0 0 6px 1px #009cef;
 }
-.s3 .gallery2 .controls div:active {
+.s3 .roadmap .controls div:active {
   box-shadow: 0 0 6px 1px #009cef, inset 0 0 2px 0px white;
 }
-.s3 .gallery2 .controls div:nth-child(2)::before {
+.s3 .roadmap .controls div:nth-child(2)::before {
   transform: rotate(180deg) translate(-2px);
 }
 .s3 .service {
@@ -1157,6 +1343,12 @@ p {
   font-size: 24px;
   font-weight: 400;
 }
+@media only screen and (max-width: 660px) {
+  .s4 .commission-level th {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 @media only screen and (max-width: 450px) {
   .s4 .commission-level th {
     font-size: 14px;
@@ -1189,6 +1381,12 @@ p {
   font-family: Mont;
   font-size: 24px;
   font-weight: 300;
+}
+@media only screen and (max-width: 660px) {
+  .s4 .commission-level tbody tr td {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 @media only screen and (max-width: 450px) {
   .s4 .commission-level tbody tr td {
