@@ -229,54 +229,45 @@ p {
 	}
 }
 
-.expand {
-	display: none;
-}
 .header {
-
 	@media only screen and (max-width: 450px) {
 		padding-top: 35px;
 		min-height: auto;
 		 .container {
-			align-items: flex-start;
+			flex-direction: column;
 		 }
 		border: none;
 		.expand {
+			position: absolute;
 			width: 23px;
 			height: 23px;
 			background: url(../imgs/nav-m.png) no-repeat;
-			float: right;
+			//float: right;
 			display: block;
+			top: -23px;
+			right: 0px;
+			cursor: pointer;
 		}
 		.nav {
+			position: relative;
+			flex-direction: column;
 			ul {
 				flex-direction: column;
-				width: 100%;
+				padding-top: 10px;
 				a {
-					float: left;
-					display: none;
-					background: #190157;
-					//display: block;
+					margin-bottom: 10px;
+					justify-content: center;
 					li {
 						margin: 0;
+
 					}
 				}
 			}
 		}
-
-		nav:hover {
-			position: relative;
-			.expand {
-				position: absolute;
-			    right: 0;
-			    top: 0;
-			}
-			a {
-				float: none;
-				display: block;
-				text-align: left;
-			}
-		}
+		// .expand:hover + ul,
+		// .expand + ul:hover {
+		// 		display: flex;
+		// }
 	}
 
 	min-height: 92px;
@@ -374,9 +365,7 @@ p {
 
 	ul {
 		@media only screen and (max-width: 450px) {
-			li {
-				//display: none;
-			}
+			display: none;
 		}
 
 		display: flex;
@@ -385,6 +374,7 @@ p {
 		a {
 			display: flex;
 			align-items: center;
+			border-bottom: 4px solid transparent;
 			li {
 				margin: 0px 23px;
 				font-family: Mont;
@@ -392,33 +382,38 @@ p {
 				font-weight: 300;
 			}
 		}
-		a:hover {
+		a:hover:not(:last-of-type) {
 			border-bottom: 4px solid #00d7ee;
 		}
-		a:last-of-type {
-			font-family: "Mont-Semi Bold";
-			font-size: 20px;
-			font-weight: 400;
-			width: 195px;
-			position: relative;
-			justify-content: center;
-			align-items: center;
-		}
-		a:last-of-type:hover {
-			border:none;
-		}
-		a:last-of-type:hover::after {
-			width: 195px;
-			height: 47px;
-			border-bottom: 4px solid #00d7ee;
-			align-self: flex-end;
-		}
-		a:last-of-type li {
-			right: 0%;
-			border-radius: 24px;
-			border: 3px solid #00d7ee;
-			padding: 13px 36px;
+		@media only screen and (min-width: 451px) {
+			a:last-of-type {
+				font-family: "Mont-Semi Bold";
+				font-size: 20px;
+				font-weight: 400;
+				width: 195px;
+				position: relative;
+				justify-content: center;
+				align-items: center;
+			}
+			a:last-of-type {
+				border: none;
+			}
+			a:last-of-type::after {
+				border-bottom: 4px solid transparent;
+			}
 
+			a:last-of-type:hover::after {
+				width: 195px;
+				height: 5px;
+				border-bottom: 4px solid #00d7ee;
+				align-self: flex-end;
+			}
+			a:last-of-type li {
+				border-radius: 24px;
+				border: 3px solid #00d7ee;
+				padding: 13px 36px;
+
+			}
 		}
 	}
 }
@@ -1200,12 +1195,13 @@ p {
 		.schedules {
 			overflow: hidden;
 			.schedule {
-				min-height: 228px;
+				height: 231px;
 				max-width: 1140px;
 				transition: 1s ease;
 				display: flex;
 				img {
 					width: 100%;
+					height: 100%;
 				}
 			}
 			.schedule.current1 {
