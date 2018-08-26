@@ -151,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function(){
 	});
 
 //mobile menu toggle
-
 	document.querySelector('.nav .expand').addEventListener('click', function() {
 		if (document.querySelector('.nav .expand + ul').style.display !== 'flex') {
 			document.querySelector('.nav .expand + ul').style.display = 'flex';

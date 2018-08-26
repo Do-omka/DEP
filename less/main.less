@@ -382,10 +382,13 @@ p {
 				font-weight: 300;
 			}
 		}
-		a:hover:not(:last-of-type) {
+		a:hover {
 			border-bottom: 4px solid #00d7ee;
 		}
 		@media only screen and (min-width: 451px) {
+			a:last-of-type {
+				border-bottom: none;
+			}
 			a:last-of-type {
 				font-family: "Mont-Semi Bold";
 				font-size: 20px;
