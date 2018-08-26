@@ -68,7 +68,7 @@
   src: url('../fonts/IBMPlexSans-MediumItalic.woff') format("woff");
 }
 @font-face {
-  font-family: "Mont - Heavy";
+  font-family: "Mont-Heavy";
   src: url('../fonts/Mont-Heavy.ttf') format("truetype");
   src: url('../fonts/Mont-Heavy.woff') format("woff");
   font-weight: 400;
@@ -107,12 +107,41 @@ table {
   position: absolute;
   box-sizing: border-box;
 }
+h2 {
+  font-family: Mont;
+  font-size: 45px;
+  font-weight: 700;
+}
+@media only screen and (max-width: 330px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+p {
+  font-family: "Mont-Book";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26px;
+  margin-top: 23px;
+}
+@media only screen and (max-width: 330px) {
+  p {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 19px;
+    margin: 10px 0;
+  }
+}
+.mobile {
+  display: none;
+}
 .s {
   width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 }
 .container {
   display: flex;
@@ -121,21 +150,29 @@ table {
   max-width: 1920px;
   padding: 0 390px;
   transition: 0.3s;
-  margin: auto;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 1660px) {
-  body .container {
+  .container {
     padding: 0 150px;
   }
 }
 @media only screen and (max-width: 1200px) {
-  body .container {
+  .container {
     padding: 0 50px;
   }
-  body .s4 .commission-level tbody tr td,
-  body .s4 .commission-level thead tr th {
+  .s4 .commission-level tbody tr td,
+  .s4 .commission-level thead tr th {
     padding-left: 16px;
     padding-right: 16px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .container {
+    padding: 0 15px;
+  }
+  .container .mobile {
+    display: block;
   }
 }
 .header,
@@ -154,9 +191,55 @@ table {
   min-height: 92px;
   border-bottom: 2px solid #232070;
 }
+@media only screen and (max-width: 330px) {
+  .header {
+    min-height: 55px;
+    align-items: flex-end;
+    border: none;
+  }
+  .header .nav {
+    width: 23px;
+    height: 23px;
+    background-image: url(../imgs/nav-m.png);
+  }
+}
 .footer {
   min-height: 72px;
   margin: 0 auto;
+  background-color: #fbfbff;
+}
+@media only screen and (max-width: 330px) {
+  .footer .container {
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+}
+.footer .copyright {
+  margin: 15px 0 25px;
+}
+.footer .nav-m {
+  display: flex;
+}
+.footer .nav-m ul:first-child {
+  margin-right: 45px;
+}
+.footer .nav-m ul {
+  display: flex;
+  flex-direction: column;
+}
+.footer .nav-m ul a:not(:first-of-type) li {
+  color: #626262;
+  font-family: Mont;
+  font-size: 11px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.footer .nav-m ul a:first-of-type li {
+  font-family: Mont;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 15px;
 }
 .s1 {
   min-height: 2680px;
@@ -165,6 +248,12 @@ table {
   background-position: 0 100%, center;
   background-size: auto, cover;
   max-width: 1920px;
+}
+@media only screen and (max-width: 330px) {
+  .s1 {
+    min-height: auto;
+    padding-bottom: 20px;
+  }
 }
 .s1,
 .s3,
@@ -175,12 +264,23 @@ table {
   display: flex;
   align-items: center;
 }
+@media only screen and (max-width: 330px) {
+  .logo img {
+    width: 20px;
+    height: 20px;
+  }
+}
 .logo p {
   font-family: 'Codec Cold Logo';
   font-size: 27px;
   font-style: italic;
   text-transform: uppercase;
   margin: 0 12px 0;
+}
+@media only screen and (max-width: 330px) {
+  .logo p {
+    font-size: 17px;
+  }
 }
 .nav {
   display: flex;
@@ -189,6 +289,11 @@ table {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+@media only screen and (max-width: 330px) {
+  .nav ul {
+    display: none;
+  }
 }
 .nav ul a {
   display: flex;
@@ -227,23 +332,16 @@ table {
   border: 3px solid #00d7ee;
   padding: 13px 36px;
 }
-h2 {
-  font-family: Mont;
-  font-size: 45px;
-  font-weight: 700;
-}
-p {
-  font-family: "Mont-Book";
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 26px;
-  margin-top: 23px;
-}
 .main .description {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
+}
+@media only screen and (max-width: 330px) {
+  .main .description {
+    margin-top: 40px;
+  }
 }
 .main .description .platform {
   margin-top: 188px;
@@ -251,15 +349,33 @@ p {
   flex-basis: 10px;
   flex-grow: 1;
 }
+@media only screen and (max-width: 330px) {
+  .main .description .platform {
+    margin-top: 0px;
+    margin-right: 0;
+  }
+}
 .main .description .platform p {
   font-family: Mont;
   font-size: 20px;
   font-weight: 300;
   line-height: 26px;
 }
+@media only screen and (max-width: 330px) {
+  .main .description .platform p {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+}
 .main .description .platform .socials {
   margin-top: 36px;
   display: flex;
+}
+@media only screen and (max-width: 330px) {
+  .main .description .platform .socials {
+    display: none;
+  }
 }
 .main .description .platform .socials a li {
   margin-right: 20px;
@@ -286,15 +402,34 @@ p {
   padding-top: 27px;
   text-align: center;
 }
+@media only screen and (max-width: 330px) {
+  .main .description .buyform {
+    margin-top: 5px;
+    font-size: 10px;
+    height: auto;
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+}
 .main .description .buyform h2 {
   font-family: "Mont-Semi Bold";
   font-size: 27px;
   font-weight: 400;
 }
+@media only screen and (max-width: 330px) {
+  .main .description .buyform h2 {
+    display: none;
+  }
+}
 .main .description .buyform .endtime {
   display: flex;
   justify-content: space-between;
   padding: 22px 78px 49px;
+}
+@media only screen and (max-width: 330px) {
+  .main .description .buyform .endtime {
+    display: none;
+  }
 }
 .main .description .buyform .endtime span {
   position: relative;
@@ -327,6 +462,8 @@ p {
 .main .description .buyform .amount {
   text-align: left;
   padding: 0 60px;
+}
+@media only screen and (max-width: 330px) {
 }
 .main .description .buyform .amount p {
   font-family: "IBM Plex Sans";
@@ -374,6 +511,11 @@ p {
   color: white;
   cursor: pointer;
 }
+@media only screen and (max-width: 330px) {
+  .main .description .buyform .buynow {
+    border-radius: 5px;
+  }
+}
 .main .description .buyform .buynow:hover {
   box-shadow: 0 0 3px 1px #00d7ee;
 }
@@ -384,6 +526,12 @@ p {
   margin-top: 133px;
   position: relative;
   margin-bottom: 105px;
+}
+@media only screen and (max-width: 330px) {
+  .main .advantages {
+    margin-top: 55px;
+    margin-bottom: 60px;
+  }
 }
 .main .advantages ul {
   display: flex;
@@ -401,11 +549,21 @@ p {
   font-weight: 400;
   margin-bottom: 10px;
 }
+@media only screen and (max-width: 330px) {
+  .main .advantages ul li h3 {
+    font-size: 16px;
+  }
+}
 .main .advantages ul li p {
   font-family: Mont;
   font-size: 16px;
   font-weight: 300;
   line-height: 19px;
+}
+@media only screen and (max-width: 330px) {
+  .main .advantages ul li p {
+    font-size: 13px;
+  }
 }
 .main .advantages ul li:nth-child(odd) {
   margin-right: 68px;
@@ -438,6 +596,11 @@ p {
   display: flex;
   flex-wrap: wrap;
 }
+@media only screen and (max-width: 330px) {
+  .main .justlook {
+    flex-direction: column;
+  }
+}
 .main .justlook .left {
   background: url(../imgs/justlook.png) no-repeat;
   width: 602px;
@@ -445,13 +608,30 @@ p {
   margin-bottom: 50px;
   margin-right: 55px;
 }
+@media only screen and (max-width: 330px) {
+  .main .justlook .left {
+    width: 256px;
+    height: 258px;
+    background-size: contain;
+    margin-right: 0;
+    align-self: center;
+  }
+}
 .main .justlook .right {
   margin-top: 115px;
   flex-basis: 200px;
   flex-grow: 1;
   margin-bottom: 100px;
 }
+@media only screen and (max-width: 330px) {
+  .main .justlook .right {
+    margin-top: auto;
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
 .main .justlook .right .three-random-words {
+  line-height: 20px;
   height: 30px;
   color: #00d7ee;
   background-image: linear-gradient(-225deg, #00d7ee 0%, #009cef 100%), -webkit-linear-gradient(-225deg, #00d7ee 0%, #009cef 100%);
@@ -467,6 +647,12 @@ p {
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 330px) {
+  .main .cantsee {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
 .main .cantsee .h2 {
   line-height: 60px;
 }
@@ -475,7 +661,14 @@ p {
   width: 450px;
   flex-shrink: 0;
 }
-.main .scheme {
+@media only screen and (max-width: 330px) {
+  .main .cantsee .youcantsee {
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+  }
+}
+.main .cantsee .scheme {
   position: relative;
   background-image: url(../imgs/scheme.png);
   background-repeat: no-repeat;
@@ -484,8 +677,21 @@ p {
   top: -90px;
   flex-shrink: 0;
 }
+@media only screen and (max-width: 330px) {
+  .main .cantsee .scheme {
+    top: 0;
+    background: url(../imgs/scheme-m.png) no-repeat;
+    width: 291px;
+    height: 368px;
+  }
+}
 .s2 {
   padding-top: 55px;
+}
+@media only screen and (max-width: 330px) {
+  .s2 {
+    background-color: #f6f5ff;
+  }
 }
 .s2 h2 {
   max-width: 550px;
@@ -496,13 +702,26 @@ p {
   font-weight: 400;
   margin-top: 34px;
 }
+@media only screen and (max-width: 330px) {
+  .s2 h3 {
+    font-size: 13px;
+    letter-spacing: 0.05px;
+    margin-top: 10px;
+  }
+}
 .s2 p {
-  color: #000000;
   font-family: "Mont-Book";
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
   margin-top: 15px;
+}
+@media only screen and (max-width: 330px) {
+  .s2 p {
+    font-size: 13px;
+    margin: 10px 0 5px;
+    line-height: 16px;
+  }
 }
 .s2 .gallery1 {
   margin: 28px auto 45px;
@@ -513,10 +732,22 @@ p {
   width: 100%;
   align-items: stretch;
 }
+@media only screen and (max-width: 330px) {
+  .s2 .gallery1 {
+    margin: 0;
+    margin-bottom: 20px;
+    background-color: #f6f5ff;
+  }
+}
 .s2 .gallery1 .slides {
   margin: auto;
   width: 1920px;
   overflow: hidden;
+}
+@media only screen and (max-width: 330px) {
+  .s2 .gallery1 .slides {
+    width: 320px;
+  }
 }
 .s2 .gallery1 input {
   display: none;
@@ -561,9 +792,21 @@ p {
   width: 952px;
   margin: auto;
 }
+@media only screen and (max-width: 330px) {
+  .s2 .gallery1 .slide {
+    width: 206px;
+  }
+}
 .s2 .gallery1 .slide img {
   box-sizing: content-box;
   padding: 0 70px;
+}
+@media only screen and (max-width: 330px) {
+  .s2 .gallery1 .slide img {
+    width: 193px;
+    height: 160px;
+    padding: 0 13px;
+  }
 }
 .s2 .gallery1 #btn-1:checked ~ .controls label[for="btn-1"],
 .s2 .gallery1 #btn-2:checked ~ .controls label[for="btn-2"],
@@ -586,6 +829,13 @@ p {
   flex-wrap: wrap;
   padding-bottom: 104px;
 }
+@media only screen and (max-width: 330px) {
+  .s2 .phones {
+    margin: 0;
+    margin-bottom: 15px;
+    display: none;
+  }
+}
 .s2 .phones .phone {
   margin-bottom: 50px;
   margin-right: 25px;
@@ -596,15 +846,36 @@ p {
   width: 490px;
   position: relative;
 }
+@media only screen and (max-width: 330px) {
+  .s2 .questions {
+    background-color: white;
+    box-sizing: content-box;
+    padding: 0 15px;
+    width: 100%;
+    transform: translate(-15px, 0);
+    text-align: center;
+    padding-top: 15px;
+  }
+}
 .s2 .questions h2 {
   font-family: Mont;
   font-size: 50px;
   font-weight: 700;
 }
+@media only screen and (max-width: 330px) {
+  .s2 .questions h2 {
+    font-size: 20px;
+  }
+}
 .s2 .questions p {
   font-family: "Mont-Book";
   font-size: 27px;
   font-weight: 400;
+}
+@media only screen and (max-width: 330px) {
+  .s2 .questions p {
+    font-size: 13px;
+  }
 }
 .s2 .questions .pdfs {
   display: flex;
@@ -612,14 +883,29 @@ p {
   padding: 0px 84px 110px;
   flex-wrap: wrap;
 }
+@media only screen and (max-width: 330px) {
+  .s2 .questions .pdfs {
+    padding: 0;
+    justify-content: center;
+  }
+}
 .s2 .questions .pdfs .pdf {
   margin-top: 30px;
   margin-bottom: 45px;
-  display: block;
+  display: flex;
   width: 126px;
   height: 126px;
   background-color: #009cef;
   border-radius: 50%;
+  justify-content: center;
+}
+@media only screen and (max-width: 330px) {
+  .s2 .questions .pdfs .pdf {
+    width: 69px;
+    height: 69px;
+    margin-top: 15px;
+    margin-bottom: 60px;
+  }
 }
 .s2 .questions .pdfs .pdf p {
   font-family: Mont;
@@ -628,13 +914,29 @@ p {
   position: relative;
   margin-top: 100%;
   padding-top: 20px;
-  text-align: center;
+}
+@media only screen and (max-width: 330px) {
+  .s2 .questions .pdfs .pdf p {
+    font-size: 15px;
+  }
 }
 .s2 .questions .pdfs .pdf:nth-child(1) {
   background: url(../imgs/pdf1.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
 }
+@media only screen and (max-width: 330px) {
+  .s2 .questions .pdfs .pdf:nth-child(1) {
+    background-size: 30px 39px, cover;
+    margin-right: 30px;
+  }
+}
 .s2 .questions .pdfs .pdf:nth-child(2) {
   background: url(../imgs/pdf2.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
+}
+@media only screen and (max-width: 330px) {
+  .s2 .questions .pdfs .pdf:nth-child(2) {
+    background-size: 22px 31px, cover;
+    margin-left: 30px;
+  }
 }
 .s2 .questions::before {
   width: 757px;
@@ -651,9 +953,27 @@ p {
   min-height: 1010px;
   background-size: auto 100%;
 }
+@media only screen and (max-width: 330px) {
+  .s3 {
+    background: white;
+    color: black;
+    min-height: auto;
+  }
+  .s3 .wrapper {
+    display: none;
+  }
+}
+.s3 .roadmap {
+  margin-top: 50px;
+}
 .s3 .container {
   flex-direction: column;
   flex-wrap: wrap;
+}
+@media only screen and (max-width: 330px) {
+  .s3 .container {
+    margin-top: 35px;
+  }
 }
 .s3 .fastesy {
   margin-top: 87px;
@@ -673,6 +993,11 @@ p {
   align-items: center;
   margin-bottom: 36px;
   width: 100%;
+}
+@media only screen and (max-width: 330px) {
+  .s3 .gallery2 {
+    display: none;
+  }
 }
 .s3 .gallery2 .schedules {
   height: 228px;
@@ -732,6 +1057,11 @@ p {
   width: 100%;
   flex-direction: column;
 }
+@media only screen and (max-width: 330px) {
+  .s3 .service {
+    order: -1;
+  }
+}
 .s3 .service h2 {
   align-self: flex-start;
 }
@@ -742,6 +1072,12 @@ p {
   margin-top: 37px;
   padding-bottom: 9px;
   border-bottom: 4px solid #009cef;
+}
+@media only screen and (max-width: 330px) {
+  .s3 .service h3 {
+    font-size: 14px;
+    margin-top: 15px;
+  }
 }
 .s3 .service .buttons {
   display: flex;
@@ -764,6 +1100,16 @@ p {
   display: flex;
   border-radius: 15px;
 }
+@media only screen and (max-width: 330px) {
+  .s3 .service .buttons div {
+    font-size: 9px;
+    width: 85px;
+    height: 22px;
+    border-radius: 3px;
+    background-color: #160a57;
+    margin-bottom: 0;
+  }
+}
 .s4 {
   padding-bottom: 50px;
   padding-top: 50px;
@@ -771,8 +1117,19 @@ p {
 .s4 h2 {
   text-align: center;
 }
+@media only screen and (max-width: 330px) {
+  .s4 h2 {
+    text-align: left;
+  }
+}
 .s4 h2 + p {
   text-align: center;
+}
+@media only screen and (max-width: 330px) {
+  .s4 h2 + p {
+    text-align: left;
+    max-width: 200px;
+  }
 }
 .s4 .container {
   justify-content: center;
@@ -781,7 +1138,11 @@ p {
   margin-top: 42px;
   margin-bottom: 60px;
   max-width: 941px;
-  height: 82px;
+}
+@media only screen and (max-width: 330px) {
+  .s4 .commission-level {
+    margin-bottom: 30px;
+  }
 }
 .s4 .commission-level th {
   text-align: left;
@@ -791,9 +1152,31 @@ p {
   font-size: 24px;
   font-weight: 400;
 }
+@media only screen and (max-width: 330px) {
+  .s4 .commission-level th {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .s4 .commission-level tbody tr {
+    font-size: 14px;
+    box-shadow: none;
+    height: 38px;
+  }
+  .s4 .commission-level tbody tr:nth-child(even) {
+    background-color: #f6f5ff;
+  }
+}
 .s4 .commission-level tbody tr {
   box-shadow: 0 5px 13px rgba(40, 126, 255, 0.08);
   height: 82px;
+}
+@media only screen and (max-width: 330px) {
+  .s4 .commission-level tbody tr {
+    font-size: 14px;
+    box-shadow: none;
+    height: 38px;
+  }
 }
 .s4 .commission-level tbody tr td {
   padding-left: 64px;
@@ -801,6 +1184,11 @@ p {
   font-family: Mont;
   font-size: 24px;
   font-weight: 300;
+}
+@media only screen and (max-width: 330px) {
+  .s4 .commission-level tbody tr td {
+    font-size: 14px;
+  }
 }
 .s4 .commission-level tbody tr:first-of-type {
   border-radius: 0 75px 0 0;
@@ -817,6 +1205,23 @@ p {
   align-items: flex-end;
   flex-wrap: wrap;
 }
+@media only screen and (max-width: 330px) {
+  .s4 .tokens {
+    margin-top: 25px;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+  .s4 .tokens .token img:first-child {
+    min-width: 120px;
+    max-width: 120px;
+    height: 157px;
+  }
+  .s4 .tokens .token img:last-child {
+    min-width: 120px;
+    max-width: 120px;
+    height: 181px;
+  }
+}
 .s4 .tokens .token {
   display: flex;
   align-items: flex-end;
@@ -824,14 +1229,34 @@ p {
   max-width: 550px;
   flex-grow: 1;
 }
+@media only screen and (max-width: 330px) {
+  .s4 .tokens .token {
+    margin-bottom: 25px;
+    align-items: flex-start;
+  }
+}
 .s4 .tokens .token ul {
   padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 330px) {
+  .s4 .tokens .token ul {
+    padding-top: 0px;
+    margin-top: 0;
+  }
 }
 .s4 .tokens .token ul li {
   font-family: Mont;
   font-size: 20px;
   font-weight: 400;
-  padding: 0 0 28px 23px;
+  margin: 0 0 28px 23px;
+}
+@media only screen and (max-width: 330px) {
+  .s4 .tokens .token ul li {
+    font-size: 11px;
+    margin: 0 0 7px 10px;
+  }
 }
 .s4 .tokens .token ul li:last-child {
   font-family: "Mont-Semi Bold";
@@ -839,6 +1264,13 @@ p {
   font-weight: 400;
   color: #48b2e3;
   text-transform: uppercase;
+}
+@media only screen and (max-width: 330px) {
+  .s4 .tokens .token ul li:last-child {
+    font-size: 14px;
+    order: -1;
+    margin-bottom: 20px;
+  }
 }
 .s4 .deps {
   display: flex;
@@ -852,19 +1284,41 @@ p {
   display: flex;
   width: 600px;
 }
+@media only screen and (max-width: 330px) {
+  .s4 .deps .deps1 .dep:last-child {
+    font-size: 21px;
+    margin-left: 75px;
+  }
+}
+@media only screen and (max-width: 315px) {
+  .s4 .deps .deps1 .dep:last-child {
+    margin-left: 40px;
+  }
+}
 .s4 .deps .deps1 .dep {
   position: relative;
   display: flex;
   align-items: flex-end;
   margin-left: 80px;
   margin-top: 106px;
-  color: #000000;
   font-family: "Mont-Heavy";
   font-size: 64px;
   font-weight: 400;
 }
+@media only screen and (max-width: 330px) {
+  .s4 .deps .deps1 .dep {
+    font-size: 21px;
+    margin-left: 30px;
+    margin-top: 50px;
+  }
+}
 .s4 .deps .deps1 .dep .dep1 {
   font-size: 102px;
+}
+@media only screen and (max-width: 330px) {
+  .s4 .deps .deps1 .dep .dep1 {
+    font-size: 43px;
+  }
 }
 .s4 .deps .deps1 .dep .dep2 {
   color: #d8e9ff;
@@ -873,6 +1327,13 @@ p {
   z-index: -1;
   top: -45px;
   left: -75px;
+}
+@media only screen and (max-width: 330px) {
+  .s4 .deps .deps1 .dep .dep2 {
+    font-size: 49px;
+    left: -30px;
+    top: -20px;
+  }
 }
 .s4 .deps .deps1:nth-child(even) {
   margin-right: -30px;
@@ -950,14 +1411,23 @@ p {
   width: 913px;
   height: 226px;
 }
-.last .popup {
+.last .popup.back {
   position: fixed;
   z-index: 10;
   top: 50%;
   transform: translate(0, -50%);
   display: none;
 }
-.last .popup .buy {
+@media only screen and (max-width: 330px) {
+  .last .popup.back {
+    width: 290px;
+    height: 267px;
+    box-shadow: 1px 4px 35px rgba(0, 0, 0, 0.67);
+    border-radius: 10px;
+    background: #ffffff;
+  }
+}
+.last .popup.back .buy {
   background: url(../imgs/form2.png) no-repeat 50% 50%;
   width: 878px;
   height: 326px;
@@ -965,14 +1435,14 @@ p {
   vertical-align: middle;
   padding: 40px 100px;
 }
-.last .popup .buy h2 {
+.last .popup.back .buy h2 {
   font-family: Mont;
   font-size: 30px;
   font-weight: 700;
   line-height: 35px;
   margin-bottom: 15px;
 }
-.last .popup .buy .key {
+.last .popup.back .buy .key {
   box-shadow: 0 1px 9px rgba(0, 0, 0, 0.08);
   background-color: rgba(13, 98, 224, 0.03);
   font-family: "Myriad Pro";
@@ -982,30 +1452,123 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
-.last .popup .buy .exchange {
+.last .popup.back .buy .exchange {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
 }
-.last .popup .buy .exchange .rate {
+.last .popup.back .buy .exchange .rate {
   font-family: "Myriad Pro";
   font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
 }
-.last .popup .buy .exchange .min {
+.last .popup.back .buy .exchange .min {
   color: #7d7d7d;
   font-family: "Myriad Pro";
   font-size: 20px;
   font-weight: 400;
 }
-.last .popup .buy form [type="button"] {
+.last .popup.back .buy form [type="button"] {
   width: 264px;
   height: 47px;
   border-radius: 0 10px 10px 0;
 }
-.last .popup .buy form [type="email"] {
+.last .popup.back .buy form [type="email"] {
   border-radius: 10px 0 0 10px;
+}
+@media only screen and (max-width: 330px) {
+  .last .popup.back .buy {
+    width: 100%;
+    height: 100%;
+    color: black;
+    padding: 23px;
+  }
+  .last .popup.back .buy h2 {
+    font-family: Mont;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+  .last .popup.back .buy .key {
+    width: 290px;
+    height: 14px;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+    font-weight: 400;
+    transform: translate(-23px, 0);
+  }
+  .last .popup.back .buy .exchange {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .last .popup.back .buy .exchange .rate {
+    font-family: "Myriad Pro";
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  .last .popup.back .buy .exchange .minimum {
+    color: #7d7d7d;
+    font-family: "Myriad Pro";
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+  .last .popup.back .buy form [type="button"] {
+    width: 251px;
+    height: 34px;
+    border-radius: 5px;
+    background-image: linear-gradient(11deg, #009cef 0%, #00d7ee 100%);
+  }
+  .last .popup.back .buy form [type="email"] {
+    width: 250px;
+    height: 33px;
+    border-radius: 5px;
+    border: 1px solid #e8e8e8;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .last {
+    height: 195px;
+    color: white;
+  }
+  .last .back {
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .last .back .buy {
+    background: linear-gradient(to top, #0b1362 0%, #2433b8 100%);
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 20px 15px 35px;
+    align-items: flex-start;
+  }
+  .last .back .buy p {
+    font-family: Mont;
+    line-height: 16px;
+    max-width: 150px;
+  }
+  .last .back .buy form {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+  .last .back .buy form input {
+    width: 100%;
+    height: 30px;
+    border-radius: 7px 2px 2px 7px;
+    margin-bottom: 10px;
+  }
+  .last .back .buy form [type="button"] {
+    font-size: 14px;
+  }
+  .last .back .buy form [type="email"] {
+    font-size: 11px;
+  }
 }
 .wrapper {
   display: flex;

@@ -83,7 +83,7 @@
 }
 
 @font-face {
-	font-family: "Mont - Heavy";
+	font-family: "Mont-Heavy";
 	src: url('../fonts/Mont-Heavy.ttf') format("truetype");
 	src: url('../fonts/Mont-Heavy.woff') format("woff");
 	font-weight: 400;
@@ -97,6 +97,7 @@
 	font: inherit;
 	box-sizing: border-box;
 }
+
 body {
 	line-height: 1;
 	display: flex;
@@ -104,17 +105,21 @@ body {
 	flex-wrap: wrap;
 	align-items: center;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 a {
 	text-decoration: none;
 	color:inherit;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 *::before,
 *::after {
 	content: '';
@@ -123,6 +128,34 @@ table {
 	box-sizing: border-box;
 }
 
+h2 {
+	font-family: Mont;
+	font-size: 45px;
+	font-weight: 700;
+
+	@media only screen and (max-width: 330px) {
+		font-size: 20px;
+		//margin: 10px 0;
+	}
+}
+p {
+	font-family: "Mont-Book";
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 26px;
+	margin-top: 23px;
+
+	@media only screen and (max-width: 330px) {
+		font-size: 13px;
+		font-weight: 300;
+		line-height: 19px;
+		margin: 10px 0;
+	}
+}
+
+.mobile {
+	display: none;
+}
 .s {
 	width: 100%;
 	//min-width: 1920px;
@@ -130,6 +163,7 @@ table {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: flex-start;
 }
 .container {
 	display: flex;
@@ -139,20 +173,22 @@ table {
 	padding: 0 390px;
 	transition: 0.3s;
 	//max-width: 1140px;
-	margin: auto;
+	margin: 0 auto;
 }
 
+
+
 @media only screen and (max-width: 1660px) {
-    body {
+    //body {
 		.container {
 	        padding: 0 150px;
 			//max-width: 1360px;
 		}
-    }
+    //}
 }
 
 @media only screen and (max-width: 1200px) {
-    body {
+    //body {
 		.container {
 	        padding: 0 50px;
 			//max-width: 1100px;
@@ -166,7 +202,18 @@ table {
 				}
 			}
 		}
-    }
+    //}
+}
+
+@media only screen and (max-width: 330px) {
+    //body {
+		.container {
+	        padding: 0 15px;
+			.mobile {
+				display: block;
+			}
+		}
+    //}
 }
 
 .header,
@@ -181,14 +228,62 @@ table {
 	}
 }
 .header {
+	@media only screen and (max-width: 330px) {
+		min-height: 55px;
+		align-items: flex-end;
+		border: none;
+
+		.nav {
+			width: 23px;
+			height: 23px;
+			background-image: url(../imgs/nav-m.png);
+		}
+	}
+
 	min-height: 92px;
-	//margin: 0 auto;
 	border-bottom: 2px solid #232070;
 }
 
 .footer {
+	@media only screen and (max-width: 330px) {
+		.container {
+			flex-direction: column;
+			padding-top: 20px;
+			padding-bottom: 10px;
+		}
+	}
+
 	min-height: 72px;
 	margin: 0 auto;
+	background-color: #fbfbff;
+	.copyright {
+		margin: 15px 0 25px;
+	}
+	.nav-m {
+		display: flex;
+		ul:first-child {
+			margin-right: 45px;
+		}
+		ul {
+			display: flex;
+			flex-direction: column;
+			a:not(:first-of-type) li {
+				color: #626262;
+				font-family: Mont;
+				font-size: 11px;
+				font-weight: 300;
+				margin-bottom: 10px;
+			}
+			a:first-of-type li {
+				font-family: Mont;
+				font-size: 13px;
+				font-weight: 400;
+				margin-bottom: 15px;
+			}
+
+		}
+
+	}
 }
 
 .s1 {
@@ -199,6 +294,10 @@ table {
 	background-position: 0 100%, center;
 	background-size: auto, cover;
 	max-width: 1920px;
+	@media only screen and (max-width: 330px) {
+		min-height: auto;
+		padding-bottom: 20px;
+	}
 }
 
 
@@ -211,12 +310,23 @@ table {
 .logo {
 	display: flex;
 	align-items: center;
+
+	img {
+		@media only screen and (max-width: 330px) {
+			width: 20px;
+			height: 20px;
+		}
+	}
 	p {
 		font-family: 'Codec Cold Logo';
 		font-size: 27px;
 		font-style: italic;
 		text-transform: uppercase;
 		margin: 0 12px 0;
+
+		@media only screen and (max-width: 330px) {
+			font-size: 17px;
+		}
 	}
 }
 
@@ -224,6 +334,10 @@ table {
 	display: flex;
 
 	ul {
+		@media only screen and (max-width: 330px) {
+			display: none;
+		}
+
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-end;
@@ -268,27 +382,22 @@ table {
 	}
 }
 
-h2 {
-	font-family: Mont;
-	font-size: 45px;
-	font-weight: 700;
-}
-p {
-	font-family: "Mont-Book";
-	font-size: 24px;
-	font-weight: 400;
-	line-height: 26px;
-	margin-top: 23px;
-}
 
 .main {
-
 	.description {
+		@media only screen and (max-width: 330px) {
+			margin-top: 40px;
+		}
 		display: flex;
 		justify-content: space-around;
 		flex-wrap: wrap;
 		width: 100%;
 		.platform {
+			@media only screen and (max-width: 330px) {
+				margin-top: 0px;
+				margin-right: 0;
+			}
+
 			margin-top: 188px;
 			margin-right: 70px;
 			flex-basis: 10px;
@@ -298,8 +407,17 @@ p {
 				font-size: 20px;
 				font-weight: 300;
 				line-height: 26px;
+				@media only screen and (max-width: 330px) {
+					font-size: 13px;
+					font-weight: 300;
+					line-height: 18px;
+				}
 			}
 			.socials {
+				@media only screen and (max-width: 330px) {
+					display: none;
+				}
+
 				margin-top: 36px;
 				display: flex;
 				a {
@@ -325,6 +443,13 @@ p {
 			}
 		}
 		.buyform {
+			@media only screen and (max-width: 330px) {
+				margin-top: 5px;
+				font-size: 10px;
+				height: auto;
+				padding-bottom: 15px;
+				padding-top: 15px;
+			}
 			margin-top: 188px;
 			background-color: rgba(14, 0, 79, 0.5);
 			width: 420px;
@@ -332,11 +457,19 @@ p {
 			padding-top: 27px;
 			text-align: center;
 			h2 {
+				@media only screen and (max-width: 330px) {
+					display: none;
+				}
+
 				font-family: "Mont-Semi Bold";
 				font-size: 27px;
 				font-weight: 400;
 			}
 			.endtime {
+				@media only screen and (max-width: 330px) {
+					display: none;
+				}
+
 				display: flex;
 				justify-content: space-between;
 				padding: 22px 78px 49px;
@@ -370,6 +503,10 @@ p {
 				}
 			}
 			.amount {
+				@media only screen and (max-width: 330px) {
+					//width: 244px;
+				}
+
 				text-align: left;
 				padding: 0 60px;
 				p {
@@ -407,6 +544,11 @@ p {
 			   }
 			}
 			.buynow {
+				@media only screen and (max-width: 330px) {
+					//width: 244px;
+					border-radius: 5px;
+				}
+
 				width: 264px;
 				height: 47px;
 				border-radius: 23px;
@@ -431,6 +573,11 @@ p {
 		}
 	}
 	.advantages {
+		@media only screen and (max-width: 330px) {
+			margin-top: 55px;
+			margin-bottom: 60px;
+		}
+
 		margin-top: 133px;
 		position: relative;
 		margin-bottom: 105px;
@@ -445,12 +592,20 @@ p {
 				// flex-shrink: 0;
 				position: relative;
 				h3 {
+					@media only screen and (max-width: 330px) {
+						font-size: 16px;
+					}
+
 					font-family: "Mont-Semi Bold";
 					font-size: 19px;
 					font-weight: 400;
 					margin-bottom: 10px;
 				}
 				p {
+					@media only screen and (max-width: 330px) {
+						font-size: 13px;
+					}
+
 					font-family: Mont;
 					font-size: 16px;
 					font-weight: 300;
@@ -487,9 +642,22 @@ p {
 		top: 0;
 	}
 	.justlook {
+		@media only screen and (max-width: 330px) {
+			flex-direction: column;
+
+		}
+
 		display: flex;
 		flex-wrap: wrap;
 		.left {
+			@media only screen and (max-width: 330px) {
+				width: 256px;
+				height: 258px;
+				background-size: contain;
+				margin-right: 0;
+				align-self: center;
+			}
+
 			background: url(../imgs/justlook.png) no-repeat;
 			width: 602px;
 			height: 609px;
@@ -497,11 +665,18 @@ p {
 			margin-right: 55px;
 		}
 		.right {
+			@media only screen and (max-width: 330px) {
+				margin-top: auto;
+				order: -1;
+				margin-bottom: 20px;
+			}
+
 			margin-top: 115px;
 			flex-basis: 200px;
 			flex-grow: 1;
 			margin-bottom: 100px;
 			.three-random-words {
+				line-height: 20px;
 				height: 30px;
 				color: #00d7ee;
 				background-image: linear-gradient(-225deg, #00d7ee 0%, #009cef 100%), -webkit-linear-gradient(-225deg, #00d7ee 0%, #009cef 100%);
@@ -517,6 +692,11 @@ p {
 	}
 
 	.cantsee {
+		@media only screen and (max-width: 330px) {
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
 		position: relative;
 		display: flex;
 		justify-content: space-between;
@@ -524,38 +704,62 @@ p {
 			line-height: 60px;
 		}
 		.youcantsee {
+			@media only screen and (max-width: 330px) {
+				margin: 0 auto;
+				width: auto;
+				text-align: center;
+			}
 			margin-right: -80px;
 			width: 450px;
 			flex-shrink: 0;
 		}
-	}
+		.scheme {
+			@media only screen and (max-width: 330px) {
+				top: 0;
+				background: url(../imgs/scheme-m.png) no-repeat;
+				width: 291px;
+				height: 368px;
+			}
+			position: relative;
+			//align-self: flex-end;
+			background-image: url(../imgs/scheme.png);
+			background-repeat: no-repeat;
+			width: 787px;
+			height: 789px;
+			top: -90px;
+			flex-shrink: 0;
 
-	.scheme {
-		position: relative;
-		//align-self: flex-end;
-		background-image: url(../imgs/scheme.png);
-		background-repeat: no-repeat;
-		width: 787px;
-		height: 789px;
-		top: -90px;
-		flex-shrink: 0;
-
+		}
 	}
 }
 
 .s2 {
+	@media only screen and (max-width: 330px) {
+		background-color: #f6f5ff;
+	}
+
 	padding-top: 55px;
 	h2 {
 		max-width: 550px;
 	}
 	h3 {
+		@media only screen and (max-width: 330px) {
+			font-size: 13px;
+			letter-spacing: 0.05px;
+			margin-top: 10px;
+		}
+
 		font-family: "Mont-Semi Bold";
 		font-size: 26px;
 		font-weight: 400;
 		margin-top: 34px
 	}
 	p {
-		color: #000000;
+		@media only screen and (max-width: 330px) {
+			font-size: 13px;
+			margin: 10px 0 5px;
+			line-height: 16px;
+		}
 		font-family: "Mont-Book";
 		font-size: 24px;
 		font-weight: 400;
@@ -563,6 +767,12 @@ p {
 		margin-top: 15px;
 	}
 	.gallery1 {
+		@media only screen and (max-width: 330px) {
+			margin: 0;
+			margin-bottom: 20px;
+			background-color: #f6f5ff;
+		}
+
 		margin: 28px auto 45px;
 		position: relative;
 		display: flex;
@@ -571,6 +781,9 @@ p {
 		width: 100%;
 		align-items: stretch;
 		.slides {
+			@media only screen and (max-width: 330px) {
+				width: 320px;
+			}
 			margin: auto;
 			width: 1920px;
 			overflow: hidden;
@@ -659,6 +872,9 @@ p {
 			}
 		}
 		.slide {
+			@media only screen and (max-width: 330px) {
+				width: 206px;
+			}
 			height: 100%;
 			transition: 0.5s;
 			display: flex;
@@ -668,6 +884,12 @@ p {
 			img {
 				box-sizing: content-box;
 				padding: 0 70px;
+
+				@media only screen and (max-width: 330px) {
+					width: 193px;
+					height: 160px;
+					padding: 0 13px;
+				}
 			}
 		}
 		#btn-1:checked ~ .controls label[for="btn-1"],
@@ -690,6 +912,13 @@ p {
 	}
 
 	.phones {
+		@media only screen and (max-width: 330px) {
+			margin: 0;
+			margin-bottom: 15px;
+			display: none;
+
+		}
+
 		display: flex;
 		justify-content: space-around;
 		width: 100%;
@@ -702,46 +931,88 @@ p {
 		}
 	}
 	.questions {
+		@media only screen and (max-width: 330px) {
+			background-color: white;
+			box-sizing: content-box;
+			padding: 0 15px;
+			width: 100%;
+			transform: translate(-15px, 0);
+			text-align: center;
+			padding-top: 15px;
+		}
+
 		padding-top: 103px;
 		width: 490px;
 		position: relative;
 		h2 {
+			@media only screen and (max-width: 330px) {
+				font-size: 20px;
+			}
+
 			font-family: Mont;
 			font-size: 50px;
 			font-weight: 700;
 		}
 		p {
+			@media only screen and (max-width: 330px) {
+				font-size: 13px;
+			}
+
 			font-family: "Mont-Book";
 			font-size: 27px;
 			font-weight: 400;
 		}
 		.pdfs {
+			@media only screen and (max-width: 330px) {
+				padding: 0;
+				justify-content: center;
+			}
+
 			display: flex;
 			justify-content: space-between;
 			padding: 0px 84px 110px;
 			flex-wrap: wrap;
 			.pdf {
+				@media only screen and (max-width: 330px) {
+					width: 69px;
+					height: 69px;
+					margin-top: 15px;
+					margin-bottom: 60px;
+				}
 				margin-top: 30px;
 				margin-bottom: 45px;
-				display: block;
+				display: flex;
 				width: 126px;
 				height: 126px;
 				background-color: #009cef;
 				border-radius: 50%;
+				justify-content: center;
 				p {
+					@media only screen and (max-width: 330px) {
+						font-size: 15px;
+					}
+
 					font-family: Mont;
 					font-size: 24px;
 					font-weight: 700;
 					position: relative;
 					margin-top: 100%;
 					padding-top: 20px;
-					text-align: center;
 				}
 			}
 			.pdf:nth-child(1) {
+				@media only screen and (max-width: 330px) {
+					background-size: 30px 39px, cover;
+					margin-right: 30px;
+				}
+
 				background: url(../imgs/pdf1.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
 			}
 			.pdf:nth-child(2) {
+				@media only screen and (max-width: 330px) {
+					background-size: 22px 31px, cover;
+					margin-left: 30px;
+				}
 				background: url(../imgs/pdf2.png) no-repeat center, linear-gradient(to top, #009cef 0%, #00d7ee 100%);
 			}
 		}
@@ -758,12 +1029,29 @@ p {
 }
 
 .s3 {
+	@media only screen and (max-width: 330px) {
+		background: white;
+		color: black;
+		min-height: auto;
+		.wrapper {
+			display: none;
+		}
+	}
+
+	.roadmap {
+		margin-top: 50px;
+	}
+	//justify-content: flex-start;
 	background-image: url(../imgs/bg-s3.png);
 	background-repeat: no-repeat;
 	background-position: 50% 0%;
 	min-height: 1010px;
 	background-size: auto 100%;
 	.container {
+		@media only screen and (max-width: 330px) {
+			margin-top: 35px;
+		}
+
 		flex-direction: column;
 		flex-wrap: wrap;
 	}
@@ -781,6 +1069,10 @@ p {
 		}
 	}
 	.gallery2 {
+		@media only screen and (max-width: 330px) {
+			display: none;
+		}
+
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -840,11 +1132,20 @@ p {
 		}
 	}
 	.service {
+		@media only screen and (max-width: 330px) {
+			order: -1;
+		}
+
 		.wrapper;
 		h2 {
 			align-self: flex-start;
 		}
 		h3 {
+			@media only screen and (max-width: 330px) {
+				font-size: 14px;
+				margin-top: 15px;
+			}
+
 			font-family: "Mont-Semi Bold";
 			font-size: 30px;
 			font-weight: 400;
@@ -853,12 +1154,24 @@ p {
 			border-bottom: 4px solid #009cef;
 		}
 		.buttons {
+			@media only screen and (max-width: 330px) {
+
+			}
+
 			display: flex;
 			justify-content: space-around;
 			margin-top: 25px;
 			flex-wrap: wrap;
 			width: 100%;
 			div {
+				@media only screen and (max-width: 330px) {
+					font-size: 9px;
+					width: 85px;
+					height: 22px;
+					border-radius: 3px;
+					background-color: #160a57;
+					margin-bottom: 0;
+				}
 				width: 291px;
 				height: 77px;
 				background-color: rgba(22, 10, 87, 0.2);
@@ -878,8 +1191,16 @@ p {
 
 .s4 {
 	h2 {
+		@media only screen and (max-width: 330px) {
+			text-align: left;
+		}
+
 		text-align: center;
 		+ p {
+			@media only screen and (max-width: 330px) {
+				text-align: left;
+				max-width: 200px;
+			}
 			text-align: center;
 		}
 	}
@@ -889,11 +1210,18 @@ p {
 	padding-bottom: 50px;
 	padding-top: 50px;
 	.commission-level {
+		@media only screen and (max-width: 330px) {
+			margin-bottom: 30px;
+		}
+
 		margin-top: 42px;
 		margin-bottom: 60px;
 		max-width: 941px;
-		height: 82px;
 		th {
+			@media only screen and (max-width: 330px) {
+				font-size: 14px;
+			}
+
 			text-align: left;
 			padding-left: 64px;
 			padding-right: 64px;
@@ -902,10 +1230,29 @@ p {
 			font-weight: 400;
 		}
 		tbody {
+			@media only screen and (max-width: 330px) {
+				tr {
+					font-size: 14px;
+					box-shadow: none;
+					height: 38px;
+				}
+				tr:nth-child(even) {
+					background-color: #f6f5ff;
+				}
+			}
 			tr {
+				@media only screen and (max-width: 330px) {
+					font-size: 14px;
+					box-shadow: none;
+					height: 38px;
+				}
+
 				box-shadow: 0 5px 13px rgba(40, 126, 255, 0.08);
 				height: 82px;
 				td {
+					@media only screen and (max-width: 330px) {
+						font-size: 14px;
+					}
 					padding-left: 64px;
 					width: 33%;
 					font-family: Mont;
@@ -923,6 +1270,23 @@ p {
 	}
 
 	.tokens {
+		@media only screen and (max-width: 330px) {
+			margin-top: 25px;
+			align-content: flex-start;
+			align-items: flex-start;
+
+			.token img:first-child {
+				min-width: 120px;
+				max-width: 120px;
+				height: 157px;
+			}
+			.token img:last-child {
+				min-width: 120px;
+				max-width: 120px;
+				height: 181px;
+			}
+		}
+
 		margin-top: 35px;
 		margin-bottom: 14px;
 		display: flex;
@@ -931,20 +1295,42 @@ p {
 		align-items: flex-end;
 		flex-wrap: wrap;
 		.token {
+			@media only screen and (max-width: 330px) {
+				margin-bottom: 25px;
+				align-items: flex-start;
+			}
+
 			display: flex;
 			align-items: flex-end;
 			flex-basis: 450px;
 			max-width: 550px;
 			flex-grow: 1;
-				ul {
+			ul {
+				@media only screen and (max-width: 330px) {
+					padding-top: 0px;
+					margin-top: 0;
+				}
+
 				padding-top: 70px;
+				display: flex;
+				flex-direction: column;
 				li {
+					@media only screen and (max-width: 330px) {
+						font-size: 11px;
+						margin: 0 0 7px 10px;
+					}
+
 					font-family: Mont;
 					font-size: 20px;
 					font-weight: 400;
-					padding: 0 0 28px 23px;
+					margin: 0 0 28px 23px;
 				}
 				li:last-child {
+					@media only screen and (max-width: 330px) {
+						font-size: 14px;
+						order: -1;
+						margin-bottom: 20px;
+					}
 					font-family: "Mont-Semi Bold";
 					font-size: 24px;
 					font-weight: 400;
@@ -964,20 +1350,44 @@ p {
 			align-items: flex-start;
 			display: flex;
 			width: 600px;
+			.dep:last-child {
+				@media only screen and (max-width: 330px) {
+					font-size: 21px;
+					margin-left: 75px;
+				}
+				@media only screen and (max-width: 315px) {
+					margin-left: 40px;
+				}
+			}
 			.dep {
+				@media only screen and (max-width: 330px) {
+					font-size: 21px;
+					margin-left: 30px;
+					margin-top: 50px;
+				}
+
 				position: relative;
 				display: flex;
 				align-items: flex-end;
 				margin-left: 80px;
 				margin-top: 106px;
-				color: #000000;
 				font-family: "Mont-Heavy";
 				font-size: 64px;
 				font-weight: 400;
 				.dep1 {
+					@media only screen and (max-width: 330px) {
+						font-size: 43px;
+					}
+
 					font-size: 102px;
 				}
 				.dep2 {
+					@media only screen and (max-width: 330px) {
+						font-size: 49px;
+						left: -30px;
+						top: -20px;
+					}
+
 					color: #d8e9ff;
 					font-size: 117px;
 					position: absolute;
@@ -990,6 +1400,8 @@ p {
 
 		}
 		.deps1:nth-child(even) {
+
+
 			margin-right: -30px;
 			margin-left: auto;
 			width: 500px;
@@ -1069,7 +1481,15 @@ p {
 		width: 913px;
 		height: 226px;
 	}
-	.popup {
+	.popup.back {
+		@media only screen and (max-width: 330px) {
+			width: 290px;
+			height: 267px;
+			box-shadow: 1px 4px 35px rgba(0, 0, 0, 0.67);
+			border-radius: 10px;
+			background: #ffffff;
+		}
+
 		position: fixed;
 		z-index: 10;
 		top: 50%;
@@ -1125,6 +1545,101 @@ p {
 				}
 				[type="email"] {
 					border-radius: 10px 0 0 10px;
+				}
+			}
+
+			@media only screen and (max-width: 330px) {
+				width: 100%;
+				height: 100%;
+				color: black;
+				padding: 23px;
+				h2 {
+					font-family: Mont;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 22px;
+				}
+				.key {
+					width: 290px;
+					height: 14px;
+					font-family: "Myriad Pro";
+					font-size: 14px;
+					font-weight: 400;
+					transform: translate(-23px, 0);
+				}
+				.exchange {
+					flex-direction: column;
+					align-items: flex-start;
+					.rate {
+						font-family: "Myriad Pro";
+						font-size: 12px;
+						font-weight: 400;
+						text-transform: uppercase;
+					}
+					.minimum {
+						color: #7d7d7d;
+						font-family: "Myriad Pro";
+						font-size: 12px;
+						font-weight: 400;
+						margin-top: 5px;
+					}
+				}
+
+				form {
+					[type="button"] {
+						width: 251px;
+						height: 34px;
+						border-radius: 5px;
+						background-image: linear-gradient(11deg, #009cef 0%, #00d7ee 100%);
+					}
+					[type="email"] {
+						width: 250px;
+						height: 33px;
+						border-radius: 5px;
+						border: 1px solid #e8e8e8;
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: 330px) {
+		height: 195px;
+		color: white;
+		.back {
+			box-shadow: none;
+			border-radius: 0;
+			width: 100%;
+			height: 100%;
+			.buy {
+				background: linear-gradient(to top, #0b1362 0%, #2433b8 100%);
+				width: 100%;
+				height: 100%;
+				border-radius: 0;
+				padding: 20px 15px 35px;
+				align-items: flex-start;
+				 p {
+					 font-family: Mont;
+					 line-height: 16px;
+					 max-width: 150px;
+				 }
+				form {
+					width: 100%;
+					flex-direction: column;
+					margin-top: 5px;
+					input {
+						width: 100%;
+						height: 30px;
+						border-radius: 7px 2px 2px 7px;
+						margin-bottom: 10px;
+						//border: 1px solid #e8e8e8;
+					}
+					[type="button"] {
+						font-size: 14px;
+					}
+					[type="email"] {
+						font-size: 11px;
+					}
 				}
 			}
 		}
