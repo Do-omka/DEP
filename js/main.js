@@ -183,4 +183,59 @@ document.addEventListener('DOMContentLoaded', function(){
 	});
 
 
-});
+//gallery1 swipes
+handleGalleryTouchStart = function(e) {
+    xDown =e.changedTouches[0].clientX;
+};
+
+handleGalleryTouchMove = function(e) {
+    if ( ! xDown) {
+        return;
+    }
+
+    var xUp = e.changedTouches[0].clientX;
+
+
+    var xDiff = xDown - xUp;
+
+    //if(Math.abs( xDiff ) > 0)
+        if (xDiff > 0 )
+		document.querySelector('.gallery .controls .next').dispatchEvent(new Event('click'));
+            //alert('лево');
+         else
+		 document.querySelector('.gallery .controls .prev').dispatchEvent(new Event('click'));
+            //alert('право');
+    xDown = null;
+
+	};
+
+	var xDown = null;
+
+	document.querySelector('.gallery .slides').addEventListener('touchstart', handleGalleryTouchStart);
+	document.querySelector('.gallery .slides').addEventListener('touchmove', handleGalleryTouchMove);
+
+	//gallery-m swipes
+	handleGalleryMTouchStart = function(e) {
+	    xDown =e.changedTouches[0].clientX;
+	};
+
+	handleGalleryMTouchMove = function(e) {
+	    if ( ! xDown) {
+	        return;
+	    }
+	    var xUp = e.changedTouches[0].clientX;
+	    var xDiff = xDown - xUp;
+
+	    //if(Math.abs( xDiff ) > 0)
+	        if (xDiff > 0 )
+			document.querySelector('.gallery-m .controls .next').dispatchEvent(new Event('click'));
+	            //alert('лево');
+	         else
+			 document.querySelector('.gallery-m .controls .prev').dispatchEvent(new Event('click'));
+	            //alert('право');
+	    xDown = null;
+		};
+
+		document.querySelector('.gallery-m .slides').addEventListener('touchstart', handleGalleryMTouchStart);
+		document.querySelector('.gallery-m .slides').addEventListener('touchmove', handleGalleryMTouchMove);
+ });
