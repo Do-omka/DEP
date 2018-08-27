@@ -1,4 +1,10 @@
 @font-face {
+  font-family: "Myriad Pro";
+  src: url('../fonts/MyriadPro-Regular.ttf') format("truetype");
+  src: url('../fonts/MyriadPro-Regular.woff') format("woff");
+  font-weight: 400;
+}
+@font-face {
   font-family: Mont;
   src: url('../fonts/Mont-Regular.ttf') format("truetype");
   src: url('../fonts/Mont-Regular.woff') format("woff");
@@ -262,6 +268,7 @@ p {
     font-size: 13px;
     font-weight: 400;
     margin-bottom: 15px;
+    text-transform: uppercase;
   }
 }
 .s1 {
@@ -1655,6 +1662,11 @@ p {
   vertical-align: middle;
   padding: 40px 100px;
 }
+@media only screen and (max-width: 450px) {
+  .last .popup.back .buy {
+    border-radius: 10px;
+  }
+}
 .last .popup.back .buy h2 {
   font-family: Mont;
   font-size: 30px;
@@ -1787,6 +1799,7 @@ p {
     font-size: 14px;
   }
   .last .back .buy form [type="email"] {
+    padding-left: 15px;
     font-size: 11px;
   }
 }

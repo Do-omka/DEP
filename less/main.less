@@ -1,5 +1,10 @@
 // out: ../css/main.css, compress: false
-
+@font-face {
+	font-family: "Myriad Pro";
+	src: url('../fonts/MyriadPro-Regular.ttf') format("truetype");
+	src: url('../fonts/MyriadPro-Regular.woff') format("woff");
+	font-weight: 400;
+}
 
 @font-face {
 	font-family: Mont;
@@ -303,6 +308,7 @@ p {
 						font-size: 13px;
 						font-weight: 400;
 						margin-bottom: 15px;
+						text-transform: uppercase;
 					}
 
 				}
@@ -1626,6 +1632,9 @@ p {
 		transform: translate(0, -50%);
 		display: none;
 		.buy {
+			@media only screen and (max-width: 450px) {
+				border-radius: 10px;
+			}
 			background: url(../imgs/form2.png) no-repeat 50% 50%;
 			width: 878px;
 			height: 326px;
@@ -1768,6 +1777,7 @@ p {
 						font-size: 14px;
 					}
 					[type="email"] {
+						padding-left: 15px;
 						font-size: 11px;
 					}
 				}
