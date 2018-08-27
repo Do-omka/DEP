@@ -94,6 +94,10 @@ input:active {
   border: none;
   outline: none;
 }
+input:focus {
+  border: none;
+  outline: none;
+}
 body {
   line-height: 1;
   display: flex;
