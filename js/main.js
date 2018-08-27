@@ -1,6 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function(){
-	var btn1 = document.getElementById("btn-1"),
+	var mobileWidth = 450,
+	btn1 = document.getElementById("btn-1"),
 	btn2 = document.getElementById("btn-2"),
 	btn3 = document.getElementById("btn-3"),
 	btn11 = document.getElementById("btn-11"),
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	nextSlide,
 	nextPhone;
 
-// screen slider
+	// screen slider
 	btn1.addEventListener('change', function() {
 		if (btn1.checked === true) {
 			clearTimeout(nextSlide);
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 	});
 
-//roadmap slider
+	//roadmap slider
 	var roadmap = 1;
 	document.querySelector('.roadmap .controls .prev').addEventListener('click', function() {
 		if (roadmap == 2) {
@@ -82,20 +83,51 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 	});
 
+	//show popup
 	document.querySelector('.buynow').addEventListener('click', function(event) {
-		console.log(document.querySelector('.last .back.popup').style.display = 'block');
+		document.querySelector('.back.popup').style.display = 'block';
 		event.stopPropagation();
 	});
 
+	//hide popup
+	document.addEventListener('click', function() {
+	    document.querySelector('.popup').style.display = "none";
+		if (screen.width <= mobileWidth) {
+			document.querySelector('.nav .expand + ul').style.display = 'none';
+		}
+	});
+	document.querySelector(".popup").addEventListener('click', function(event) {
+		event.stopPropagation();
+	});
+
+	//hide popup
 	document.addEventListener('click', function() {
 	    document.querySelector('.popup').style.display = "none";
 	});
+	document.querySelector(".back.popup [type='button']").addEventListener('click', function(event) {
+		document.querySelector('.back.popup').style.display = 'none';
+		event.stopPropagation();
+	});
 
-	document.querySelector(".popup").addEventListener('click', function(event) {
+	//show mobile menu
+	document.querySelector('.nav .expand').addEventListener('click', function() {
+		if (document.querySelector('.nav .expand + ul').style.display !== 'flex') {
+			document.querySelector('.nav .expand + ul').style.display = 'flex';
+		} else {
+			document.querySelector('.nav .expand + ul').style.display = 'none';
+		}
+	});
+	//hide mobile menu
+	if (screen.width <= mobileWidth) {
+		document.addEventListener('click', function() {
+			document.querySelector('.nav .expand + ul').style.display = 'none';
+			});
+	}
+	document.querySelector('.header .nav').addEventListener('click', function(event) {
 	    event.stopPropagation();
 	});
 
-//mobile phones slider
+	//mobile phones slider
 	btn11.addEventListener('change', function() {
 		if (btn11.checked === true) {
 			clearTimeout(nextPhone);
@@ -150,12 +182,5 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 	});
 
-//mobile menu toggle
-	document.querySelector('.nav .expand').addEventListener('click', function() {
-		if (document.querySelector('.nav .expand + ul').style.display !== 'flex') {
-			document.querySelector('.nav .expand + ul').style.display = 'flex';
-		} else {
-			document.querySelector('.nav .expand + ul').style.display = 'none';
-		}
-	});
+
 });
