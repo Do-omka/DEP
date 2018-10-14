@@ -1,52 +1,61 @@
+'use strict'
 const
 	gulp = require('gulp')
-	sourcemaps = require('gulp-sourcemaps')
-	postcss = require('gulp-postcss')
-	less = require('gulp-less')
-	imagemin = require('gulp-imagemin')
-	htmlmin = require('gulp-htmlmin')
-	jsmin = require('gulp-uglify')
-	pump = require('pump')
-	// livereload = require('gulp-livereload')
+	,sourcemaps = require('gulp-sourcemaps')
+	,postcss = require('gulp-postcss')
+	,less = require('gulp-less')
+	,imgmin = require('gulp-imagemin')
+	,htmlmin = require('gulp-htmlmin')
+	,jsmin = require('gulp-uglify')
+	,pump = require('pump')
+	,concat = require('gulp-concat')
 
 function mincss() {
 	const processors = [
-		prefix = require('autoprefixer'),
-		csso = require('postcss-csso')
+		require('autoprefixer')
+		,require('postcss-csso')
+		,require('postcss-focus')
 	]
-	return gulp.src('less/*.less')
+	return gulp.src('src/less/*.less')
 		.pipe(sourcemaps.init())
 		.pipe(sourcemaps.identityMap())
 		.pipe(less())
 		.pipe(postcss(processors))
-		.pipe(sourcemaps.write('', {includeContent: false, sourceRoot: 'less'}))
-		.pipe(gulp.dest('css'))
-		// .pipe(livereload({ start: true }))
+		.pipe(sourcemaps.write('', {includeContent: false, sourceRoot: 'src/less'}))
+		.pipe(gulp.dest('docs/css'))
 }
 
-gulp.task('minhtml', () => {
-	return gulp.src('dev/*.html')
+function minhtml () {
+	return gulp.src('src/*.html')
 	.pipe(htmlmin({ collapseWhitespace: true }))
-	.pipe(gulp.dest('prod'));
-});
+	.pipe(gulp.dest('docs'))
+}
 
-gulp.task(function watchcss() {
-	gulp.watch('less/*.less', mincss)
+function watchcss() {
+	return gulp.watch('src/less/*.less', mincss)
 }
-)
-gulp.task('imgmin', () => {
-	return gulp.src('img/*')
-		.pipe(imagemin())
-		.pipe(gulp.dest('imgs'))
+
+
+function minimg () {
+	return gulp.src('src/imgs/*')
+		.pipe(imgmin())
+		.pipe(gulp.dest('docs/imgs'))
 }
-)
-gulp.task('minjs', function (cb) {
+
+gulp.task('minimg', minimg)
+
+function minjs (cb) {
 	pump([
-		gulp.src('js/*.js'),
-		jsmin(),
-		gulp.dest('dist')
+		gulp.src('src/js/*.js')
+		.pipe(concat('main.js'))
+		.pipe(sourcemaps.init())
+		.pipe(sourcemaps.identityMap())
+		.pipe(jsmin())
+		.pipe(sourcemaps.write('', {includeContent: false, sourceRoot: 'src/js'})),
+		gulp.dest('docs/js')
 	],
 	cb
 	)
-})
-gulp.task('default', gulp.series(mincss, 'watchcss'))
+}
+
+gulp.task('default', gulp.series(mincss, minhtml, minjs, watchcss))
