@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function(){
 	var mobileWidth = 450,
 	btn1 = document.getElementById("btn-1"),

@@ -17,11 +17,13 @@ function mincss() {
 		,require('postcss-focus')
 	]
 	return gulp.src('src/less/*.less')
-		.pipe(sourcemaps.init())
+		.pipe(sourcemaps.init({loadMaps: true}))
 		.pipe(sourcemaps.identityMap())
+		.pipe(concat('main.css'))
 		.pipe(less())
 		.pipe(postcss(processors))
-		.pipe(sourcemaps.write('', {includeContent: false, sourceRoot: 'src/less'}))
+		.pipe(sourcemaps.write(''))
+		//.pipe(sourcemaps.write(''))
 		.pipe(gulp.dest('docs/css'))
 }
 
@@ -31,31 +33,32 @@ function minhtml () {
 	.pipe(gulp.dest('docs'))
 }
 
-function watchcss() {
-	return gulp.watch('src/less/*.less', mincss)
-}
-
-
 function minimg () {
 	return gulp.src('src/imgs/*')
 		.pipe(imgmin())
 		.pipe(gulp.dest('docs/imgs'))
 }
 
-gulp.task('minimg', minimg)
-
 function minjs (cb) {
 	pump([
 		gulp.src('src/js/*.js')
-		.pipe(concat('main.js'))
 		.pipe(sourcemaps.init())
+		.pipe(concat('main.js'))
 		.pipe(sourcemaps.identityMap())
 		.pipe(jsmin())
-		.pipe(sourcemaps.write('', {includeContent: false, sourceRoot: 'src/js'})),
-		gulp.dest('docs/js')
+		.pipe(sourcemaps.write(''))
+		,gulp.dest('docs/js')
 	],
 	cb
 	)
 }
 
-gulp.task('default', gulp.series(mincss, minhtml, minjs, watchcss))
+function watchcss() {
+	return gulp.watch('src/less/*.less', mincss)
+}
+
+function watchjs() {
+	return gulp.watch('src/js/*.js', minjs)
+}
+
+gulp.task('default', gulp.series(mincss, minhtml, minjs, gulp.parallel(watchcss, watchjs)))
