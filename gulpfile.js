@@ -9,6 +9,7 @@ const
 	,jsmin = require('gulp-uglify')
 	,pump = require('pump')
 	,concat = require('gulp-concat')
+	,del = require('del')
 
 function mincss() {
 	const processors = [
@@ -29,11 +30,12 @@ function mincss() {
 
 function minhtml () {
 	return gulp.src('src/*.html')
-	.pipe(htmlmin({ collapseWhitespace: true }))
-	.pipe(gulp.dest('docs'))
+		.pipe(htmlmin({ collapseWhitespace: true }))
+		.pipe(gulp.dest('docs'))
 }
 
 function minimg () {
+	del(['docs/imgs']);
 	return gulp.src('src/imgs/*')
 		.pipe(imgmin())
 		.pipe(gulp.dest('docs/imgs'))
@@ -42,11 +44,11 @@ function minimg () {
 function minjs (cb) {
 	pump([
 		gulp.src('src/js/*.js')
-		.pipe(sourcemaps.init())
-		.pipe(concat('main.js'))
-		.pipe(sourcemaps.identityMap())
-		.pipe(jsmin())
-		.pipe(sourcemaps.write(''))
+			.pipe(sourcemaps.init())
+			.pipe(concat('main.js'))
+			.pipe(sourcemaps.identityMap())
+			.pipe(jsmin())
+			.pipe(sourcemaps.write(''))
 		,gulp.dest('docs/js')
 	],
 	cb
@@ -57,8 +59,9 @@ function watchcss() {
 	return gulp.watch('src/less/*.less', mincss)
 }
 
-function watchjs() {
-	return gulp.watch('src/js/*.js', minjs)
+function watchjs(arg) {
+	return function watchjs(){return gulp.watch('src/js/*.js', minjs)}
 }
 
-gulp.task('default', gulp.series(mincss, minhtml, minjs, gulp.parallel(watchcss, watchjs)))
+gulp.task('default', gulp.series(mincss, minhtml, minjs, gulp.parallel(watchcss, watchjs('dest'))))
+gulp.task(minimg);
